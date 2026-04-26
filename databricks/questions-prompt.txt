@@ -1,0 +1,2 @@
+examine everying in `databricks\` and it's sub directories.
+create a 8 week study plan to learn everything required to pass the exam found databricks\plan-databricksSparkExamOverview.prompt.md
