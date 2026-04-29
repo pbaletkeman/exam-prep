@@ -224,8 +224,8 @@ Iteration prompts used during the development of the GitHub Actions study conten
 
 ### For GitHub Actions Certification
 
-1. Start with [githubactions/exam-overview.md](githubactions/exam-overview.md) for exam structure
-2. Follow [githubactions/study-plan.md](githubactions/study-plan.md) for a guided study path
+1. Start with [githubactions/learning/exam-overview.md](githubactions/learning/exam-overview.md) for exam structure
+2. Follow [githubactions/learning/60-hour-study-plan.md](githubactions/learning/60-hour-study-plan.md) for a guided study path
 3. Work through topics 01–19 in order
 4. Use the [quiz-engine](quiz-engine/) for practice questions
 
