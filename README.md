@@ -198,14 +198,14 @@ The quiz engine is implemented in 8 programming languages to allow practice with
 
 | Directory | Language / Framework |
 | --------- | -------------------- |
-| `quiz-engine-csharp/` | C# (.NET) |
-| `quiz-engine-dart/` | Dart |
-| `quiz-engine-golang/` | Go |
-| `quiz-engine-java/` | Java |
-| `quiz-engine-nodejs/` | Node.js (JavaScript) |
-| `quiz-engine-python/` | Python |
-| `quiz-engine-rust/` | Rust |
-| `quiz-engine-springboot/` | Java (Spring Boot) |
+| [quiz-engine-csharp](quiz-engine/quiz-engine-csharp/README.md) | C# (.NET) |
+| [quiz-engine-dart](quiz-engine/quiz-engine-dart/README.md) | Dart |
+| [quiz-engine-golang](quiz-engine/quiz-engine-golang/README.md) | Go |
+| [quiz-engine-java](quiz-engine/quiz-engine-java/README.md) | Java |
+| [quiz-engine-nodejs](quiz-engine/quiz-engine-nodejs/README.md) | Node.js (JavaScript) |
+| [quiz-engine-python](quiz-engine/quiz-engine-python/README.md) | Python |
+| [quiz-engine-rust](quiz-engine/quiz-engine-rust/README.md) | Rust |
+| [quiz-engine-springboot](quiz-engine/quiz-engine-springboot/README.md) | Java (Spring Boot) |
 
 See [quiz-engine/README.md](quiz-engine/README.md) for setup instructions for each implementation.
 
