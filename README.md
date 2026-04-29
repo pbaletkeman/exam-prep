@@ -9,7 +9,7 @@ A structured learning repository for technical certification and exam preparatio
 This repository serves as a comprehensive study platform for three certification paths:
 
 | Certification | Provider | Study Materials |
-|--------------|----------|----------------|
+| ------------- | -------- | --------------- |
 | GitHub Actions (GH-200) | GitHub / Microsoft | `githubactions/` |
 | Databricks Certified Associate Developer for Apache Spark | Databricks | `databricks/learning/` |
 | HashiCorp Certified Terraform Associate (004) | HashiCorp | `terraform/learning/` |
@@ -18,35 +18,51 @@ This repository serves as a comprehensive study platform for three certification
 
 ## Directory Structure
 
-```
-github-actions/
-├── .github/                          # GitHub Actions workflow files
-├── actions-source-material/          # Source prompts used to generate study content
-│   ├── gh-200-iteration-1.md through gh-200-iteration-10.md
+```shell
+.github/                             # GitHub Actions workflow files
+actions-source-material/             # Source prompts for GitHub Actions study content
+├── gh-200-iteration-1.md through gh-200-iteration-10.md
+└── README.md
+databricks/
+├── learning/                        # 32 Jupyter notebooks + 32 markdown guides
+│   ├── 8-WEEK-STUDY-PLAN.md
+│   ├── questions/                   # 10 iterations of practice questions
+│   │   └── spark-databricks-iteration-1.md through iteration-10.md
 │   └── README.md
-├── databricks/
-│   └── learning/                     # 32 Jupyter notebooks + 32 markdown guides
-├── engine/                           # Shared quiz engine logic
-├── githubactions/                    # GitHub Actions study materials (19 topics)
-│   ├── 01-GitHub-Actions-VS-Code-Extension.md
-│   ├── 02-Contextual-Information.md
-│   ├── ... (01–19)
-│   ├── GitHub-Workflows-Guide.md
-│   ├── study-plan.md
-│   ├── exam-overview.md
-│   ├── README.md
-│   └── INDEX.md
-├── quiz-engine/                      # Quiz engine in 8 languages
-│   ├── quiz-engine-csharp/
-│   ├── quiz-engine-dart/
-│   ├── quiz-engine-golang/
-│   ├── quiz-engine-java/
-│   ├── quiz-engine-nodejs/
-│   ├── quiz-engine-python/
-│   ├── quiz-engine-rust/
-│   └── quiz-engine-springboot/
-└── terraform/
-    └── learning/                     # 17 Jupyter notebooks + 17 markdown guides
+├── plan-databricksSparkExamOverview.prompt.md
+├── plan-databricksSparkStudyPrompts.prompt.md
+└── questions-prompt.txt
+engine/                              # Shared quiz engine logic
+githubactions/                       # GitHub Actions study materials (19 topics)
+├── 01-GitHub-Actions-VS-Code-Extension.md
+├── 02-Contextual-Information.md
+├── ... (01–19)
+├── GitHub-Workflows-Guide.md
+├── study-plan.md
+├── exam-overview.md
+├── README.md
+└── INDEX.md
+quiz-engine/                         # Quiz engine in 8 languages
+├── quiz-engine-csharp/
+├── quiz-engine-dart/
+├── quiz-engine-golang/
+├── quiz-engine-java/
+├── quiz-engine-nodejs/
+├── quiz-engine-python/
+├── quiz-engine-rust/
+└── quiz-engine-springboot/
+terraform/
+├── learning/                        # 17 Jupyter notebooks + 17 markdown guides
+│   ├── 8-WEEK-STUDY-PLAN.md
+│   ├── questions/                   # 10 iterations + original 80 batches
+│   │   ├── tf-associate-iter1-merged.md through iter10-merged.md
+│   │   ├── orginal/                 # 80 original batch files
+│   │   ├── answer-key.py
+│   │   └── merge.py
+│   └── README.md
+├── plan-terraformAssociateExamOverview.prompt.md
+├── plan-terraformAssociateStudyPrompts.prompt.md
+└── quiz-prompt.md
 ```
 
 ---
@@ -59,8 +75,8 @@ Comprehensive study materials for the **GitHub Actions (GH-200)** certification 
 
 ### Topics Covered
 
-| File | Topic |
-|------|-------|
+| File   | Topic |
+| ------ | ----- |
 | [01-GitHub-Actions-VS-Code-Extension.md](githubactions/01-GitHub-Actions-VS-Code-Extension.md) | VS Code extension setup and usage |
 | [02-Contextual-Information.md](githubactions/02-Contextual-Information.md) | GitHub context and metadata |
 | [03-Context-Availability-Reference.md](githubactions/03-Context-Availability-Reference.md) | Context availability by event |
@@ -82,6 +98,7 @@ Comprehensive study materials for the **GitHub Actions (GH-200)** certification 
 | [19-Common-Failures-Troubleshooting.md](githubactions/19-Common-Failures-Troubleshooting.md) | Common failure patterns and fixes |
 
 Additional resources:
+
 - [GitHub-Workflows-Guide.md](githubactions/GitHub-Workflows-Guide.md) — Complete reference guide
 - [study-plan.md](githubactions/study-plan.md) — Exam study plan
 - [exam-overview.md](githubactions/exam-overview.md) — Exam structure and domains
@@ -92,31 +109,40 @@ Additional resources:
 
 **Location:** `databricks/learning/`
 
-Study materials for the **Databricks Certified Associate Developer for Apache Spark** exam. 32 Jupyter notebooks with paired markdown documentation covering all 7 topic areas.
+Comprehensive study materials for the **Databricks Certified Associate Developer for Apache Spark** exam. **32 Jupyter notebooks** with paired markdown documentation covering 7 topic areas, plus an **8-week study plan** and **1.1K+ practice questions** across 10 iterations.
 
-### Topic Areas
+### Getting Started
 
-| Topic | Notebooks | Focus |
-|-------|-----------|-------|
-| Topic 1 — Spark Architecture | prompts 1–5 | Spark fundamentals, clusters, execution model |
-| Topic 2 — Spark SQL & DataFrames | prompts 6–10 | DataFrame API, SQL operations, schema management |
-| Topic 3 — Data Sources & I/O | prompts 11–15 | Reading/writing files, formats (Parquet, Delta, JSON, CSV) |
-| Topic 4 — Transformations | prompts 16–19 | Joins, aggregations, window functions |
-| Topic 5 — Performance Tuning | prompts 20–24 | Caching, partitioning, shuffles, Catalyst optimizer |
-| Topic 6 — Streaming | prompts 25–29 | Structured Streaming, watermarks, output modes |
-| Topic 7 — Delta Lake | prompts 30–32 | ACID transactions, time travel, schema evolution |
+Begin with the **[8-WEEK-STUDY-PLAN.md](databricks/8-WEEK-STUDY-PLAN.md)** for a structured learning roadmap that organizes all 32 prompts into realistic weekly milestones.
 
-Special notebooks:
-- `topic-prompt31-practice-exam.ipynb` / `.md` — 20-question practice exam across all topics
-- `topic-prompt32-capstone.ipynb` / `.md` — End-to-end ride-sharing pipeline project
+### Topic Areas (7 major topics, 32 prompts)
 
-### How to Use
+| Topic | Prompts | Focus |
+| ----- | ------- | ----- |
+| **1 — Spark Core Architecture & Internals** | 1–7 | Cluster architecture, execution models, lazy evaluation, shuffling, broadcasting, fault tolerance, GC |
+| **2 — Spark SQL** | 8–11 | SQL fundamentals, built-in functions, window functions, query optimization |
+| **3 — DataFrame API** | 12–23 | Creation, selection, manipulation, filtering, aggregations, joins, combining, I/O, partitioning, schemas, UDFs |
+| **4 — Performance Tuning & Debugging** | 24–26 | Tuning techniques, common errors, debugging |
+| **5 — Structured & Stateful Streaming** | 27–28 | Streaming fundamentals, windows, watermarking |
+| **6 — Spark Connect** | 29 | Architecture and usage |
+| **7 — Pandas API on Spark** | 30 | pyspark.pandas integration |
+| **Practice & Capstone** | 31–32 | Practice exam (20 questions) + hands-on capstone project |
 
-1. Open notebooks in Databricks (Community Edition is free) or Jupyter
-2. Read the paired `.md` file for a study-ready summary
-3. Use the practice exam (prompt31) for self-assessment
+### Practice Questions (10 iterations, 1.1K+ total questions)
 
-See [databricks/learning/README.md](databricks/learning/README.md) for the full topic index.
+The [`questions/`](databricks/learning/questions/) directory contains **10 iterative refinements** of practice questions:
+
+- **Iteration 1–10**: Progressive difficulty and coverage (55 → 215+ questions per iteration)
+- Each iteration covers all exam topics with increasing complexity
+- Use iterations sequentially for self-assessment and targeted practice
+
+### Parent Directory Resources
+
+- **[plan-databricksSparkExamOverview.prompt.md](databricks/plan-databricksSparkExamOverview.prompt.md)** — Exam format, structure, scoring, registration
+- **[plan-databricksSparkStudyPrompts.prompt.md](databricks/plan-databricksSparkStudyPrompts.prompt.md)** — Prompt specifications for all 32 notebooks
+- **[questions-prompt.txt](databricks/questions-prompt.txt)** — Template for generating and refining questions
+
+See [databricks/learning/README.md](databricks/learning/README.md) for the complete index and organization details.
 
 ---
 
@@ -124,45 +150,43 @@ See [databricks/learning/README.md](databricks/learning/README.md) for the full 
 
 **Location:** `terraform/learning/`
 
-Study materials for the **HashiCorp Certified Terraform Associate (004)** exam. 17 Jupyter notebooks with paired markdown documentation covering all 8 exam objectives.
+Comprehensive study materials for the **HashiCorp Certified Terraform Associate (004)** exam. **17 Jupyter notebooks** with paired markdown documentation covering all 8 exam objectives, plus an **8-week study plan** and **1.1K+ practice questions** across 10 iterations.
 
-### Exam Objectives
+### Getting Started
 
-| Objective | Notebooks | Topics |
-|-----------|-----------|--------|
-| 1 — IaC Concepts | prompt01 | Infrastructure as Code, idempotency, declarative vs imperative |
-| 2 — Fundamentals | prompt02 | Providers, plugin model, `required_providers`, version constraints |
-| 2 — State | prompt03 | State purpose, state file, `terraform.tfstate` |
-| 3 — Core Workflow | prompt04 | init, plan, apply, destroy, fmt, validate |
-| 4 — Configuration | prompt05–10 | Resources, data sources, variables, locals, outputs, functions, lifecycle |
-| 5 — Modules | prompt11 | Module types, sources, inputs, outputs, registry |
-| 6 — State Advanced | prompt12 | Backends, locking, S3+DynamoDB, drift detection |
-| 7 — Import & Debug | prompt13 | `import` block, CLI import, TF_LOG, state inspection |
-| 8 — HCP Terraform | prompt14–15 | Workspaces, runs, variables, policies, RBAC, OIDC |
+Begin with the **[8-WEEK-STUDY-PLAN.md](terraform/8-WEEK-STUDY-PLAN.md)** for a structured learning roadmap that organizes all 17 prompts into realistic weekly milestones.
 
-### Notebook Index
+### Exam Objectives (8 objectives, 17 prompts)
 
-| File | Topic |
-|------|-------|
-| [prompt01-what-is-iac.md](terraform/learning/prompt01-what-is-iac.md) | What is Infrastructure as Code? |
-| [prompt02-providers-plugin-model.md](terraform/learning/prompt02-providers-plugin-model.md) | Providers and the plugin model |
-| [prompt03-terraform-state.md](terraform/learning/prompt03-terraform-state.md) | Terraform state |
-| [prompt04-core-workflow-cli.md](terraform/learning/prompt04-core-workflow-cli.md) | Core workflow and CLI commands |
-| [prompt05-resource-data-blocks.md](terraform/learning/prompt05-resource-data-blocks.md) | Resource and data blocks |
-| [prompt06-variables-locals-outputs.md](terraform/learning/prompt06-variables-locals-outputs.md) | Variables, locals, and outputs |
-| [prompt07-complex-types-collections.md](terraform/learning/prompt07-complex-types-collections.md) | Complex types, count, for_each, dynamic blocks |
-| [prompt08-builtin-functions-expressions.md](terraform/learning/prompt08-builtin-functions-expressions.md) | Built-in functions and expressions |
-| [prompt09-dependencies-lifecycle.md](terraform/learning/prompt09-dependencies-lifecycle.md) | Resource dependencies and lifecycle |
-| [prompt10-custom-conditions-sensitive-data.md](terraform/learning/prompt10-custom-conditions-sensitive-data.md) | Custom conditions and sensitive data |
-| [prompt11-terraform-modules.md](terraform/learning/prompt11-terraform-modules.md) | Terraform modules |
-| [prompt12-state-backends-locking-remote-state.md](terraform/learning/prompt12-state-backends-locking-remote-state.md) | State backends, locking, and remote state |
-| [prompt13-importing-infrastructure-state-inspection.md](terraform/learning/prompt13-importing-infrastructure-state-inspection.md) | Importing infrastructure and state inspection |
-| [prompt14-hcp-terraform-workspaces-runs-state.md](terraform/learning/prompt14-hcp-terraform-workspaces-runs-state.md) | HCP Terraform: workspaces, runs, and state |
-| [prompt15-hcp-terraform-governance-security-advanced.md](terraform/learning/prompt15-hcp-terraform-governance-security-advanced.md) | HCP Terraform: governance and security |
-| [prompt16-practice-exam-questions-all-objectives.md](terraform/learning/prompt16-practice-exam-questions-all-objectives.md) | 25-question practice exam |
-| [prompt17-hands-on-capstone-project.md](terraform/learning/prompt17-hands-on-capstone-project.md) | Hands-on capstone project |
+| Objective | Prompts | Topics |
+| --------- | ------- | ------ |
+| **1 — IaC Concepts** | prompt01 | Infrastructure as Code, idempotency, declarative vs imperative |
+| **2 — Terraform Fundamentals** | prompt02 | Providers, plugin model, `required_providers`, version constraints |
+| **3 — Terraform State** | prompt03 | State purpose, state file, `terraform.tfstate` |
+| **4 — Core Workflow** | prompt04 | init, plan, apply, destroy, fmt, validate |
+| **5 — Configuration** | prompt05–10 | Resources, data sources, variables, locals, outputs, functions, lifecycle, conditions |
+| **6 — Modules** | prompt11 | Module types, sources, inputs, outputs, registry |
+| **7 — State Advanced** | prompt12 | Backends, locking, S3+DynamoDB, drift detection, import |
+| **8 — HCP Terraform** | prompt14–15 | Workspaces, runs, variables, policies, RBAC, OIDC, governance, security |
+| **Practice & Capstone** | prompt16–17 | 25-question practice exam + hands-on capstone project |
 
-See [terraform/learning/README.md](terraform/learning/README.md) for the full topic index.
+### Practice Questions (10 iterations, 1.1K+ total questions)
+
+The [`questions/`](terraform/learning/questions/) directory contains **10 iterative refinements** of merged practice questions:
+
+- **Iteration 1–10**: Progressive difficulty and coverage (55 → 215+ questions per iteration)
+- Original **80 batch files** archived in `questions/orginal/` for reference
+- Supporting utilities: `answer-key.py` and `merge.py` for question management
+- Use iterations sequentially for self-assessment and targeted practice
+
+### Parent Directory Resources
+
+- **[8-WEEK-STUDY-PLAN.md](terraform/8-WEEK-STUDY-PLAN.md)** — Structured learning roadmap with weekly milestones
+- **[plan-terraformAssociateExamOverview.prompt.md](terraform/plan-terraformAssociateExamOverview.prompt.md)** — Exam format, structure, objectives, registration
+- **[plan-terraformAssociateStudyPrompts.prompt.md](terraform/plan-terraformAssociateStudyPrompts.prompt.md)** — Prompt specifications for all 17 notebooks
+- **[quiz-prompt.md](terraform/quiz-prompt.md)** — Template for generating and refining questions
+
+See [terraform/learning/README.md](terraform/learning/README.md) for the complete index and organization details.
 
 ---
 
@@ -173,7 +197,7 @@ See [terraform/learning/README.md](terraform/learning/README.md) for the full to
 The quiz engine is implemented in 8 programming languages to allow practice with different technology stacks. Each implementation is functionally equivalent.
 
 | Directory | Language / Framework |
-|-----------|---------------------|
+| --------- | -------------------- |
 | `quiz-engine-csharp/` | C# (.NET) |
 | `quiz-engine-dart/` | Dart |
 | `quiz-engine-golang/` | Go |
@@ -206,24 +230,27 @@ Iteration prompts used during the development of the GitHub Actions study conten
 
 ### For Databricks Certification
 
-1. Review [databricks/learning/README.md](databricks/learning/README.md)
-2. Work through notebooks by topic area (Topics 1–7)
-3. Read paired `.md` files for quick review
-4. Take the practice exam (prompt31) to assess readiness
+1. Start with [databricks/learning/8-WEEK-STUDY-PLAN.md](databricks/learning/8-WEEK-STUDY-PLAN.md)
+2. Review [databricks/learning/README.md](databricks/learning/README.md) for complete structure
+3. Work through 32 notebooks by topic area, reading paired `.md` files for summaries
+4. Use the 10 practice question iterations for progressive self-assessment
+5. Take the practice exam (prompt31) for final readiness check
 
 ### For Terraform Certification
 
-1. Review [terraform/learning/README.md](terraform/learning/README.md)
-2. Work through notebooks prompt01–prompt15 in order
-3. Take the practice exam (prompt16) to assess readiness
-4. Complete the capstone project (prompt17) for hands-on practice
+1. Start with [terraform/learning/8-WEEK-STUDY-PLAN.md](terraform/8-WEEK-STUDY-PLAN.md)
+2. Review [terraform/learning/README.md](terraform/learning/README.md) for complete structure
+3. Work through 17 notebooks in order, reading paired `.md` files for summaries
+4. Use the 10 practice question iterations for progressive self-assessment
+5. Take the practice exam (prompt16) for readiness check
+6. Complete the capstone project (prompt17) for hands-on practice
 
 ---
 
 ## Prerequisites
 
 | Section | Requirements |
-|---------|-------------|
+| ------- | ------------ |
 | GitHub Actions notebooks | GitHub account, VS Code with GitHub Actions extension |
 | Databricks notebooks | Databricks account (Community Edition is free) or Jupyter |
 | Terraform notebooks | Terraform CLI >= 1.5.0 installed |

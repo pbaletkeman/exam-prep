@@ -3,6 +3,7 @@
 > **Exam Prep:** These notebooks were created to help learn and prepare for the **Databricks Certified Associate Developer for Apache Spark** certification. See [`plan-databricksSparkExamOverview.prompt.md`](../plan-databricksSparkExamOverview.prompt.md) for full exam details (45 questions, 90 minutes, $200, Python only, 2-year validity).
 
 - [Databricks / Apache Spark Study Notebooks](#databricks--apache-spark-study-notebooks)
+  - [Getting Started](#getting-started)
   - [Topic 1 — Spark Core Architecture \& Internals (Prompts 1–7)](#topic-1--spark-core-architecture--internals-prompts-17)
   - [Topic 2 — Spark SQL (Prompts 8–11)](#topic-2--spark-sql-prompts-811)
   - [Topic 3 — DataFrame API (Prompts 12–23)](#topic-3--dataframe-api-prompts-1223)
@@ -12,11 +13,19 @@
   - [Topic 7 — Pandas API on Spark (Prompt 30)](#topic-7--pandas-api-on-spark-prompt-30)
   - [Practice \& Capstone (Prompts 31–32)](#practice--capstone-prompts-3132)
   - [Summary](#summary)
+  - [Questions \& Practice Iterations](#questions--practice-iterations)
+  - [Parent Directory Resources](#parent-directory-resources)
 
 
 Jupyter notebooks for studying Apache Spark and Databricks concepts. The series covers 32 prompts organized into 7 topic areas, progressing from core architecture through streaming, Spark Connect, the Pandas API on Spark, and a final practice exam and capstone project.
 
 All notebooks are self-contained with explanatory markdown cells and runnable PySpark/Python code cells.
+
+---
+
+## Getting Started
+
+Start with the **[8-WEEK-STUDY-PLAN.md](8-WEEK-STUDY-PLAN.md)** for a structured learning roadmap. This plan organizes all 32 prompts into a realistic 8-week curriculum with weekly milestones and time estimates.
 
 ---
 
@@ -113,6 +122,42 @@ All notebooks are self-contained with explanatory markdown cells and runnable Py
 | Stat | Value |
 |------|-------|
 | Total notebooks | 32 |
-| Total size | ~1.1 MB |
+| Total size | ~1.4 MB |
 | Topics covered | 7 |
+| Study guides | 32 markdown files |
 | Practice notebooks | 2 (exam + capstone) |
+
+---
+
+## Questions & Practice Iterations
+
+The [`questions/`](questions/) subdirectory contains 10 iterations of curated practice questions generated through iterative refinement:
+
+| File | Questions |
+|------|-----------|
+| [spark-databricks-iteration-1.md](questions/spark-databricks-iteration-1.md) | ~25 questions |
+| [spark-databricks-iteration-2.md](questions/spark-databricks-iteration-2.md) | ~30 questions |
+| [spark-databricks-iteration-3.md](questions/spark-databricks-iteration-3.md) | ~30 questions |
+| [spark-databricks-iteration-4.md](questions/spark-databricks-iteration-4.md) | ~25 questions |
+| [spark-databricks-iteration-5.md](questions/spark-databricks-iteration-5.md) | ~30 questions |
+| [spark-databricks-iteration-6.md](questions/spark-databricks-iteration-6.md) | ~35 questions |
+| [spark-databricks-iteration-7.md](questions/spark-databricks-iteration-7.md) | ~40 questions |
+| [spark-databricks-iteration-8.md](questions/spark-databricks-iteration-8.md) | ~40 questions |
+| [spark-databricks-iteration-9.md](questions/spark-databricks-iteration-9.md) | ~40 questions |
+| [spark-databricks-iteration-10.md](questions/spark-databricks-iteration-10.md) | ~50+ questions |
+
+These are excellent for self-assessment and targeted practice, with later iterations incorporating more complex scenarios and edge cases.
+
+---
+
+## Parent Directory Resources
+
+The parent [`../`](../) directory contains additional planning and prompt resources:
+
+| File | Purpose |
+|------|---------|
+| [plan-databricksSparkExamOverview.prompt.md](../plan-databricksSparkExamOverview.prompt.md) | Complete exam format, structure, scoring, and registration details |
+| [plan-databricksSparkStudyPrompts.prompt.md](../plan-databricksSparkStudyPrompts.prompt.md) | Comprehensive prompt specifications for all 32 study notebooks |
+| [questions-prompt.txt](../questions-prompt.txt) | Prompt template for generating and refining practice questions |
+
+---

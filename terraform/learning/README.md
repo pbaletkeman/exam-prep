@@ -6,10 +6,17 @@ Jupyter notebooks for studying the HashiCorp Terraform Associate (004) certifica
 
 All notebooks contain explanatory markdown cells and HCL (HashiCorp Configuration Language) code examples.
 
+## Getting Started
+
+Start with the **[8-WEEK-STUDY-PLAN.md](../8-WEEK-STUDY-PLAN.md)** for a structured learning roadmap. This plan organizes all 17 prompts into a realistic 8-week curriculum with weekly milestones and time estimates.
+
 - [Terraform Associate (004) Study Notebooks](#terraform-associate-004-study-notebooks)
+  - [Getting Started](#getting-started)
   - [Exam Objectives Coverage](#exam-objectives-coverage)
   - [Notebooks](#notebooks)
   - [Capstone Project (Prompt 17)](#capstone-project-prompt-17)
+  - [Questions \& Practice Iterations](#questions--practice-iterations)
+  - [Parent Directory Resources](#parent-directory-resources)
   - [Summary](#summary)
 
 
@@ -71,12 +78,54 @@ The capstone uses only the `hashicorp/random`, `hashicorp/local`, and `hashicorp
 
 ---
 
+## Questions & Practice Iterations
+
+The [`questions/`](questions/) subdirectory contains 10 iterations of merged and refined practice questions:
+
+| File | Coverage |
+|------|----------|
+| [tf-associate-iter1-merged.md](questions/tf-associate-iter1-merged.md) | ~55 questions |
+| [tf-associate-iter2-merged.md](questions/tf-associate-iter2-merged.md) | ~70 questions |
+| [tf-associate-iter3-merged.md](questions/tf-associate-iter3-merged.md) | ~80 questions |
+| [tf-associate-iter4-merged.md](questions/tf-associate-iter4-merged.md) | ~90 questions |
+| [tf-associate-iter5-merged.md](questions/tf-associate-iter5-merged.md) | ~95 questions |
+| [tf-associate-iter6-merged.md](questions/tf-associate-iter6-merged.md) | ~120 questions |
+| [tf-associate-iter7-merged.md](questions/tf-associate-iter7-merged.md) | ~70 questions |
+| [tf-associate-iter8-merged.md](questions/tf-associate-iter8-merged.md) | ~165+ questions |
+| [tf-associate-iter9-merged.md](questions/tf-associate-iter9-merged.md) | ~170+ questions |
+| [tf-associate-iter10-merged.md](questions/tf-associate-iter10-merged.md) | ~215+ questions |
+
+These merged files consolidate 8 batches each for comprehensive exam prep. Original batch files are archived in [`questions/orginal/`](questions/orginal/) (note: directory name preserves original spelling).
+
+Supporting files:
+- [`answer-key.py`](questions/answer-key.py) — Python script for answer key generation/validation
+- [`merge.py`](questions/merge.py) — Script used to merge batch files into iterations
+
+---
+
+## Parent Directory Resources
+
+The parent [`../`](..) directory contains additional planning and prompt resources:
+
+| File | Purpose |
+|------|----------|
+| [8-WEEK-STUDY-PLAN.md](../8-WEEK-STUDY-PLAN.md) | Structured learning roadmap with weekly milestones |
+| [plan-terraformAssociateExamOverview.prompt.md](../plan-terraformAssociateExamOverview.prompt.md) | Complete exam format, structure, objectives, and registration details |
+| [plan-terraformAssociateStudyPrompts.prompt.md](../plan-terraformAssociateStudyPrompts.prompt.md) | Comprehensive prompt specifications for all 17 study notebooks |
+| [quiz-prompt.md](../quiz-prompt.md) | Prompt template for generating and refining practice questions |
+
+---
+
 ## Summary
 
 | Stat | Value |
 |------|-------|
-| Total notebooks | 17 |
-| Total size | ~870 KB |
+| Total study notebooks | 17 |
+| Study guide markdown files | 17 |
+| Total size | ~988 KB |
+| Practice question files | 10 iterations (merged) |
+| Original batch files | 80 batches |
+| Total questions across iterations | 1.1K+ questions |
 | Exam objectives covered | All 8 |
 | Practice notebooks | 2 (exam + capstone) |
 | Cloud credentials required | None (capstone uses local/random/null providers) |
