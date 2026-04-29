@@ -1,5 +1,7 @@
 # Terraform Associate Exam Questions
 
+---
+
 ### Question 1 — Incorrect Idempotency Definition
 
 **Difficulty**: Easy
@@ -17,6 +19,8 @@ What is the error in this explanation?
 - B) Idempotency means the *opposite* — applying the same configuration multiple times produces the same end state without unnecessary changes; if the infrastructure already matches, no actions are taken
 - C) The error is that idempotency only applies to the first apply — subsequent applies always trigger a full rebuild
 - D) The error is that `terraform apply` never destroys resources — only `terraform destroy` can do that
+
+---
 
 ### Question 2 — Incorrect Claim About `count = 0`
 
@@ -36,6 +40,8 @@ What is the error in this comment?
 - C) The comment is incorrect — `count = 0` is valid and useful; it tells Terraform the desired number of instances is zero, so any existing instances will be planned for destruction
 - D) The comment is partially correct — `count = 0` is allowed but only when combined with a `lifecycle` block
 
+---
+
 ### Question 3 — State File Described as Desired State
 
 **Difficulty**: Medium
@@ -53,6 +59,8 @@ What is the error in this statement?
 - B) The error is that the state file records the **current** tracked state of infrastructure (what Terraform believes exists), not the desired state; desired state is expressed in the `.tf` configuration files
 - C) The error is that `terraform.tfstate` is read-only and cannot be edited under any circumstances
 - D) The error is that the state file is not a source of truth at all — Terraform queries the cloud provider API every time without using it
+
+---
 
 ### Question 4 — Drift Defined as "Unrun Apply"
 
@@ -72,6 +80,8 @@ What is the error in this definition?
 - C) The error is that this scenario describes an **unapplied change**, not drift; drift specifically refers to when **real cloud infrastructure** diverges from the desired or tracked state — typically caused by manual out-of-band changes to the cloud, not unrun applies
 - D) The error is that drift can only occur after `terraform destroy` has been run
 
+---
+
 ### Question 5 — Terraform and Ansible Both Called "Config Management"
 
 **Difficulty**: Medium
@@ -89,6 +99,8 @@ What is the error in this job posting?
 - B) The error is that Ansible is a provisioning tool, not a configuration management tool
 - C) The error is that Terraform is a **provisioning** tool used to create and manage infrastructure — not a configuration management tool; Ansible is the configuration management tool that installs and configures software on existing servers
 - D) The error is that Terraform and Ansible cannot be used together in the same toolchain
+
+---
 
 ### Question 6 — CloudFormation Described as Multi-Cloud
 
@@ -108,6 +120,8 @@ What is the error in this statement?
 - C) The error is that CloudFormation uses YAML/JSON templates which are less capable than HCL for multi-cloud scenarios
 - D) The error is that Azure blob storage cannot be managed by any IaC tool
 
+---
+
 ### Question 7 — Two Incorrect Claims About IaC Benefits
 
 **Difficulty**: Medium
@@ -121,6 +135,8 @@ A team writes four statements about the benefits of IaC in their documentation. 
 - B) "IaC eliminates infrastructure drift entirely — once infrastructure is managed by Terraform, no drift can ever occur"
 - C) "Storing Terraform configuration in Git provides a version-controlled audit trail of every infrastructure change"
 - D) "IaC is slower than manual console provisioning because every change must go through code review and a CI/CD pipeline"
+
+---
 
 ### Question 8 — IaC Said to Remove the Need for Audit Trails
 
@@ -140,6 +156,8 @@ What is the error in this statement?
 - C) The error is that `terraform plan` creates the audit trail, not version control
 - D) The error is that audit trails are only relevant for security resources, not infrastructure
 
+---
+
 ### Question 9 — Two Incorrect Claims About Declarative vs Imperative
 
 **Difficulty**: Medium
@@ -153,6 +171,8 @@ Four statements are made about declarative and imperative IaC approaches. Which 
 - B) "Ansible playbooks are primarily imperative — they define ordered tasks to execute on target systems"
 - C) "Terraform is imperative because it ultimately makes sequential API calls to cloud providers to create resources"
 - D) "The declarative model guarantees idempotency — re-applying the same desired state configuration produces no changes if the current state already matches"
+
+---
 
 ### Question 10 — Current State Described as Configuration Files
 
@@ -172,6 +192,8 @@ What is the error in this paragraph?
 - C) The error is that the state file, not `.tf` files, represents desired state
 - D) The error is minor — "current state" and "desired state" are interchangeable terms in Terraform documentation
 
+---
+
 ### Question 11 — Idempotency Applied to a First-Time Apply
 
 **Difficulty**: Hard
@@ -190,6 +212,8 @@ What is the specific error in this reasoning?
 - C) The error is that idempotency is a property of `terraform plan`, not `terraform apply`
 - D) The error is that the developer used the word "safe" — idempotent operations can still be dangerous
 
+---
+
 ### Question 12 — Two Errors in a Declarative IaC Description
 
 **Difficulty**: Hard
@@ -203,6 +227,8 @@ A developer writes a blog post about Terraform with these four claims. Which TWO
 - B) "Terraform's declarative model means you write step-by-step API calls in HCL that Terraform executes in order — like a shell script but with better syntax"
 - C) "Because Terraform is declarative, running the same configuration against an already-provisioned environment makes no changes — the desired state is already satisfied"
 - D) "Terraform is multi-cloud because its declarative model means the same HCL syntax works natively for all providers without any provider-specific blocks"
+
+---
 
 ### Question 13 — Wrong Provider Source Address Format
 
@@ -231,6 +257,8 @@ What is the error in this configuration?
 - C) There is no error — Terraform supports GitHub URLs as an alternative source address for providers
 - D) The error is that `"aws"` is the wrong local name — it must match the provider type exactly as `"hashicorp/aws"`
 
+---
+
 ### Question 14 — Lock File Incorrectly Added to `.gitignore`
 
 **Difficulty**: Easy
@@ -253,6 +281,8 @@ What is the error in this reasoning?
 - C) The error is that `.terraform.lock.hcl` **must be committed** to version control so all team members and CI pipelines use the same provider versions; `.terraform/` (the plugin cache directory) is correctly gitignored
 - D) The error is that `.gitignore` cannot affect Terraform behaviour — both files are always available regardless of git settings
 
+---
+
 ### Question 15 — `~> 5.0.0` Claimed Equivalent to `~> 5.0`
 
 **Difficulty**: Medium
@@ -270,6 +300,8 @@ What is the error in this comment?
 - B) The error is that `~> 5.0` and `~> 5.0.0` both restrict to patch-level changes — the constraints are identical but the comment used the wrong term
 - C) The error is that `"~> 5.0"` allows minor and patch updates (>= `5.0`, < `6.0`), while `"~> 5.0.0"` allows only patch updates (>= `5.0.0`, < `5.1.0`) — they permit different version ranges
 - D) The error is that `~>` is not valid when used with three-component version numbers like `5.0.0`
+
+---
 
 ### Question 16 — Provider Reference Written as Quoted String
 
@@ -300,6 +332,8 @@ What is the error in this resource block?
 - C) There is no error — both `provider = "aws.west"` and `provider = aws.west` are equivalent in Terraform
 - D) The error is that the `provider` meta-argument is only allowed on module blocks, not resource blocks
 
+---
+
 ### Question 17 — Duplicate Provider Blocks Without Alias
 
 **Difficulty**: Medium
@@ -326,6 +360,8 @@ Which TWO statements correctly identify what is wrong with this configuration? (
 - C) The fix is to add `alias = "<name>"` to the second provider block, for example `alias = "west"`, so each configuration has a unique identity
 - D) The fix is to move the second provider block into a separate `.tf` file — Terraform allows one provider block per file but multiple across files
 
+---
+
 ### Question 18 — `terraform state rm` Claimed to Delete Cloud Resource
 
 **Difficulty**: Medium
@@ -344,6 +380,8 @@ What is the error in this documentation?
 - C) The error is that `terraform state rm` only removes the resource from the **state file** — it does not delete the actual S3 bucket from AWS; the bucket continues to exist and Terraform simply stops managing it
 - D) The error is that individual resources can only be destroyed using `terraform destroy -target`, not `terraform state rm`
 
+---
+
 ### Question 19 — `terraform plan -refresh=false` Claimed to Detect Drift
 
 **Difficulty**: Medium
@@ -361,6 +399,8 @@ What is the error in this procedure?
 - B) The error is that drift detection requires `terraform plan -detailed-exitcode`, not `-refresh=false`
 - C) The error is that `terraform plan -refresh=false` **skips the live API refresh** and compares the configuration only against the cached state file — it cannot detect out-of-band changes made after the last apply because it never queries the actual infrastructure
 - D) The error is minor — `-refresh=false` detects drift but displays it differently from a normal `terraform plan`
+
+---
 
 ### Question 20 — `required_version` Placed Inside `required_providers`
 
@@ -390,6 +430,8 @@ What is the error in this configuration?
 - C) The error is that `required_version` is an argument of the `terraform {}` block itself, not a property of a provider entry in `required_providers`; a provider object only accepts `source` and `version`
 - D) The error is that `required_version` must be declared in a separate `version.tf` file
 
+---
+
 ### Question 21 — Incorrect Claims About `terraform.tfstate.backup`
 
 **Difficulty**: Medium
@@ -403,6 +445,8 @@ A wiki article makes four claims about `terraform.tfstate.backup`. Which TWO con
 - B) "`terraform.tfstate.backup` maintains a rolling history of every previous state, allowing rollback to any earlier version"
 - C) "Only one `terraform.tfstate.backup` file exists at a time — it is overwritten on each apply with the state from the previous apply"
 - D) "`terraform.tfstate.backup` provides the same versioning capability as enabling S3 bucket versioning for a remote backend"
+
+---
 
 ### Question 22 — `terraform state push` Used to Read State
 
@@ -422,6 +466,8 @@ What is the error in this description?
 - C) The error is that `terraform state push` **uploads** a local state file to a remote backend (a write operation) — not downloads; `terraform state pull` is the command that downloads the current remote state to stdout as JSON
 - D) The error is that neither `push` nor `pull` produces JSON output — the `-json` flag is required for JSON format
 
+---
+
 ### Question 23 — Core↔Provider Communication Described as HTTP REST
 
 **Difficulty**: Hard
@@ -439,6 +485,8 @@ What is the error in this description?
 - B) The error is that the provider plugin does not run as a separate process — it is compiled into the Terraform Core binary at build time
 - C) The error is in the communication protocol: Terraform Core and provider plugins communicate via **gRPC** (not HTTP REST) over a Unix socket or localhost port; the providers then make HTTPS calls to cloud APIs, but the Core↔Plugin channel is gRPC
 - D) The error is that the provider plugin forwards requests to the cloud API using gRPC — not HTTPS
+
+---
 
 ### Question 24 — Alias Name Mismatch Between Provider Block and Resource Reference
 
@@ -472,6 +520,8 @@ Which TWO statements correctly identify the problems in this configuration? (Sel
 - C) The second `provider "aws"` block is invalid because each provider can only have one configuration per workspace
 - D) The VPC will be created in `us-east-1` because Terraform falls back to the default provider when the aliased reference is unresolvable
 
+---
+
 ### Question 25 — `>= 5.0` Claimed Equivalent to `~> 5.0`
 
 **Difficulty**: Hard
@@ -490,6 +540,8 @@ What is the error in this reasoning?
 - C) The error is that `>= 5.0` has **no upper bound** and would also permit versions `6.0`, `7.0`, and beyond, whereas `~> 5.0` restricts the range to `>= 5.0` and `< 6.0`; the change allows any future major version to be installed, which could introduce breaking changes
 - D) The error is that `>= 5.0` selects the minimum satisfying version (`5.0.0`) while `~> 5.0` always selects the latest — so they select different versions, not just different ranges
 
+---
+
 ### Question 26 — `terraform validate` Claimed to Require Credentials
 
 **Difficulty**: Easy
@@ -507,6 +559,8 @@ What is the error in this guidance?
 - B) The error is that `terraform validate` does not check resource references at all — only `terraform plan` reads `.tf` files
 - C) The error is that `terraform validate` performs **no network calls and requires no provider credentials** — it checks only HCL syntax and static configuration consistency (undefined references, type errors, invalid arguments) without querying any cloud API
 - D) The error is that AMI IDs must be validated with `terraform plan`, not `terraform validate`, because `validate` only handles provider block syntax
+
+---
 
 ### Question 27 — `-` Plan Symbol Described as Update
 
@@ -534,6 +588,8 @@ What is the error in this interpretation?
 - C) The error is that `-` means the resource is being moved to a different Terraform workspace
 - D) The error is that `-` next to individual attribute lines always indicates a replacement, not a standalone destroy
 
+---
+
 ### Question 28 — `terraform fmt -check` Claimed to Reformat Files
 
 **Difficulty**: Medium
@@ -555,6 +611,8 @@ What is the error in this script?
 - C) The error is that `terraform fmt -check` is **read-only** — it checks whether files need reformatting and exits with code 1 if they do, but it does **not** write any changes to disk; to actually reformat files and then check, run `terraform fmt` first (no flags)
 - D) The error is that the CI script should use `terraform fmt -diff` instead of `terraform fmt -check` to write and verify changes simultaneously
 
+---
+
 ### Question 29 — `terraform init -reconfigure` Claimed to Migrate State
 
 **Difficulty**: Medium
@@ -573,6 +631,8 @@ What is the error in this runbook?
 - C) The error is that `terraform init -reconfigure` forces Terraform to reconfigure the backend but **does not migrate existing state** — it may discard the current state location and start fresh; to copy existing state to the new backend, `terraform init -migrate-state` is the correct flag
 - D) The error is that state migration from local to S3 requires running `terraform apply -migrate-state`, not an `init` flag
 
+---
+
 ### Question 30 — `terraform plan -target` Claims About Dependencies
 
 **Difficulty**: Medium
@@ -586,6 +646,8 @@ A wiki article makes four claims about `terraform plan -target`. Which TWO conta
 - B) "`terraform plan -target=aws_instance.web` plans only `aws_instance.web` exactly — its upstream dependencies (such as a security group or subnet it references) are excluded from the plan entirely"
 - C) "`terraform plan -target` is the recommended approach for routine production applies because it limits the blast radius to only the intended resource"
 - D) "The targeted resource and any resources it transitively depends on are included in the plan"
+
+---
 
 ### Question 31 — `terraform graph` Output Described as JSON
 
@@ -608,6 +670,8 @@ What is the error in this approach?
 - C) The error is that `terraform graph` outputs **DOT format** — a plain-text graph description language used by Graphviz — not JSON; piping it to `jq` will fail because DOT text is not valid JSON
 - D) The error is that `terraform graph` outputs XML and must be converted to JSON before processing
 
+---
+
 ### Question 32 — `terraform destroy` Claimed to Delete the State File
 
 **Difficulty**: Medium
@@ -625,6 +689,8 @@ What is the error in this documentation?
 - B) The error is that `terraform destroy` deletes `terraform.tfstate.backup` but not `terraform.tfstate`
 - C) The error is that `terraform destroy` **does not delete the state file** — after all resources are destroyed, `terraform.tfstate` remains on disk but contains an empty resources list; the state file records that no resources are currently managed
 - D) The error is that `terraform destroy` always leaves one backup copy of `terraform.tfstate` per resource destroyed
+
+---
 
 ### Question 33 — `terraform apply` Without Saved Plan Claimed to Guarantee Reviewed Changes
 
@@ -644,6 +710,8 @@ What is the error in this procedure?
 - C) The error is that `terraform apply` without a saved plan file **re-runs the plan internally** at apply time — if infrastructure has changed between the plan and apply steps, the applied changes may differ from what was reviewed; to guarantee the exact plan is applied, use `terraform plan -out=file` followed by `terraform apply file`
 - D) The error is that `terraform plan` output is only valid for 60 seconds — after that, `terraform apply` automatically refreshes and re-plans
 
+---
+
 ### Question 34 — `terraform fmt` Claimed to Recurse by Default
 
 **Difficulty**: Medium
@@ -662,6 +730,8 @@ What is the error in this statement?
 - C) The error is that `terraform fmt` **only processes `.tf` files in the current directory by default** — it does not recurse into subdirectories unless the `-recursive` flag is explicitly provided; for a multi-module repository, `terraform fmt -recursive` is required to format all modules
 - D) The error is that `terraform fmt` does not support subdirectories at all, even with `-recursive`
 
+---
+
 ### Question 35 — Wrong Conditions Claimed to Require `terraform init` Re-run
 
 **Difficulty**: Medium
@@ -675,6 +745,8 @@ A team's wiki lists five actions that it claims require re-running `terraform in
 - B) Adding a new `output` block to an existing module that the root configuration already sources
 - C) Changing the `backend` block from local to a remote S3 backend
 - D) Updating the `default` value of an existing `variable` block in `variables.tf`
+
+---
 
 ### Question 36 — `terraform console` Claimed to Modify State
 
@@ -694,6 +766,8 @@ What is the error in this warning?
 - C) The error is that `terraform console` is a **read-only REPL** — it evaluates HCL expressions and functions against the current configuration and state without modifying state, without making any provider API calls, and without triggering any resource changes; it is completely safe to run in any environment
 - D) The error is that `terraform console` only reads from local state files — it cannot evaluate expressions referencing resources in a remote backend
 
+---
+
 ### Question 37 — `terraform plan` Run Before `terraform init`
 
 **Difficulty**: Hard
@@ -712,6 +786,8 @@ What is the error in this proposed workflow?
 - C) The error is that `terraform plan` requires a **fully initialised working directory** — providers must already be downloaded and the backend must be configured before `plan` can execute; running `plan` before `init` returns an error such as "This configuration has not been initialized" and no plan is generated
 - D) The error is only relevant for remote backends — for local state, `terraform plan` can run before `terraform init`
 
+---
+
 ### Question 38 — Wrong Claims About `terraform apply -replace` and `terraform taint`
 
 **Difficulty**: Hard
@@ -725,6 +801,8 @@ A blog post makes four claims about `terraform apply -replace` and `terraform ta
 - B) "`terraform apply -replace` requires a configuration change to the targeted resource — if the configuration is unchanged, the command has no effect and Terraform skips the replacement"
 - C) "Running `terraform apply -replace=<address>` causes the plan output to show a `-/+` symbol for the targeted resource, indicating destroy-then-recreate"
 - D) "`terraform apply -replace` can only be used in conjunction with `terraform plan -out` — the saved plan file is required to invoke the replace behaviour"
+
+---
 
 ### Question 39 — `data` Block Claimed to Create Resources
 
@@ -744,6 +822,8 @@ What is the error in this comment?
 - C) The error is that a `data` block **never creates or manages resources** — it performs a read-only query against the provider API to retrieve information about an already-existing object; no resource is provisioned and the result is not added to state as a managed resource
 - D) The error is that `id` is not a valid filter argument inside a `data "aws_vpc"` block — VPCs must be looked up by `cidr_block`
 
+---
+
 ### Question 40 — `create_before_destroy` Described as the Default Behaviour
 
 **Difficulty**: Easy
@@ -762,6 +842,8 @@ What is the error in this guide?
 - C) The error is that **Terraform's default replacement order is destroy-first, then create** — the original resource is destroyed before the replacement is provisioned; `create_before_destroy = true` must be explicitly set in the `lifecycle` block to reverse this order and avoid downtime
 - D) The error is that `create_before_destroy` applies to all resource operations, not just replacements — it affects creates and updates as well
 
+---
+
 ### Question 41 — `count` and `for_each` Claimed Usable Together
 
 **Difficulty**: Medium
@@ -775,6 +857,8 @@ A wiki article makes four claims about Terraform meta-arguments. Which TWO conta
 - B) "With `count = 3`, the valid values of `count.index` are 0, 1, and 2 — indexing starts at zero, so the third instance has `count.index = 2`"
 - C) "`for_each` accepts a plain `list(string)` value directly, without requiring any type conversion — Terraform iterates over the list elements natively"
 - D) "When `for_each` is assigned a `map`, `each.key` holds the map key and `each.value` holds the corresponding map value for each iteration"
+
+---
 
 ### Question 42 — Implicit Dependency Described as Requiring `depends_on`
 
@@ -794,6 +878,8 @@ What is the error in this review comment?
 - C) The error is that **Terraform automatically detects implicit dependencies through attribute references** — because `aws_instance.web` uses `aws_subnet.public.id` as an argument value, Terraform infers that the subnet must be created first without any explicit `depends_on`; adding it here is unnecessary and reduces parallelism
 - D) The error is that dependency ordering is only enforced during `terraform destroy`, not `terraform apply`
 
+---
+
 ### Question 43 — `prevent_destroy` Claimed to Block `terraform state rm`
 
 **Difficulty**: Medium
@@ -812,6 +898,8 @@ What is the error in this claim?
 - C) The error is that `prevent_destroy = true` **only prevents plan-time operations** that would destroy the resource (such as `terraform destroy` or config-driven replacements) — it does **not** protect against `terraform state rm`, which directly manipulates the state file and completely bypasses lifecycle hooks
 - D) The error is that `prevent_destroy` requires a remote backend to function — it has no effect when state is stored locally
 
+---
+
 ### Question 44 — `ignore_changes` Claimed to Hide Resource from `terraform plan`
 
 **Difficulty**: Medium
@@ -829,6 +917,8 @@ What is the error in this documentation?
 - B) The error is that `ignore_changes = all` is invalid syntax — the `all` keyword is not accepted; individual attribute names must be listed
 - C) The error is that `ignore_changes = all` **does not hide the resource from plan or remove it from Terraform management** — Terraform still tracks the resource in state, still refreshes its current values, and still includes it in the plan; `ignore_changes = all` only means Terraform will not propose changes to update attribute values that have drifted, not that the resource is unmanaged
 - D) The error is that `ignore_changes = all` must be combined with `prevent_destroy = true` to suppress all plan output for a resource
+
+---
 
 ### Question 45 — `count.index` Starting Value Claimed as 1
 
@@ -859,6 +949,8 @@ What is the error in this comment?
 - C) The error is that `count.index` **starts at 0**, not 1 — with `count = 3`, the three instances have `count.index` values of 0, 1, and 2, producing tag values `"worker-0"`, `"worker-1"`, and `"worker-2"`, not `"worker-1"`, `"worker-2"`, `"worker-3"`
 - D) The error is that `count.index` returns a floating-point number by default and must be converted to a string with `tostring()` before use in string interpolation
 
+---
+
 ### Question 46 — Wrong Claims About `depends_on` on a Data Source
 
 **Difficulty**: Medium
@@ -882,6 +974,8 @@ Which TWO claims contain errors? (Select two.)
 - C) "Adding `depends_on` to a data source with empty results will cause the data source to return `null` on every subsequent plan, permanently breaking the configuration"
 - D) "`depends_on` on the data source ensures that `aws_iam_role_policy.app_s3` is fully created or updated before the data source queries the provider API"
 
+---
+
 ### Question 47 — Resource `id` Attribute Claimed to Be User-Defined
 
 **Difficulty**: Medium
@@ -899,6 +993,8 @@ What is the error in this response?
 - B) The error is that `id` can be set on `data` blocks but not on `resource` blocks
 - C) The error is that the `id` attribute of a managed resource is a **read-only value assigned by the cloud provider** after the resource is created — it cannot be set in the resource block configuration; Terraform stores the provider-assigned ID in state, where it can be referenced as `aws_instance.web.id`
 - D) The error is that `id` is a reserved keyword in Terraform HCL and will cause a parse error if used as an argument name in any block type
+
+---
 
 ### Question 48 — `for_each` with a `list(string)` Variable
 
@@ -928,6 +1024,8 @@ What is the error in this configuration?
 - C) The error is that `for_each` **does not accept a `list` type** — it requires a `set(string)` or `map`; the correct fix is `for_each = toset(var.regions)` to convert the list to a set before iterating
 - D) The error is that `each.value` is the wrong reference when iterating a variable — `each.key` must be used instead
 
+---
+
 ### Question 49 — `depends_on` Claimed to Override Lifecycle Hooks
 
 **Difficulty**: Hard
@@ -946,6 +1044,8 @@ What is the error in this explanation?
 - C) The error is that `depends_on` **controls execution ordering only** — it has no effect on lifecycle hooks whatsoever; `prevent_destroy = true` continues to block any plan that would destroy the protected resource regardless of `depends_on` relationships; lifecycle hooks and dependency ordering are entirely independent mechanisms in Terraform's execution model
 - D) The error is that `depends_on` cannot reference resources in different modules — it is only valid between resources declared in the same configuration file
 
+---
+
 ### Question 50 — Wrong Claims About the `removed` Block
 
 **Difficulty**: Hard
@@ -959,6 +1059,8 @@ A Terraform 1.7+ runbook makes four claims about the `removed` block. Which TWO 
 - B) "A `removed` block with `lifecycle { destroy = false }` deletes both the Terraform state entry **and** the real cloud resource — the `destroy = false` setting only suppresses the interactive confirmation prompt before deletion"
 - C) "After `terraform apply` successfully processes a `removed` block, the block must remain in the configuration permanently to prevent future `terraform plan` runs from flagging the resource address as unknown and attempting to recreate it"
 - D) "After `terraform apply` processes a `removed` block, the block can be safely deleted from the configuration — subsequent plans will not attempt to recreate or re-manage the resource because it is no longer in state"
+
+---
 
 ### Question 51 — `replace_triggered_by` Claimed to Work on Data Sources
 
@@ -991,6 +1093,8 @@ What is the error in this configuration and claim?
 - C) The error is that `lifecycle` blocks — and all lifecycle meta-arguments including `replace_triggered_by` — are **not supported on `data` blocks**; lifecycle meta-arguments only apply to `resource` blocks; data sources are re-evaluated based on their argument values and dependency changes, not lifecycle hooks
 - D) The error is that `replace_triggered_by` requires a list of attribute references (e.g., `aws_iam_role.app.arn`), not full resource addresses
 
+---
+
 ### Question 52 — Flawed Claim: `default` Sets the Type
 
 **Difficulty**: Easy
@@ -1008,6 +1112,8 @@ What is wrong with this claim?
 - B) The claim is wrong about type inference: Terraform does infer the type from the default, but the variable is still required
 - C) The claim is wrong about type constraints: while `default` does make the variable optional, Terraform does **not** enforce a type constraint based on the default — an explicit `type` argument is needed to validate that callers provide the correct type
 - D) The claim is wrong because `default` values are ignored if a `type` constraint is also declared
+
+---
 
 ### Question 53 — Flawed Claim: `sensitive = true` Encrypts State
 
@@ -1027,6 +1133,8 @@ Which part of this conclusion is incorrect?
 - C) The conclusion is incorrect — `sensitive = true` prevents the value from being stored in state at all
 - D) The conclusion is incorrect — `sensitive = true` only applies to output blocks, not variable blocks
 
+---
+
 ### Question 54 — Flawed Claim: Locals Are Evaluated at Apply Time Only
 
 **Difficulty**: Easy
@@ -1044,6 +1152,8 @@ What is wrong with this explanation?
 - B) The explanation is wrong: locals are evaluated during `terraform plan` as well; if a local references a known value it resolves at plan time, and if it references an unknown value the local itself becomes unknown (shown as `(known after apply)`) but no error is raised for that reason alone
 - C) The explanation is wrong: locals are evaluated at `terraform init` time, before plan or apply
 - D) The explanation is wrong: locals that reference resource attributes cause an immediate error at plan time, regardless of whether the value is known
+
+---
 
 ### Question 55 — Flawed Claim: `output sensitive = true` Removes Value from State
 
@@ -1070,6 +1180,8 @@ What is wrong with this claim?
 - C) The claim is wrong: `sensitive = true` on an output causes an error during apply because passwords cannot be exposed as outputs
 - D) The claim is wrong: `sensitive = true` only affects `terraform output` commands; it has no effect on `terraform apply` output
 
+---
+
 ### Question 56 — Flawed Variable Precedence Order
 
 **Difficulty**: Medium
@@ -1091,6 +1203,8 @@ Which error does this list contain?
 - B) The `-var` CLI flag and `TF_VAR_*` environment variables are listed in the wrong order — `-var` has the highest precedence and both are above `.tfvars` files; the list also incorrectly places `.tfvars` files above environment variables
 - C) `default` in the variable block should be listed first (highest priority)
 - D) There are no errors — this is the correct precedence order
+
+---
 
 ### Question 57 — Flawed Claim: `toset()` Preserves List Order
 
@@ -1117,6 +1231,8 @@ What is wrong with this comment?
 - C) The comment is wrong: `toset()` converts the list to a map, not a set
 - D) The comment is wrong: `toset()` can only be used with `count`, not `for_each`
 
+---
+
 ### Question 58 — Flawed Claim: `for` on a Map Always Produces a List
 
 **Difficulty**: Medium
@@ -1134,6 +1250,8 @@ Which of the following best describes the error in this statement?
 - B) The statement is wrong: the outer delimiter determines the output type — `[for ...]` (square brackets) produces a **list**, while `{for ... : key => value}` (curly braces with `=>`) produces a **map (object)**; they are not interchangeable
 - C) The statement is wrong: `for` expressions always produce maps, not lists
 - D) The statement is wrong: `{...}` produces a set, not a map
+
+---
 
 ### Question 59 — Flawed Claim: `lookup()` Default Argument Is Optional
 
@@ -1158,6 +1276,8 @@ What is wrong with this explanation?
 - B) The explanation is wrong: omitting the default from `lookup()` causes Terraform to raise an error if the key is not found; the default argument is required to make the call safe against missing keys
 - C) The explanation is wrong: `lookup()` requires exactly four arguments
 - D) The explanation is wrong: `lookup()` cannot be used with variables — only with literals
+
+---
 
 ### Question 60 — Flawed Claim: `merge()` Deep-Merges Nested Maps
 
@@ -1188,6 +1308,8 @@ The developer expects `local.config.tags` to equal `{ Environment = "production"
 - C) The expectation is wrong: `merge()` will raise an error because both maps contain the same top-level key `"tags"`
 - D) The expectation is wrong: `merge()` only works on flat maps with string values; nested maps cause a type error
 
+---
+
 ### Question 61 — Flawed Claim: `nonsensitive()` Permanently Removes Sensitive Marking from State
 
 **Difficulty**: Medium
@@ -1205,6 +1327,8 @@ What is wrong with this claim?
 - B) The claim is wrong: `nonsensitive()` only removes the sensitive marking for the **specific expression** where it is used, allowing that value to be displayed in plan output; it does not change how the underlying source (the original sensitive variable or attribute) is marked, and the source value remains sensitive in other contexts
 - C) The claim is wrong: `nonsensitive()` is not a valid Terraform function
 - D) The claim is wrong: `nonsensitive()` removes the value from state entirely
+
+---
 
 ### Question 62 — Flawed Claim: `coalesce()` and `coalescelist()` Are Interchangeable
 
@@ -1230,6 +1354,8 @@ What is wrong with this code and explanation?
 - B) The second usage is wrong: `coalesce()` is designed for **scalar values** (strings, numbers, bools) and returns the first non-null, non-empty string; for returning the first non-empty **list**, `coalescelist()` should be used instead
 - C) The first usage is wrong: `coalesce()` only accepts exactly two arguments
 - D) Both usages are wrong: `coalesce()` only works with boolean values
+
+---
 
 ### Question 63 — Flawed Claim: `can()` Returns the Value on Success
 
@@ -1257,6 +1383,8 @@ Which TWO statements correctly identify errors or accuracies in these claims? (S
 - B) Claim 1 is **correct**: `can()` returns the value of the expression when it succeeds
 - C) Claim 2 is **correct**: `try()` evaluates the first expression successfully (`local.settings["timeout"]` = `30`) and returns `30`; the fallback `0` is never used
 - D) Claim 2 is **wrong**: `try()` always returns the last fallback argument regardless of whether earlier expressions succeed
+
+---
 
 ### Question 64 — Flawed Claim: `length()` on `null` Returns Zero
 
@@ -1288,6 +1416,8 @@ What is wrong with this claim?
 - C) The claim is wrong: `length()` returns `-1` for `null` values to indicate an undefined collection
 - D) The claim is wrong: the `nullable = true` setting prevents `var.tags` from ever being `null`, so the scenario cannot occur
 
+---
+
 ### Question 65 — Flawed Claim: `check` Block Failure Blocks Apply
 
 **Difficulty**: Easy
@@ -1306,6 +1436,8 @@ What is wrong with this explanation?
 - C) The explanation is wrong: `check` block failures are more severe than `precondition` failures — they abort the entire Terraform run including `init`
 - D) The explanation is wrong: `check` block failures only block apply if they contain a scoped `data` source
 
+---
+
 ### Question 66 — Flawed Claim: `validation` Runs During Apply
 
 **Difficulty**: Easy
@@ -1323,6 +1455,8 @@ What is wrong with this description?
 - B) The description is wrong: variable `validation` blocks run **before `terraform plan`** — they are evaluated during input variable processing, which happens before any planning; an invalid variable aborts before a plan is ever generated
 - C) The description is wrong: variable `validation` blocks only run when explicitly invoked with `terraform validate`
 - D) The description is wrong: variable `validation` blocks run at `terraform init` time when providers are registered
+
+---
 
 ### Question 67 — Flawed HCL: `validation` Condition References a Local
 
@@ -1355,6 +1489,8 @@ What is wrong with this configuration?
 - C) The configuration is wrong: `contains()` cannot be used inside a `validation` block condition
 - D) The configuration is wrong: `locals` must be declared after all `variable` blocks in a Terraform file
 
+---
+
 ### Question 68 — Flawed Claim: `self` Available in `precondition`
 
 **Difficulty**: Medium
@@ -1372,6 +1508,8 @@ What is wrong with this documentation?
 - B) The documentation is wrong: `self` is only available in `postcondition` blocks; `precondition` blocks cannot use `self` because the resource has not yet been created or updated when the precondition is evaluated
 - C) The documentation is wrong: `self` is only available in `precondition` blocks; `postcondition` blocks must reference the resource by its full address
 - D) The documentation is wrong: `self` is not valid in either block; resource attributes must always be referenced by their full address
+
+---
 
 ### Question 69 — Flawed Claim: `check` Block Introduced in Terraform 1.3
 
@@ -1391,6 +1529,8 @@ Which two facts in this statement are incorrect?
 - C) The `check` block was introduced in Terraform 1.7; `moved` blocks were introduced in 1.3
 - D) The `check` block was introduced in Terraform 1.5; `moved` blocks were also introduced in Terraform 1.5 in the same release
 
+---
+
 ### Question 70 — Flawed Claim: Failed `postcondition` Destroys Resource and Removes from State
 
 **Difficulty**: Medium
@@ -1408,6 +1548,8 @@ What is wrong with this explanation?
 - B) The explanation is wrong: when a `postcondition` fails, the resource **remains in AWS and remains recorded in `terraform.tfstate`**; Terraform does not perform an automatic rollback, destroy, or state removal — the apply exits with a failure status and the team must investigate manually
 - C) The explanation is wrong: when a `postcondition` fails, the resource is kept in AWS but is removed from state so the next plan treats it as a new resource to be imported
 - D) The explanation is wrong: when a `postcondition` fails, the resource is destroyed in AWS but remains in state as an orphaned record
+
+---
 
 ### Question 71 — Flawed HCL: `precondition` Placed Outside `lifecycle` Block
 
@@ -1437,6 +1579,8 @@ What is wrong with this configuration?
 - C) The configuration is wrong: `precondition` cannot reference variables — it can only reference data source attributes
 - D) The configuration is wrong: `precondition` blocks must be placed in a separate `conditions` file, not inside the resource block
 
+---
+
 ### Question 72 — Two Flawed Claims About `check` Block Structure
 
 **Difficulty**: Medium
@@ -1455,6 +1599,8 @@ Which TWO statements correctly identify what is wrong with these claims? (Select
 - B) Claim 1 is **correct**: `check` blocks can be placed inside resource blocks
 - C) Claim 2 is **wrong**: the `data` block inside a `check` block is **optional** — a `check` block with only an `assert` block is perfectly valid
 - D) Claim 2 is **correct**: a `check` block with only an `assert` and no `data` block causes a Terraform parse error
+
+---
 
 ### Question 73 — Flawed Claim: Sensitive Variable Propagates Automatically to Output
 
@@ -1485,6 +1631,8 @@ What is wrong with this claim?
 - C) The claim is wrong: Terraform silently allows the output to expose the sensitive value in plaintext; no error or automatic protection is applied
 - D) The claim is wrong: sensitive variables cannot be interpolated into output values at all — they must be referenced directly with `value = var.db_password`
 
+---
+
 ### Question 74 — Two Flawed Claims About Condition Mechanism Failure Behaviour
 
 **Difficulty**: Hard
@@ -1503,6 +1651,8 @@ Which TWO statements correctly identify the errors? (Select two.)
 - B) Claim 1 is **correct**: validation failures are non-fatal warnings and the plan proceeds
 - C) Claim 2 is **wrong**: a failed `precondition` is a **fatal error that halts `terraform apply` before the resource is created or modified** — the resource is not created and the apply exits with a failure
 - D) Claim 2 is **correct**: precondition failures are warnings that allow the resource to be created
+
+---
 
 ### Question 75 — Flawed Claim: Scoped `data` Source in `check` Block Has Fatal Errors Like Top-Level `data`
 
@@ -1535,6 +1685,8 @@ What is wrong with this claim?
 - C) The claim is wrong: the scoped `data` source inside a `check` block is never actually executed during apply — it is only evaluated during `terraform plan`
 - D) The claim is wrong: `check` block data sources automatically retry three times before deciding whether to fail or warn
 
+---
+
 ### Question 76 — Two Flawed Claims About Retrieving Sensitive Output Values
 
 **Difficulty**: Medium
@@ -1553,6 +1705,8 @@ Which TWO statements correctly identify the errors? (Select two.)
 - B) Claim 1 is **correct**: `terraform output -json` always hides sensitive values
 - C) Claim 2 is **wrong**: `terraform output db_password` (querying a single output by name) **displays the actual plaintext value** — only the aggregate `terraform output` (no arguments) listing redacts sensitive values
 - D) Claim 2 is **correct**: querying a sensitive output by name always returns `(sensitive value)`
+
+---
 
 ### Question 77 — Flawed Claim: `version` Argument Valid with GitHub Module Source
 
@@ -1579,6 +1733,8 @@ What is wrong with this claim?
 - B) The claim is wrong: the `version` argument is only valid for Terraform Registry and private registry sources; using it with a GitHub URL causes a `terraform init` error — the correct way to pin a Git source is the `?ref=` query parameter (e.g., `?ref=v3.0.0`)
 - C) The claim is wrong: `version` works with GitHub sources but uses the GitHub release API, not semantic version constraints
 - D) The claim is wrong: the `version` argument is only valid when `source` begins with `git::https://` — bare GitHub URLs do not support versioning
+
+---
 
 ### Question 78 — Flawed HCL: Module Output Referenced with Wrong Syntax
 
@@ -1607,6 +1763,8 @@ What is wrong with this configuration?
 - C) The configuration is wrong: child module outputs cannot be used directly in resource arguments — they must first be assigned to a local value
 - D) The configuration is wrong: the `subnet_id` argument requires an `aws_subnet` resource reference, not a module output
 
+---
+
 ### Question 79 — Flawed Claim: `.terraform/modules/` Should Be Committed to Git
 
 **Difficulty**: Medium
@@ -1625,6 +1783,8 @@ What is wrong with this guidance?
 - C) The guidance is wrong: `.terraform/modules/` is encrypted with a workspace-specific key and cannot be shared across machines even if committed
 - D) The guidance is wrong: committing `.terraform/modules/` is not supported by GitHub because module caches exceed the 100 MB file size limit
 
+---
+
 ### Question 80 — Flawed Claim: `terraform init` Is a One-Time Step
 
 **Difficulty**: Medium
@@ -1642,6 +1802,8 @@ What is wrong with this advice?
 - B) The advice is wrong: `terraform init` must be re-run whenever a new `module` block is added, an existing module's `source` is changed, or a module version is updated — `terraform plan` does not automatically install missing or updated modules and will raise an error if a new module has not been initialised
 - C) The advice is wrong: `terraform init` must be re-run on every single `terraform plan` execution to ensure providers and modules are up to date
 - D) The advice is wrong: modules are not downloaded by `terraform init` at all — they are resolved dynamically during `terraform plan`
+
+---
 
 ### Question 81 — Flawed HCL: DynamoDB Lock Table with Wrong `hash_key` Attribute Name
 
@@ -1682,6 +1844,8 @@ What is wrong with this configuration?
 - C) The configuration is wrong: the DynamoDB table must use `"terraform.lock"` as the `hash_key` to match the format expected by the S3 backend
 - D) The configuration is wrong: the `hash_key` type must be `"N"` (Number), not `"S"` (String), for the S3 backend locking to function correctly
 
+---
+
 ### Question 82 — Flawed Claim: `terraform state rm` Deletes the Cloud Resource
 
 **Difficulty**: Medium
@@ -1699,6 +1863,8 @@ What is wrong with this explanation?
 - B) The explanation is wrong: `terraform state rm` removes the resource **only from the state file** — the actual AWS resource (the S3 bucket) is not touched in any way and continues to exist in AWS; Terraform simply stops managing it
 - C) The explanation is wrong: `terraform state rm` is not valid for S3 resources — it can only be used with compute resources
 - D) The explanation is wrong: `terraform state rm` sends a delete request to AWS but waits for manual confirmation before updating the state file
+
+---
 
 ### Question 83 — Flawed Claim: `terraform plan -refresh-only` Updates the State File
 
@@ -1718,6 +1884,8 @@ What is wrong with this explanation?
 - C) The explanation is wrong: `terraform plan -refresh-only` re-applies all infrastructure to match the configuration — it is not a safe read-only command
 - D) The explanation is wrong: only `terraform refresh` (not `plan -refresh-only`) updates the state file
 
+---
+
 ### Question 84 — Flawed Claim: Every Child Module Requires Its Own `provider` Block
 
 **Difficulty**: Medium
@@ -1735,6 +1903,8 @@ What is wrong with this style guide rule?
 - B) The rule is wrong: child modules **automatically inherit** the root module's default provider configuration — they do not need their own `provider "aws" {}` blocks; adding redundant provider blocks in child modules can cause "conflicting configurations" errors and is not a recommended practice
 - C) The rule is wrong: child modules cannot declare `provider` blocks at all — only the root module is allowed to configure providers
 - D) The rule is wrong: provider configuration is only required in leaf modules (modules with no children); intermediate modules inherit automatically but leaf modules do not
+
+---
 
 ### Question 85 — Flawed HCL: `version` Constraint on Local Path Module Source
 
@@ -1761,6 +1931,8 @@ What is wrong with this configuration?
 - B) The configuration is wrong: the `version` argument is not valid for local path sources — it causes `terraform init` to raise an error; local modules have no version registry to consult, and code changes are controlled via the file system (or, for git repos, via `?ref=` on the source URL)
 - C) The configuration is wrong: local path modules require `version = "0.0.0"` as a placeholder — any other version string causes an error
 - D) The configuration is wrong: the `~>` operator is only valid for provider version constraints, not for module version constraints
+
+---
 
 ### Question 86 — Two Errors in `for_each` Module Block
 
@@ -1791,6 +1963,8 @@ Which TWO statements correctly identify the errors? (Select two.)
 - C) `module.server[0]` uses a numeric index, but `for_each` with a set of strings addresses instances using their string keys — the correct reference is `module.server["web"]`
 - D) `for_each` cannot be used on a `module` block — it is only valid for `resource` blocks
 
+---
+
 ### Question 87 — Two Flawed Claims About `terraform.tfstate.backup`
 
 **Difficulty**: Medium
@@ -1810,6 +1984,8 @@ Which TWO statements correctly identify the errors? (Select two.)
 - C) Claim 2 is **wrong**: `terraform.tfstate.backup` is only created by the **local backend**; when using a remote backend (such as S3), no local backup file is written to the working directory during apply
 - D) Claim 2 is **correct**: remote backends always write a local `terraform.tfstate.backup` for disaster recovery purposes
 
+---
+
 ### Question 88 — Flawed Claim: `terraform state push` Prompts Before Overwriting
 
 **Difficulty**: Hard
@@ -1827,6 +2003,8 @@ What is wrong with this documentation?
 - B) The documentation is wrong: `terraform state push` **does not prompt for confirmation** and does not display a diff — it immediately overwrites the remote state file with the contents of the provided local file; it is a dangerous command that can silently destroy the remote state without any safety checks, and should only be used as a last resort by operators who have already verified the file to push is correct
 - C) The documentation is wrong: `terraform state push` only works for the local backend — it cannot overwrite a remote S3 backend state
 - D) The documentation is wrong: `terraform state push` requires the `-force` flag to be added before it will overwrite an existing remote state; without `-force` it is read-only
+
+---
 
 ### Question 89 — Two Errors About `terraform state mv` and `moved` Blocks
 
@@ -1847,6 +2025,8 @@ Which TWO statements correctly identify the errors? (Select two.)
 - C) Claim 2 is **wrong**: `moved` blocks support a wide range of restructuring scenarios including moving a root-level resource into a module (`from = aws_instance.web` → `to = module.compute.aws_instance.web`), renaming a module call, and addressing resources within nested modules — they are not limited to root-level resource renames
 - D) Claim 2 is **correct**: `moved` blocks only support root-level resource renames
 
+---
+
 ### Question 90 — CLI Import and HCL Generation
 
 **Difficulty**: Easy
@@ -1863,6 +2043,8 @@ What is wrong with this claim?
 - C) The flag works but requires an existing resource block to be present before it can generate the configuration
 - D) The flag is valid but only outputs JSON, not HCL
 
+---
+
 ### Question 91 — TF_LOG Default Output Destination
 
 **Difficulty**: Easy
@@ -1878,6 +2060,8 @@ What is wrong with this claim?
 - B) When `TF_LOG` is set but `TF_LOG_PATH` is not, Terraform writes log output to **stderr** — `TF_LOG_PATH` is optional and only redirects output from stderr to a file
 - C) `TF_LOG_PATH` defaults to `terraform.log` in the working directory, so logging is active by default without explicitly setting it
 - D) Terraform writes logs to stdout when `TF_LOG_PATH` is absent, which may mix with plan output
+
+---
 
 ### Question 92 — Swapped `import` Block Arguments
 
@@ -1903,6 +2087,8 @@ What is wrong with this configuration and the colleague's explanation?
 - B) The arguments are swapped — `to` must be the Terraform resource address (unquoted, e.g., `aws_instance.web`) and `id` must be the cloud provider's resource identifier (e.g., `"i-0abcd1234ef567890"`)
 - C) Both values must be quoted strings — using an unquoted reference for `id` causes a syntax error
 - D) The `import` block must be placed inside the `resource "aws_instance" "web"` block, not at the root level
+
+---
 
 ### Question 93 — `cloud` Block and `backend` Block Coexistence
 
@@ -1935,6 +2121,8 @@ What is the error in this configuration and claim?
 - C) The `cloud` block overrides `backend "local"` silently, making the `backend` block unreachable but not an error
 - D) This is valid Terraform syntax; the blocks serve different lifecycle phases and do not conflict
 
+---
+
 ### Question 94 — Sentinel Enforcement Level Descriptions
 
 **Difficulty**: Medium
@@ -1948,6 +2136,8 @@ A team lead explains Sentinel policy enforcement levels to new engineers. Which 
 - B) The `advisory` enforcement level blocks the apply when a policy fails — it is less strict than `soft-mandatory` only because the failure is displayed as a warning rather than a hard stop
 - C) There is no mechanism to override a `soft-mandatory` policy failure — once blocked, the only resolution is to fix the configuration or remove the policy
 - D) The `hard-mandatory` enforcement level blocks the run and provides no override mechanism — not even organisation Owners can bypass a `hard-mandatory` failure
+
+---
 
 ### Question 95 — Health Assessment Auto-Apply Claim
 
@@ -1965,6 +2155,8 @@ What is the error in this description?
 - C) Health assessments do not detect instance type changes — they only detect resource deletions
 - D) Health assessments are triggered manually, not on a schedule
 
+---
+
 ### Question 96 — Speculative Plan Approval Claim
 
 **Difficulty**: Medium
@@ -1980,6 +2172,8 @@ What is the error in this statement?
 - B) Only organisation Owners (not workspace Admins) can approve a speculative plan that shows no changes
 - C) Speculative plans that show no changes are automatically applied by HCP Terraform without requiring approval
 - D) Speculative plans can only be triggered via the HCP Terraform UI, not via VCS pull request webhooks
+
+---
 
 ### Question 97 — `terraform login` Token Storage Location
 
@@ -1997,6 +2191,8 @@ What is the specific error in this documentation?
 - C) The token is saved to `~/.terraform.d/credentials.tfrc.json` in the user's **home directory** — not in the project's `.terraform/` directory
 - D) `terraform login` saves the token to the system keychain, not a file, on supported operating systems
 
+---
+
 ### Question 98 — HCP Terraform Audit Log Properties
 
 **Difficulty**: Medium
@@ -2010,6 +2206,8 @@ A compliance officer reviews HCP Terraform's audit logging capabilities. Which T
 - B) Organisation Owners can edit or redact audit log entries containing sensitive information before exporting them to external systems
 - C) Audit logs are immutable — no user, including Owners, can modify or delete individual log entries
 - D) Audit logs are stored internally within HCP Terraform and cannot be exported to external SIEM or log management systems
+
+---
 
 ### Question 99 — `import` Block Workflow Step Order
 
@@ -2031,6 +2229,8 @@ What is the error in this workflow description?
 - C) Step 1 should use `terraform apply -generate-config-out`, not `terraform plan -generate-config-out`
 - D) The generated file from `-generate-config-out` must be manually renamed to `main.tf` before `terraform apply` will process it
 
+---
+
 ### Question 100 — `terraform state list` Capabilities
 
 **Difficulty**: Medium
@@ -2046,6 +2246,8 @@ What is the error in this description?
 - B) `terraform state list` only outputs **resource addresses** (one per line, e.g., `aws_instance.web`) — it does not display attribute values; use `terraform state show <address>` to see all recorded attributes for a specific resource
 - C) `terraform state list` is a deprecated command — `terraform show` is the recommended replacement for listing all managed resources
 - D) `terraform state list` only shows resources in the root module and cannot list resources inside child modules
+
+---
 
 ### Question 101 — HCP Terraform Private Registry Source Address
 
@@ -2071,6 +2273,8 @@ What is the error?
 - B) The correct hostname for the HCP Terraform private registry is `app.terraform.io`, not `registry.terraform.io` — the source address should be `app.terraform.io/acme-corp/vpc/aws`
 - C) The private registry requires the full URL format: `https://app.terraform.io/app/acme-corp/registry/modules/private/vpc/aws`
 - D) Private registry modules cannot be versioned with `~>` constraints — an exact version must be specified
+
+---
 
 ### Question 102 — Dynamic Provider Credentials (OIDC) Misconceptions
 

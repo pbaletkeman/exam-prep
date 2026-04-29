@@ -1,4 +1,5 @@
 # Terraform Associate Exam Questions
+---
 
 ### Question 1 — Nightly Apply Reports No Changes
 
@@ -17,6 +18,8 @@ What does the "No changes. Infrastructure is up-to-date." output most accurately
 - C) The nightly apply is being silently skipped due to a missing state lock file
 - D) Terraform is operating in plan-only mode and is not permitted to execute changes
 
+---
+
 ### Question 2 — New Engineer Told to "Read the Repo"
 
 **Difficulty**: Easy
@@ -33,6 +36,8 @@ Which benefit of IaC most directly justifies the tech lead's instruction?
 - B) Terraform logs every `apply` operation to a structured log file that describes the current state of each resource in prose
 - C) Terraform automatically generates architecture diagrams and HTML documentation from HCL resource blocks
 - D) Reading `.tf` files allows the engineer to run a simulation of the infrastructure locally without cloud credentials
+
+---
 
 ### Question 3 — Incident Workaround Overwritten on Monday Morning
 
@@ -51,6 +56,8 @@ What does Terraform do when `terraform apply` is executed on Monday morning?
 - C) Terraform reverts the Auto Scaling Group `min_size` back to `2` to match the desired state in the configuration
 - D) Terraform imports the manual change into the state file and automatically updates the `.tf` configuration to `min_size = 5`
 
+---
+
 ### Question 4 — Company Expanding from AWS to Azure and GCP
 
 **Difficulty**: Medium
@@ -67,6 +74,8 @@ What is the most accurate assessment of this situation?
 - B) CloudFormation is limited to AWS and cannot manage resources on GCP or Azure; the team needs a multi-cloud IaC tool such as Terraform to manage all three providers in a unified workflow
 - C) CloudFormation supports multi-cloud deployments through its StackSets feature, which can federate API calls to external cloud providers
 - D) CloudFormation can manage Azure resources natively using ARM template integration but requires a third-party plugin for GCP
+
+---
 
 ### Question 5 — Accidental `terraform destroy` on the Wrong Workspace
 
@@ -85,6 +94,8 @@ What is the most accurate description of the recovery procedure and expected out
 - C) The team can run `terraform apply` immediately without restoring the state file; Terraform will automatically detect the missing resources and recreate them without any risk
 - D) The team must re-run `terraform init` to recover the provider plugins and configuration from the remote backend before resources can be recreated
 
+---
+
 ### Question 6 — Bash Script vs Terraform for Provisioning EC2 Instances
 
 **Difficulty**: Medium
@@ -101,6 +112,8 @@ What is the most likely difference in outcome when both solutions are re-run?
 - B) Both solutions skip the creation step and report success, because all modern cloud automation tools are idempotent by design
 - C) Engineer B's `terraform apply` fails with a conflict error because the 3 instances already exist in the cloud
 - D) Engineer A's Bash script fails because the AWS CLI detects duplicate instance names and returns a `DuplicateResource` error
+
+---
 
 ### Question 7 — Staging Environment Diverges from Production
 
@@ -119,6 +132,8 @@ Which TWO statements most accurately describe the root cause and the correct rem
 - C) Running `terraform apply` against the staging environment using the same configuration as production will reconcile the staging environment to the desired state, restoring parity
 - D) The team must use `terraform taint` on all staging resources to force a full replacement before running `apply`
 
+---
+
 ### Question 8 — Compliance Audit Requests Change History
 
 **Difficulty**: Medium
@@ -135,6 +150,8 @@ Which single artifact from the team's IaC workflow most directly provides all th
 - B) The GitHub pull request and associated Git commit history for the relevant `.tf` file, which records the author, reviewer approvals, and the configuration diff
 - C) The `terraform.log` output file generated automatically during the `apply` run that changed the security group
 - D) The cloud provider's native activity log (e.g., AWS CloudTrail), which records every API call made to modify the security group
+
+---
 
 ### Question 9 — Choosing Tools for a Two-Layer Automation Stack
 
@@ -153,6 +170,8 @@ Which TWO tools are most appropriate for this two-layer automation approach?
 - C) Ansible for installing and configuring software packages, application runtimes, and configuration files on the VMs after provisioning
 - D) Chef for provisioning cloud VMs, networking, and databases directly from its recipe definitions
 
+---
+
 ### Question 10 — Scaling Up from 3 to 5 EC2 Instances
 
 **Difficulty**: Medium
@@ -169,6 +188,8 @@ What output does `terraform plan` most likely produce, and what does it reveal a
 - B) `Plan: 2 to add, 0 to change, 0 to destroy` — Terraform computes only the minimal changes needed to bring the current state to the desired state
 - C) `Plan: 0 to add, 3 to change, 0 to destroy` — Terraform modifies the existing three instances in place to increase their individual capacity
 - D) `Plan: 5 to add, 0 to change, 0 to destroy` — Terraform ignores the 3 existing instances because they were created before the count argument was declared
+
+---
 
 ### Question 11 — Engineer Describes Terraform as a Sophisticated Shell Script
 
@@ -187,6 +208,8 @@ Which statement most accurately describes why the senior developer's explanation
 - C) The senior developer is correct; Terraform is fundamentally an imperative tool that reads and executes resource creation steps in the sequence they appear in the configuration files
 - D) The senior developer is incorrect only about ordering; `depends_on` declarations are required for all resources, and without them Terraform creates blocks in a random order
 
+---
+
 ### Question 12 — Security Team Wants Safe Drift Detection in Production
 
 **Difficulty**: Hard
@@ -203,6 +226,8 @@ Which TWO Terraform actions correctly support safe drift detection without modif
 - B) Run `terraform apply -auto-approve` — this applies all detected differences immediately and is the most efficient way to both detect and remediate drift in a single step
 - C) Run `terraform plan -refresh-only` — this updates the in-memory view of current state and reports differences between the state file and actual cloud resources, without planning any configuration-driven changes
 - D) Delete the `terraform.tfstate` file and run `terraform init` to force Terraform to re-scan all cloud resources and rebuild state from scratch
+
+---
 
 ### Question 13 — Provider Schema Validation Catches Typo Before API Call
 
@@ -221,6 +246,8 @@ What does this behaviour demonstrate about the Terraform provider's role in the 
 - C) Terraform queries the AWS EC2 API to retrieve the list of valid instance arguments, then compares the configuration against the API's live response to detect the typo
 - D) The validation error is generated by reading `.terraform.lock.hcl` to compare the config against the installed provider version metadata
 
+---
+
 ### Question 14 — Same Resource Type Deployed Across Three AWS Accounts
 
 **Difficulty**: Medium
@@ -237,6 +264,8 @@ What must the resource blocks for the staging and production S3 buckets include,
 - B) Resources automatically distribute across multiple `provider "aws"` blocks in declaration order when more than one provider block is defined for the same provider type
 - C) Each resource block that should use a non-default provider must include a `provider` meta-argument in the format `provider = aws.<alias>`, explicitly referencing the correct aliased configuration
 - D) A `for_each` over the list of account aliases automatically assigns each resource iteration to the corresponding provider configuration with the matching alias name
+
+---
 
 ### Question 15 — Security Auditor Finds Database Password in Plaintext in S3 State
 
@@ -255,6 +284,8 @@ Which TWO statements accurately describe the situation?
 - C) To protect sensitive values at rest, the team must use an encrypted backend (such as S3 with server-side encryption enabled) or avoid storing secrets in Terraform state by retrieving them dynamically from a secrets manager such as HashiCorp Vault
 - D) The value is only encrypted in state when `terraform apply` is run with the `-encrypt-state` flag alongside the sensitive output declaration
 
+---
+
 ### Question 16 — "Error Acquiring the State Lock" During a Deployment
 
 **Difficulty**: Easy
@@ -271,6 +302,8 @@ What is the most accurate response to the junior engineer's concern?
 - B) The error indicates the DynamoDB table used for locking has become corrupted and must be deleted and recreated before any apply can proceed
 - C) This is the expected behaviour of state locking — Engineer A's apply has acquired the lock, preventing concurrent state modification. Engineer B must wait until Engineer A's apply completes and the lock is released; no infrastructure is broken
 - D) The error indicates the state file was corrupted by a previous failed apply and must be manually repaired using `terraform state push` before new applies can run
+
+---
 
 ### Question 17 — S3 Bucket Rename in Code Review Triggers Destroy + Create
 
@@ -289,6 +322,8 @@ What is the correct action before running `terraform apply`?
 - C) Revert the rename in the code, apply, then re-introduce the rename in a second commit so Terraform processes it as an in-place name attribute change
 - D) Run `terraform import aws_s3_bucket.raw <bucket-name>` to register the bucket under the new address, then run `terraform apply` to clean up the old address
 
+---
+
 ### Question 18 — Permissive Version Constraint Allows Major Version Jump
 
 **Difficulty**: Medium
@@ -306,6 +341,8 @@ What is the root cause of this problem, and what is the correct fix?
 - C) The root cause is that the new engineer ran `terraform init -upgrade` without realising it; they should re-run `terraform init` without the `-upgrade` flag to downgrade to v5.31.0
 - D) The root cause is that the team's lock file is outdated and should not be committed to version control; each engineer should generate their own lock file from scratch
 
+---
+
 ### Question 19 — Colleague Suggests Restoring the Backup State After a Partial Apply Failure
 
 **Difficulty**: Hard
@@ -322,6 +359,8 @@ Which TWO statements explain why restoring the backup state file is the wrong ap
 - B) Restoring the backup is always safe and correct; the backup file contains a complete history of all resource states and is the intended recovery mechanism for failed applies
 - C) With the backup restored, the next `terraform apply` would plan to create all five resources again; the four that already exist in the cloud would either cause API conflict errors or result in duplicate resources, depending on the resource type
 - D) The `.terraform.tfstate.backup` file uses a different JSON schema version and cannot be used as the primary state file without running `terraform state push` first
+
+---
 
 ### Question 20 — New Engineer Needs a Quick Resource Inventory
 
@@ -348,6 +387,8 @@ Which command produced this output?
 - C) `terraform state list`
 - D) `terraform state show`
 
+---
+
 ### Question 21 — Migrating from Local to Remote S3 Backend in CI
 
 **Difficulty**: Medium
@@ -365,6 +406,8 @@ Which flag enables the state migration non-interactively?
 - C) `terraform init -migrate-state`
 - D) `terraform init -upgrade`
 
+---
+
 ### Question 22 — Enterprise Team Evaluates a Partner-Tier Provider
 
 **Difficulty**: Medium
@@ -381,6 +424,8 @@ Which TWO statements accurately describe Partner-tier providers on the Terraform
 - B) Partner providers are subject to the same internal code review process as Official providers because HashiCorp applies uniform standards across both tiers
 - C) HashiCorp reviews and approves Partner providers before awarding the Partner badge, placing them above Community providers (unverified) in the trust hierarchy, though below Official providers (maintained by HashiCorp)
 - D) Partner providers are self-published by individual open-source contributors on GitHub and carry no HashiCorp endorsement or verification
+
+---
 
 ### Question 23 — Terraform CLI Upgrade Breaks a Shared Module
 
@@ -407,6 +452,8 @@ Why does this module reject Terraform v1.8.0?
 - C) `~> 1.5.0` sets a minimum of v1.5.0 with no upper limit, so v1.8.0 should be accepted — the error is caused by a binary mismatch unrelated to the version constraint
 - D) `~> 1.5.0` is identical in behaviour to `~> 1.5`, which permits all v1.x releases including v1.8.0; the error is caused by a corrupted module cache
 
+---
+
 ### Question 24 — Internal Provider Crashes Without Taking Down Terraform Core
 
 **Difficulty**: Hard
@@ -423,6 +470,8 @@ Which architectural characteristic of the Terraform plugin model explains why th
 - B) Each Terraform provider plugin runs as a separate operating system process that communicates with Terraform Core over gRPC; the crash of one provider's process is isolated from Terraform Core and from all other provider processes
 - C) Terraform Core maintains a watchdog subprocess for each provider; when a provider crashes, the watchdog automatically restarts the binary and retries the failed operation before reporting an error
 - D) Terraform Core compiles provider operation wrappers into its own binary at `init` time; the provider binary is no longer needed at `apply` time and cannot cause Terraform Core to crash
+
+---
 
 ### Question 25 — Handing Off an RDS Instance to Another Team Without Downtime
 
@@ -441,6 +490,8 @@ What is the correct Terraform command for the current team to use, and what is i
 - C) Run `terraform state mv aws_db_instance.postgres ../db-team/aws_db_instance.postgres`; this automatically transfers the resource entry into the database team's local state file
 - D) Delete the `aws_db_instance.postgres` resource block from the configuration and run `terraform apply`; Terraform will silently drop it from state without touching the cloud resource
 
+---
+
 ### Question 26 — Second Provider Added to Existing Config
 
 **Difficulty**: Easy
@@ -457,6 +508,8 @@ What is the correct next action before `terraform plan` can succeed?
 - B) Run `terraform validate` first — this downloads missing providers as a side effect before performing syntax checks
 - C) Run `terraform init` to download the newly declared `hashicorp/random` provider plugin and update the lock file
 - D) Run `terraform apply -refresh-only` — this re-resolves provider dependencies without requiring a full init
+
+---
 
 ### Question 27 — Production Deploy Pipeline Uses a Two-Stage Approach
 
@@ -475,6 +528,8 @@ Which approach correctly implements this two-stage guarantee?
 - C) Run `terraform validate` in Stage 1 to capture the intended changes; in Stage 2, run `terraform apply -auto-approve` to apply without prompting
 - D) Pass a checksum of the configuration files from Stage 1 to Stage 2; Terraform verifies the checksum before applying to ensure no changes occurred
 
+---
+
 ### Question 28 — Formatting Check Added to Pull Request Validation
 
 **Difficulty**: Easy
@@ -491,6 +546,8 @@ Which command correctly implements the formatting check without modifying any fi
 - B) `terraform fmt -check -recursive` — checks all `.tf` files recursively and exits with a non-zero code if any file needs reformatting, without writing any changes
 - C) `terraform validate -recursive` — validates HCL syntax recursively across all subdirectories, including formatting style
 - D) `terraform fmt -diff -recursive` — shows what would change and automatically fails the pipeline when diff output is non-empty
+
+---
 
 ### Question 29 — Unhealthy EC2 Instance Needs a Clean Replacement
 
@@ -509,6 +566,8 @@ Which command is the correct current approach for this situation?
 - C) Run `terraform apply -replace="aws_instance.app"` to force Terraform to destroy the existing instance and create a new one in a single apply operation
 - D) Run `terraform taint aws_instance.app` — this is the current recommended command for forcing resource replacement
 
+---
+
 ### Question 30 — Platform Team Visualizes a Dependency Graph for a New Hire
 
 **Difficulty**: Medium
@@ -525,6 +584,8 @@ Which command produces the rendered SVG dependency diagram?
 - B) `terraform graph | dot -Tsvg > graph.svg`
 - C) `terraform plan -out=graph.svg` — saves the execution plan as an SVG diagram when the file extension is `.svg`
 - D) `terraform state list | dot -Tsvg > graph.svg`
+
+---
 
 ### Question 31 — Script Assigns a Terraform Output to a Shell Variable
 
@@ -543,6 +604,8 @@ What change to the `terraform output` command eliminates the surrounding quotes?
 - C) Use `terraform show instance_ip` — the `show` command omits quotation marks from scalar output values
 - D) Use `terraform output instance_ip | tr -d '"'` — pipe through `tr` to remove quotes as a post-processing step
 
+---
+
 ### Question 32 — Large Environment Plan Takes 20 Minutes Due to API Throttling
 
 **Difficulty**: Medium
@@ -559,6 +622,8 @@ Which TWO statements accurately describe the trade-off of using `terraform plan 
 - B) `terraform plan -refresh=false` queries the API for resources that have changed since the last apply, but skips resources that are unchanged — it provides a partial refresh with improved performance
 - C) Since the team's policy ensures no out-of-band infrastructure changes occur, the cached state in the state file is reliable, making `-refresh=false` a reasonable trade-off in this specific context
 - D) `terraform plan -refresh=false` is inherently unsafe regardless of the environment because it disables all state consistency checks and may corrupt the state file
+
+---
 
 ### Question 33 — Validate Passes, Plan Fails on First Deployment
 
@@ -577,6 +642,8 @@ Why did `terraform validate` pass while `terraform plan` failed?
 - C) The failure is caused by a missing provider version constraint; `terraform validate` does not enforce version constraints but `terraform plan` does
 - D) `terraform validate` succeeded because the AMI ID was syntactically a valid string; `terraform plan` checks AMI IDs against a local cached list maintained in `.terraform/`
 
+---
+
 ### Question 34 — Workspace Verification Before a Destructive Command
 
 **Difficulty**: Medium
@@ -593,6 +660,8 @@ Which command provides this information?
 - B) `terraform workspace show` — outputs only the name of the currently active workspace as a plain string
 - C) `terraform env` — the legacy command alias that outputs the active workspace name
 - D) `terraform state list | head -1` — the first line of state list output always contains the workspace name
+
+---
 
 ### Question 35 — Developer Tests a Conditional Expression Before Embedding It
 
@@ -611,6 +680,8 @@ Which Terraform command provides this interactive testing capability?
 - C) `terraform console` — opens an interactive REPL where the developer can evaluate HCL expressions, test functions, and inspect variable values without modifying configuration or state
 - D) `terraform output` — displays the result of arbitrary HCL expressions entered as arguments when run in debug mode
 
+---
+
 ### Question 36 — CI Pipeline Must Pass Only Reviewed Changes to Production
 
 **Difficulty**: Hard
@@ -627,6 +698,8 @@ Why is the team member's proposed simplification incorrect and potentially dange
 - B) `terraform apply -auto-approve` runs a fresh plan at apply time, meaning any infrastructure changes that occurred between Stage 1 and Stage 2 (such as manual console changes or concurrent pipeline runs) would be included in the apply — producing different changes from what the change advisory board reviewed and approved
 - C) `terraform apply approved.tfplan` and `terraform apply -auto-approve` are functionally identical when the configuration has not changed between the two stages, so the simplification is safe
 - D) `-auto-approve` requires the `-input=false` flag to be specified alongside it in CI environments; omitting `-input=false` will cause Stage 2 to pause waiting for user input
+
+---
 
 ### Question 37 — Emergency Fix Targets One Resource in a Shared Workspace
 
@@ -645,6 +718,8 @@ Which TWO concerns correctly describe the risks of using `-target` regularly (no
 - C) After a `-target` apply, the remainder of the configuration has not been fully evaluated — running a full `terraform plan` afterwards may reveal planned changes to resources that were not included in the targeted apply, because their dependencies changed
 - D) `-target` causes Terraform to permanently lock the targeted resource's state entry, preventing future full applies from modifying it unless the lock is manually removed with `terraform state rm`
 
+---
+
 ### Question 38 — Engineer Mistakes `terraform plan -destroy` for `terraform destroy`
 
 **Difficulty**: Hard
@@ -661,6 +736,8 @@ Which statement most accurately describes the distinction between `terraform pla
 - B) `terraform plan -destroy` generates a read-only preview showing what `terraform destroy` would remove, without making any API calls or changes to infrastructure. `terraform destroy` actually executes the destruction — it prompts for confirmation by default, but once "yes" is entered (or `-auto-approve` is used), it immediately begins deleting resources
 - C) `terraform plan -destroy` also destroys resources, but it destroys them in reverse dependency order to avoid errors; `terraform destroy` uses alphabetical order and is therefore more likely to produce errors
 - D) `terraform plan -destroy` is only valid when used with a `-out` flag to save the destroy plan; running it without `-out` is equivalent to `terraform destroy`
+
+---
 
 ### Question 39 — Zero-Downtime RDS Replacement Required
 
@@ -679,6 +756,8 @@ Which lifecycle configuration correctly implements this zero-downtime replacemen
 - C) Add `replace_triggered_by = [aws_db_parameter_group.new]` to the `lifecycle` block — this triggers the replacement in a create-first order automatically
 - D) Add `ignore_changes = [parameter_group_name]` — this prevents the replacement from occurring and allows the parameter group change to be applied in-place
 
+---
+
 ### Question 40 — Auto Scaling Group Keeps Reverting to Minimum Capacity
 
 **Difficulty**: Medium
@@ -695,6 +774,8 @@ Which configuration change correctly prevents Terraform from reverting `min_size
 - B) Add a `lifecycle` block with `ignore_changes = [min_size]` to the ASG resource — Terraform will no longer detect or revert drift on that specific attribute
 - C) Add `depends_on = [aws_cloudwatch_metric_alarm.traffic]` — this tells Terraform to defer changes to the ASG until the alarm fires, preventing premature reverts
 - D) Set `create_before_destroy = true` — this pauses the apply until manual changes are confirmed, avoiding the revert
+
+---
 
 ### Question 41 — `for_each` Fails with a `list(string)` Variable
 
@@ -727,6 +808,8 @@ What is the minimal fix to the `for_each` argument that resolves the error?
 - C) Change `for_each = var.usernames` to `for_each = toset(var.usernames)` — the `toset()` function converts the list to a `set(string)`, which `for_each` accepts
 - D) Change the variable type from `list(string)` to `tuple` — tuples are accepted directly by `for_each`
 
+---
+
 ### Question 42 — Legacy S3 Bucket Must Be Removed from Terraform Without Deletion
 
 **Difficulty**: Medium
@@ -743,6 +826,8 @@ Why does the team lead reject the proposed approach, and what is the correct alt
 - B) The team lead rejects it because Terraform requires a two-step process: first run `terraform state rm` to remove it from state, then delete the resource block. Running `terraform apply` with only the block deleted would cause a validation error
 - C) The team lead rejects it because deleting a resource block does nothing — Terraform continues to manage resources whose blocks are removed, reading their state from the state file
 - D) The team lead rejects it because `terraform apply` requires the `-confirm-orphan` flag when resource blocks are deliberately removed to prevent accidental deletions
+
+---
 
 ### Question 43 — Module Refactoring Moves Resources from Root to Child Module
 
@@ -761,6 +846,8 @@ What must the team add to prevent the destroy+create cycle for each resource bei
 - C) Export the existing resource IDs as outputs from the root module and pass them as inputs to the child module, then run `terraform apply` with `-target=module.networking`
 - D) Run `terraform state mv aws_vpc.main module.networking.aws_vpc.main` for each resource before applying — `moved` blocks are only for renaming within the same module level
 
+---
+
 ### Question 44 — EC2 Instance Fails on Startup Because IAM Policy Isn't Ready
 
 **Difficulty**: Medium
@@ -777,6 +864,8 @@ Why was `depends_on` necessary here when Terraform already references `aws_iam_i
 - B) Terraform detected the `aws_iam_instance_profile.app` attribute reference and created a dependency edge between the instance profile and the EC2 instance. However, the `aws_iam_role_policy.s3_read` attachment has no attribute referenced in the EC2 block — Terraform cannot detect that dependency through attributes alone. `depends_on` explicitly adds the missing edge so Terraform waits for the policy attachment before creating the instance
 - C) `depends_on` prevents Terraform from parallelising the apply, which gives IAM time to propagate before the instance starts — it works purely as a timing delay mechanism and has nothing to do with the dependency graph
 - D) The IAM policy attachment creates a dependency cycle with the instance profile, which Terraform normally skips. `depends_on` overrides cycle detection to allow the attachment to be applied first
+
+---
 
 ### Question 45 — Data Source Returns a Value That Won't Be Known Until Apply
 
@@ -795,6 +884,8 @@ Why does the data source show `(known after apply)` during plan?
 - C) The `(known after apply)` marker means the data source has no matching results and will create the resource instead of querying existing ones during apply
 - D) Data sources referenced from the same Terraform configuration as their filter dependency always fail with errors; they must be placed in a separate Terraform workspace
 
+---
+
 ### Question 46 — Launch Template Update Does Not Refresh Running Instances
 
 **Difficulty**: Medium
@@ -812,6 +903,8 @@ Which lifecycle configuration on the ASG resource causes Terraform to replace th
 - C) Add `replace_triggered_by = [aws_launch_template.web]` in the ASG resource's `lifecycle` block — this instructs Terraform to replace the ASG whenever the launch template resource changes, even if none of the ASG's own attributes changed
 - D) Add `create_before_destroy = true` to the launch template's `lifecycle` block — creating the new template version first automatically triggers instance refresh in the ASG
 
+---
+
 ### Question 47 — Nightly Teardown Pipeline Blocked by `prevent_destroy`
 
 **Difficulty**: Medium
@@ -828,6 +921,8 @@ Which TWO statements accurately describe the situation and the available remedia
 - B) `prevent_destroy = true` is enforced at the cloud provider API level — the protection cannot be bypassed even if removed from the Terraform configuration, requiring a support ticket to AWS to unlock
 - C) To allow the nightly destroy to succeed, the `prevent_destroy = true` setting must be removed from the resource block's `lifecycle` configuration, and `terraform init` must be re-run to update the provider schema before the destroy can proceed
 - D) To allow the nightly destroy to succeed, `prevent_destroy = true` must be removed from the resource block's `lifecycle` configuration and the configuration re-applied or the destroy re-run — `prevent_destroy` is a Terraform-only guard evaluated at plan time; once removed from the config, the destroy plan will no longer error
+
+---
 
 ### Question 48 — Middle Username Removed from `count`-Based IAM Users Causes Unexpected Replacements
 
@@ -859,6 +954,8 @@ What causes the three unexpected replacements?
 - C) Terraform detects that the list length decreased and plans to delete all existing `count` instances before creating the new set, resulting in five deletes and four creates
 - D) The `count.index` is not recalculated after an element is removed — Terraform reuses the old indices, causing the last element `eve` to have an orphaned index that triggers a cascade replacement
 
+---
+
 ### Question 49 — Terraform Detects a Circular Dependency and Errors
 
 **Difficulty**: Hard
@@ -876,6 +973,8 @@ Which approach correctly resolves the circular dependency while preserving the i
 - C) Merge both security groups into a single `aws_security_group` resource — Terraform can handle self-referential rules within a single resource block without cycle errors
 - D) Use `ignore_changes = [ingress, egress]` on both security group resources — this tells Terraform to ignore the circular references during planning
 
+---
+
 ### Question 50 — Data Source Looks Up a Resource Created in the Same Apply
 
 **Difficulty**: Hard
@@ -892,6 +991,8 @@ Which TWO statements accurately explain the behaviour?
 - B) Data sources that reference newly created resource attributes always produce errors during plan — the only solution is to use `terraform apply` with `-refresh-only` before a standard apply
 - C) The `(known after apply)` value propagates downstream: because the data source result is unknown at plan time, any resource arguments that reference the data source result are also shown as `(known after apply)` in the plan output
 - D) Terraform resolves all data sources at plan time regardless of their dependencies; the `(known after apply)` marker means the S3 bucket is misconfigured and will fail during apply
+
+---
 
 ### Question 51 — New Resource Must Be Deployed into a Specific AWS Region
 
@@ -923,6 +1024,8 @@ What must the S3 bucket resource block include to deploy into `eu-west-1`?
 - C) Create a new `terraform workspace` named `ireland` — workspaces automatically route resources to the region matching the workspace name
 - D) Include `alias = "ireland"` as a meta-argument in the `aws_s3_bucket` resource block to select the aliased provider
 
+---
+
 ### Question 52 — Validation Block Tries to Reference a Data Source
 
 **Difficulty**: Medium
@@ -953,6 +1056,8 @@ Why does Terraform reject this validation block?
 - C) The data source `data.aws_regions.available` must be declared inside the `variable` block for the reference to resolve correctly within the validation scope
 - D) Validation blocks do not support multi-argument functions like `contains()` — each condition must be a single boolean expression using comparison operators
 
+---
+
 ### Question 53 — Sensitive Output: What It Protects and What It Does Not
 
 **Difficulty**: Medium
@@ -979,6 +1084,8 @@ Which TWO statements accurately describe what `sensitive = true` on an output bl
 - C) `sensitive = true` prevents anyone with `terraform output` access from ever retrieving the actual value — the value can only be recovered by re-running `terraform apply`
 - D) Even with `sensitive = true`, the actual plaintext value remains accessible in the state file — protecting it from unauthorized access requires storing state in an encrypted remote backend (such as S3 with server-side encryption or HCP Terraform)
 
+---
+
 ### Question 54 — CI Pipeline: Which Variable Source Wins?
 
 **Difficulty**: Easy
@@ -995,6 +1102,8 @@ Which value does Terraform use for `var.region` during this apply?
 - B) `"eu-west-1"` — the CLI `-var` flag has the highest precedence of all variable input sources; it overrides `*.auto.tfvars`, `terraform.tfvars`, `-var-file` flags, and environment variables
 - C) Terraform errors because the same variable is specified in two sources simultaneously — duplicate variable assignments are not permitted
 - D) `"us-east-1"` — `*.auto.tfvars` is processed last in the input chain and therefore takes final precedence
+
+---
 
 ### Question 55 — Inline IAM Policy Using `jsonencode()`
 
@@ -1031,6 +1140,8 @@ What does `jsonencode()` return, and why is it valid for the `policy` argument?
 - C) `jsonencode()` returns a Terraform map type — it is equivalent to writing `var.policy_map` and is only useful for outputs, not resource arguments
 - D) `jsonencode()` returns a Base64-encoded string — this is required because the AWS provider internally base64-encodes IAM policy documents before sending them to the API
 
+---
+
 ### Question 56 — Custom Iterator Name in `dynamic` Block Changes Reference Syntax
 
 **Difficulty**: Medium
@@ -1064,6 +1175,8 @@ What is the cause of the validation failure, and what is the correct fix?
 - C) The `iterator` argument requires the same name as the block type — `iterator = ingress` is the only valid assignment, making `iterator = rule` always invalid
 - D) The `for_each` in a `dynamic` block must be a set, not a list — the failure is caused by `var.ingress_rules` being a `list(object(...))` rather than a `set(object(...))`
 
+---
+
 ### Question 57 — Using `locals` with `merge()` to Centralise Resource Tags
 
 **Difficulty**: Easy
@@ -1095,6 +1208,8 @@ Which answer best explains why `locals` is the appropriate choice here?
 - B) Locals are internal computed values scoped to the module — they cannot be set by callers, which is correct here because the tag map should be automatically derived from other inputs, not overridden arbitrarily. A `variable` block would expose `common_tags` as part of the module interface, allowing callers to pass in conflicting or incomplete tag maps
 - C) Locals must be used instead of variables whenever a `merge()` call is involved — Terraform does not support `merge()` inside variable `default` values
 - D) Using a `variable` block for the tag map would cause Terraform to treat each tag as a sensitive value and suppress it in terminal output
+
+---
 
 ### Question 58 — `for` Expression with `[...]` Extracts Map Values as a List
 
@@ -1134,6 +1249,8 @@ What type and content does `local.instance_types` hold?
 - C) A `set(string)` — Terraform automatically deduplicates the results when a `for` expression iterates over a map's values
 - D) An error — iterating a map with two loop variables (`k, v`) is only valid when producing a map output; a list `for` expression must use a single variable
 
+---
+
 ### Question 59 — `cidrsubnet` for Three Availability Zone Subnets
 
 **Difficulty**: Hard
@@ -1161,6 +1278,8 @@ Which option correctly lists the three subnet CIDRs produced by `cidrsubnet("10.
 - B) `10.0.0.0/8`, `10.0.1.0/8`, `10.0.2.0/8` — `cidrsubnet` with `newbits = 8` subtracts 8 bits from the base prefix to produce larger supernets
 - C) `10.0.0.0/24`, `10.0.1.0/24`, `10.0.2.0/24` — `newbits = 8` extends the `/16` prefix by 8 bits to produce `/24` subnets; `netnum` 0, 1, 2 selects the first, second, and third `/24` block within `10.0.0.0/16`
 - D) `10.0.0.0/24`, `10.0.8.0/24`, `10.0.16.0/24` — `newbits = 8` shifts the third octet by 8 with each `netnum` increment
+
+---
 
 ### Question 60 — `flatten()` to Consolidate Per-AZ Subnet ID Lists from a Module
 
@@ -1190,6 +1309,8 @@ Which TWO statements accurately describe what `flatten()` does in this scenario?
 - B) `flatten()` removes duplicate subnet IDs — if `"subnet-a1"` appeared in both `module.network_az1` and `module.network_az2`, `flatten()` would produce it only once
 - C) `flatten()` is distinct from `concat()` in this use case: `concat()` requires separate list arguments (e.g., `concat(module.network_az1.subnet_ids, module.network_az2.subnet_ids, module.network_az3.subnet_ids)`), while `flatten()` operates on a single collection that already contains the nested lists
 - D) `flatten()` only unwraps one level of nesting — it cannot handle more than two levels deep, so `list(list(list(string)))` would require multiple nested `flatten()` calls
+
+---
 
 ### Question 61 — `nullable = false` Rejects Explicit `null` Even When a Default Exists
 
@@ -1227,6 +1348,8 @@ Why does Terraform error even though `default = 90` is set?
 - C) `nullable = false` prevents callers from explicitly passing `null` to the variable. Normally, passing `null` overrides the `default` (because `null` is a valid explicit value when `nullable = true`). With `nullable = false`, Terraform rejects the explicit `null` assignment — the `default` is only used when the caller provides no value at all, not when they actively pass `null`
 - D) The error is caused by a type mismatch: `null` cannot be coerced to `number`, so Terraform errors before evaluating the `nullable` constraint
 
+---
+
 ### Question 62 — `try()` to Safely Access an Optional Map Key
 
 **Difficulty**: Medium
@@ -1251,6 +1374,8 @@ Which statement correctly explains how `try()` works in this expression, and whe
 - B) `try(var.app_config["log_level"], "info")` evaluates `var.app_config["log_level"]`. If the key does not exist, bracket indexing raises an error, and `try()` catches that error and returns the fallback `"info"`. `try()` is more general than `lookup()` because it can wrap any expression — not just map lookups — making it the preferred pattern when the optional access involves type coercions, attribute traversals, or function calls that might fail
 - C) `try()` only catches errors from network calls — it is not designed for map key lookups. Using bracket indexing `[]` with a missing key always returns `null` rather than an error, so `try()` has no effect in this scenario
 - D) `try()` evaluates all of its arguments simultaneously and returns the one with the highest non-null type priority — it does not return the first non-erroring expression
+
+---
 
 ### Question 63 — `for_each` with a Map: Two True Facts About Instance Addressing
 
@@ -1289,6 +1414,8 @@ Which TWO statements accurately describe how Terraform handles the `for_each` ma
 - C) Removing the `"app"` key from the map causes Terraform to plan the destruction of only `aws_instance.app["app"]` — the `"web"` and `"db"` instances are unaffected because they retain their stable string-key identifiers
 - D) `for_each` with a map requires the map values to be unique — if two keys shared the value `"t3.micro"`, Terraform would error and refuse to create the instances
 
+---
+
 ### Question 64 — `terraform output -raw` for Shell Variable Assignment in CI
 
 **Difficulty**: Easy
@@ -1311,6 +1438,8 @@ Which `terraform output` flag resolves this by printing the value without surrou
 - B) `terraform output -json db_endpoint | jq -r '.value'` — piping to `jq` with the `-r` flag is the only supported method to extract a raw string from a Terraform output
 - C) `terraform output -raw db_endpoint` — the `-raw` flag prints the string value without surrounding quotes or newline padding, making it suitable for direct shell variable assignment
 - D) `terraform output -plain db_endpoint` — the `-plain` flag suppresses all formatting including quotes and is the recommended flag for CI pipeline usage
+
+---
 
 ### Question 65 — CI Pipeline Expected `check` Block to Block the Deploy
 
@@ -1344,6 +1473,8 @@ Why did the CI pipeline continue to report success despite the health check fail
 - C) The scoped `data "http"` source inside the `check` block suppresses all HTTP errors — only assertions that reference module-level resources can produce non-zero exit codes
 - D) The `check` block requires `depends_on = [aws_lb.web]` inside the assertion block to evaluate after the load balancer is created — without it, the assertion is skipped entirely
 
+---
+
 ### Question 66 — AMI Architecture Mismatch Detected by `precondition`
 
 **Difficulty**: Medium
@@ -1376,6 +1507,8 @@ Which TWO statements accurately describe the state of the system after the faile
 - B) Terraform partially creates the EC2 instance (allocates the instance ID) and then rolls back the creation after the precondition fails — the instance briefly exists in AWS before being deleted
 - C) The error message includes the actual architecture value from the data source because `data.aws_ami.selected.architecture` is interpolated directly into the `error_message` string
 - D) The apply failure causes Terraform to delete the data source's results from the state file — the next `terraform plan` will re-fetch the AMI information from scratch
+
+---
 
 ### Question 67 — Attempt to Use `self` Inside a `precondition`
 
@@ -1414,6 +1547,8 @@ Why is `self` invalid inside the `precondition` block?
 - C) `self` is available in both `precondition` and `postcondition`, but it can only reference attributes that are known at plan time — dynamic attributes like `bucket` are not eligible
 - D) `self` is only invalid when the resource does not yet exist in state — on a subsequent apply where the resource already exists, `self` would work correctly in a `precondition`
 
+---
+
 ### Question 68 — Security Audit Finds DB Password in Plaintext State Despite `sensitive = true`
 
 **Difficulty**: Hard
@@ -1444,6 +1579,8 @@ Which TWO statements accurately explain the audit finding and the corrective act
 - B) `sensitive = true` on an output block encrypts the value in `terraform.tfstate` using Terraform's built-in AES encryption — the auditor must have used `terraform state pull` with elevated permissions to bypass the encryption
 - C) To protect the password in state, the team should store state in an encrypted remote backend — for example, an S3 bucket with server-side encryption (SSE-KMS) enabled, or HCP Terraform's encrypted state storage — and apply strict IAM policies to restrict who can read the state file
 - D) The correct long-term solution is to stop storing the password in Terraform configuration entirely by using the HashiCorp Vault provider to retrieve dynamic credentials at apply time — this prevents the password from ever appearing in the Terraform state file as a static value
+
+---
 
 ### Question 69 — Variable Has Two `validation` Blocks; Both Conditions Fail
 
@@ -1480,6 +1617,8 @@ What does Terraform report when both validation conditions fail?
 - C) Terraform merges all failing `validation` error messages into a single combined error string separated by semicolons — only one error block appears in the output regardless of how many validations fail
 - D) Terraform evaluates both `validation` blocks but only reports the error from the block with the stricter (more specific) condition, determined by the length of the `error_message` string
 
+---
+
 ### Question 70 — `check` Block Scoped Data Source Returns 503 During `terraform plan`
 
 **Difficulty**: Medium
@@ -1509,6 +1648,8 @@ What happens when the scoped `data "http"` source inside the `check` block fails
 - B) Because the data source is declared inside a `check` block (not at the top level), its failure is treated as a warning. Terraform emits a warning about the data source error, skips the `assert` evaluation, and the plan/apply continues normally — the CI pipeline receives exit code `0`
 - C) A connection timeout inside a `check` block causes Terraform to retry the HTTP request three times before giving up and aborting the plan with a hard error
 - D) The scoped data source failure is silently ignored — Terraform does not print any warning or message when a `check` block's embedded data source fails to retrieve data
+
+---
 
 ### Question 71 — Colleague Claims `precondition` Has the Same `var`-Only Scope as `validation`
 
@@ -1543,6 +1684,8 @@ Is the senior developer's review comment correct?
 - C) Yes — `precondition` blocks can reference locals and variables but not data sources, because data sources may not be read until apply time and their values could be unknown during the precondition evaluation
 - D) The comment is partially correct — `precondition` can reference data sources, but only data sources declared within the same resource block, not top-level data sources
 
+---
+
 ### Question 72 — Output Block References Sensitive Variable Without `sensitive = true`
 
 **Difficulty**: Easy
@@ -1573,6 +1716,8 @@ What error does Terraform produce, and what is the minimal fix?
 - C) Terraform errors with `Unknown value in output` — sensitive variables are treated as `(known after apply)` and cannot be referenced in outputs at plan time; they can only be referenced inside resource blocks
 - D) Terraform silently replaces `${var.db_password}` with `(sensitive value)` in the output string and proceeds — no error is produced because the interpolation produces a masked string automatically
 
+---
+
 ### Question 73 — `nonsensitive()` Used to Demote a Value for a Diagnostic Output
 
 **Difficulty**: Medium
@@ -1597,6 +1742,8 @@ Which answer correctly explains `nonsensitive()` and when it should be used?
 - B) `nonsensitive()` creates a new copy of the value with the sensitive marking removed. The output will display the certificate in plaintext in `terraform output`. The author is explicitly taking responsibility for the security implications — in production environments, this would expose the certificate to anyone who can run `terraform output`, so it should be used only when the team has explicitly accepted that risk
 - C) `nonsensitive()` is only valid when called inside `check` block assertions — using it in an `output` block causes a validation error
 - D) `nonsensitive()` has no effect on storage — it is equivalent to setting `sensitive = false` on the output block, which is the default, so the function call is redundant
+
+---
 
 ### Question 74 — Vault Dynamic Secrets vs `sensitive = true` for a Long-Lived DB Password
 
@@ -1627,6 +1774,8 @@ Which TWO statements accurately describe what the Vault dynamic secrets approach
 - C) With `sensitive = true` on a variable, the password is stored as an encrypted value in `terraform.tfstate` — the Vault approach and the `sensitive = true` approach provide identical state-level protection
 - D) Vault supports secret rotation and dynamic credentials with short TTLs — if Vault is configured to generate short-lived dynamic database credentials, the password retrieved during one apply is different from the one retrieved during the next apply, reducing the blast radius of a credential leak
 
+---
+
 ### Question 75 — `terraform validate` Does Not Trigger Variable Validation Blocks
 
 **Difficulty**: Medium
@@ -1643,6 +1792,8 @@ Why did `terraform validate` succeed without triggering the validation block?
 - B) `terraform validate` checks only HCL syntax and provider schema correctness. It does not require variable values to be provided and does not evaluate variable `validation` blocks. Validation blocks are evaluated during `terraform plan`, when variable values must be resolved — running `terraform plan -var "environment=invalid_value"` would trigger the validation failure
 - C) `terraform validate` triggers validation blocks only for variables that have a `default` value set — variables without defaults are skipped during validation to avoid requiring user input
 - D) `terraform validate` is not supported when the configuration has unsatisfied required variables — the command would have failed before reaching the validation block evaluation, which is why the validation failure was not reported
+
+---
 
 ### Question 76 — `postcondition` Fails After RDS Instance Is Successfully Created
 
@@ -1682,6 +1833,8 @@ What is the state of the RDS instance after the failed apply?
 - C) The postcondition failure is treated identically to a precondition failure — the resource never reaches a created state and is not recorded in state
 - D) The RDS instance exists in AWS but is NOT recorded in `terraform.tfstate` — Terraform only records a resource in state after all its postconditions pass successfully
 
+---
+
 ### Question 77 — Registry Module Without a `version` Constraint Breaks in CI
 
 **Difficulty**: Medium
@@ -1709,6 +1862,8 @@ What is the root cause of this failure, and what change prevents it from recurri
 - B) Without a `version` constraint, `terraform init` always resolves and downloads the latest published version of the module. When a new major version with breaking changes was published, the CI run silently adopted it. Adding `version = "~> 5.0"` to the module block pins the resolution to compatible 5.x releases and prevents automatic adoption of v6.x
 - C) The issue is caused by using `~>` pessimistic pinning in the backend, which propagates to module version resolution — using exact version pinning with `version = "= 5.9.0"` is the only safe approach
 - D) CI pipelines should add `-no-upgrade` flag to `terraform init` to prevent version resolution — without this flag, `terraform init` always upgrades all modules to their latest versions regardless of whether a version constraint is present
+
+---
 
 ### Question 78 — Child Module Needs a Non-Default Provider Alias (Multi-Region)
 
@@ -1752,6 +1907,8 @@ Which TWO statements accurately describe the `providers` meta-argument and the b
 - C) The `providers` map `{ aws = aws.eu }` tells Terraform: "when this child module refers to provider `aws`, use the aliased provider `aws.eu` from the root module." This is the only mechanism for directing a child module to use a non-default provider alias
 - D) The `providers` meta-argument is only required when the child module declares its own `provider` block — if the child module has no `provider` block, provider configuration always flows automatically from the root
 
+---
+
 ### Question 79 — Renaming a Module Block Label Triggers Full Destroy and Recreate
 
 **Difficulty**: Medium
@@ -1775,6 +1932,8 @@ Why does renaming the module block label cause a full destroy-and-recreate plan?
 - C) The rename triggers an automatic `terraform init` to re-download the module source, and during re-initialisation the module version is bumped, which causes breaking changes in the resource schema
 - D) Module block labels must match the `module_name` metadata field declared inside the child module's `versions.tf` — a mismatch between the call label and the declared name causes a full replacement cycle
 
+---
+
 ### Question 80 — Plain `terraform init` Doesn't Update a Cached Module to a Newer Patch Version
 
 **Difficulty**: Medium
@@ -1791,6 +1950,8 @@ Why did the re-run of `terraform init` not update the module to `5.7.3`?
 - B) `terraform init` without any flags does not check for newer versions if a module version already exists in the local cache that satisfies the declared constraint. Since `5.0.0` satisfies `~> 5.0`, no network request is made. To resolve the latest compatible version within the constraint, the developer must run `terraform init -upgrade`
 - C) Module version upgrades require editing the `.terraform/modules/modules.json` file manually to update the version field before running `terraform init` — `terraform init` alone never changes a cached module version
 - D) The `version` argument in a module block is evaluated only on the first `terraform init` — subsequent runs always use the same version that was downloaded initially, regardless of flags
+
+---
 
 ### Question 81 — Root Module References a Child Module Output That Was Never Declared
 
@@ -1820,6 +1981,8 @@ What error does Terraform produce, and what is the minimal fix?
 - B) Terraform produces a reference error stating that the module has no output named `private_ip`. The minimal fix is to add an output block to the child module's `outputs.tf`: `output "private_ip" { value = aws_instance.server.private_ip }`
 - C) Terraform produces an error because `private_ip` is a computed attribute — it cannot be referenced in another resource until after the EC2 instance has been created. The fix is to run `terraform apply` first to create the instance, then re-run `terraform plan`
 - D) Terraform produces a module encapsulation error — resource attributes from inside a child module can only be used by other resources inside the same module, never by the root module
+
+---
 
 ### Question 82 — `for_each` Module: Adding a New Environment Key Affects Only That Instance
 
@@ -1852,6 +2015,8 @@ Which TWO statements accurately describe what the plan shows?
 - C) Each module instance created by `for_each` is addressed in state using the map key as a string — the new `"dr"` entry creates a new `module.env["dr"]` address in state independent of the three existing entries
 - D) Terraform errors when a new entry is added to a `for_each` module map after the initial apply — the map must be finalized before the first apply and cannot be extended without using `terraform state import`
 
+---
+
 ### Question 83 — Detecting Configuration Drift Without Proposing Infrastructure Changes
 
 **Difficulty**: Easy
@@ -1868,6 +2033,8 @@ Which command satisfies these requirements — showing the drift without modifyi
 - B) `terraform plan -refresh-only` — this command refreshes Terraform's view of the live infrastructure and displays what has changed relative to the recorded state, but it does not generate a plan to modify any infrastructure resources and does not write changes to the state file
 - C) `terraform apply -refresh-only` — the `-refresh-only` flag prevents infrastructure changes; it only updates the state file to reflect the live cloud, which is a safe read-only operation
 - D) `terraform show -json` — this command reads the current state file and displays the recorded values; comparing its output to the live AWS console shows what has drifted
+
+---
 
 ### Question 84 — Backend Migration: What Happens to the Old Local State File
 
@@ -1886,6 +2053,8 @@ What is the correct answer to the developer's question?
 - C) No action is needed — Terraform automatically detects the local file on every init and will re-migrate it to S3, so keeping it present is safe and ensures continuity if the S3 backend becomes temporarily unavailable
 - D) The `terraform init -migrate-state` command deletes the local `terraform.tfstate` file after confirming the migration — the developer is asking about a file that no longer exists
 
+---
+
 ### Question 85 — `terraform state rm` Used to Abandon Management of a Resource
 
 **Difficulty**: Medium
@@ -1902,6 +2071,8 @@ Why does `terraform plan` show the instance as a resource to create, and what ad
 - B) `terraform state rm` removed the resource's entry from the state file, but the `aws_instance.legacy` block is still present in the configuration. With no state entry and a configuration block present, Terraform treats the resource as non-existent and plans to create it. The missing step is removing (or commenting out) the `aws_instance.legacy` resource block from `main.tf` — once the block is removed, Terraform has no configuration entry and no state entry and ignores the resource entirely
 - C) `terraform state rm` only flags a resource for removal — the next `terraform plan` is required to confirm and finalize the removal from state; until the plan is run, the resource is still tracked by Terraform
 - D) The plan shows a create because `terraform state rm` refreshes state from the cloud before removing the entry, and the refresh detected the instance had been terminated — the instance exists in configuration but not in AWS, so Terraform correctly plans to recreate it
+
+---
 
 ### Question 86 — Stale State Lock from a Crashed CI Pipeline
 
@@ -1931,6 +2102,8 @@ What is the correct recovery command, and what critical check must the engineer 
 - C) The correct command is `terraform force-unlock a3f7c8b2-91d4-4e2e-bb10-fd3a9c0e1234`. Before running it, the engineer must verify that the original CI process is truly dead — not still running in a degraded state somewhere. `force-unlock` removes the lock entry unconditionally; if another Terraform process is actually still modifying state, removing the lock allows two writers simultaneously, which can corrupt the state file
 - D) The engineer should wait at least 15 minutes because DynamoDB lock entries automatically expire after a configurable TTL — Terraform sets this TTL to 15 minutes by default, so the lock will self-release without any manual intervention
 
+---
+
 ### Question 87 — Two Simultaneous Applies Against S3 Backend Without DynamoDB Locking
 
 **Difficulty**: Hard
@@ -1947,6 +2120,8 @@ Which TWO statements accurately explain what happened and the ongoing risk?
 - B) S3 provides native atomic writes through object versioning, which prevents state corruption — the DynamoDB table is only needed to display a user-friendly "locked" error message when concurrent applies are attempted, not to actually prevent corruption
 - C) The next `terraform plan` shows the three EC2 instances as "to be created" because they exist in AWS but are absent from the current state file (which was overwritten by Pipeline B). Without any state entry for these instances, Terraform considers them unmanaged and would create duplicate EC2 instances if `terraform apply` is run
 - D) Terraform detects the state version mismatch from the two concurrent writes and automatically merges the two state files, preserving all resource records from both pipelines — the "to be created" output indicates a separate, unrelated issue
+
+---
 
 ### Question 88 — Accidentally Overwriting Remote State with `terraform state push`
 
@@ -1970,6 +2145,8 @@ What is the immediate consequence of this accidental push, and what should the t
 - B) The production state is now the seven-day-old snapshot. All 23 resources added during the past week exist in AWS but are no longer recorded in state — Terraform considers them unmanaged. The team's immediate priority is to restore the correct state. If S3 bucket versioning was enabled, they can retrieve the previous state version using `aws s3api get-object --version-id <id>` and push it back with `terraform state push`. If versioning was not enabled, the state must be reconstructed by importing the 23 orphaned resources
 - C) `terraform state push` automatically creates a timestamped backup of the existing remote state before overwriting it — the team can run `terraform state pull > current.tfstate` to retrieve this backup and push it back
 - D) The team should immediately run `terraform apply` to re-create the 23 missing resources before anyone else runs `terraform plan`, because a plan would show 23 resources scheduled for destruction (since they exist in state but not in the cloud)
+
+---
 
 ### Question 89 — `terraform state mv` During a Root-to-Module Refactor
 
@@ -1998,6 +2175,8 @@ What does `terraform state mv` accomplish in this scenario, and what should `ter
 - B) `terraform state mv` renames the resource's address in the state file from `aws_instance.web` to `module.compute.aws_instance.server` without making any AWS API calls and without modifying the EC2 instance. The actual cloud resource is completely unaffected. After this command, `terraform plan` should show no changes (or only minor drift-related attribute updates) because the configuration address (`module.compute.aws_instance.server`) now matches the updated state address
 - C) `terraform state mv` is equivalent to `terraform import` — it re-discovers the EC2 instance under the new module address by querying AWS, which is why it prevents the destroy-and-create cycle
 - D) `terraform state mv` updates both the state file and the Terraform configuration automatically — the root module resource block is removed and the child module block is created as part of the command
+
+---
 
 ### Question 90 — Importing a `for_each` Resource: Correct `to` Address Syntax
 
@@ -2033,6 +2212,8 @@ What is the correct value for the `to` argument?
 - C) `aws_instance.server.db` — dot notation is valid for both module path traversal and `for_each` key references within a resource address
 - D) `aws_instance.server[db]` — the key is placed in square brackets without quotes; unquoted identifiers are valid for `for_each` string keys in import blocks
 
+---
+
 ### Question 91 — `TF_LOG=TRACE` in CI Exposes Plaintext Credentials in Log Files
 
 **Difficulty**: Medium
@@ -2050,6 +2231,8 @@ What is the root cause of this credential exposure, and what should the engineer
 - C) The exposure was caused by `TF_LOG_PATH` alone — without this variable, Terraform discards log output to `/dev/null`, making it safe to leave `TF_LOG=TRACE` permanently set in CI
 - D) `TF_LOG=TRACE` only captures Terraform core operations and does not include provider plugin network traffic — the credential exposure was caused by a misconfigured provider independently logging its own authentication headers, unrelated to `TF_LOG`
 
+---
+
 ### Question 92 — "Plan" Workspace Permission Cannot Trigger or Confirm Applies
 
 **Difficulty**: Easy
@@ -2066,6 +2249,8 @@ What is the explanation?
 - B) The "Plan" permission in HCP Terraform allows a user to trigger speculative plans but does not grant the ability to queue, trigger, or confirm apply runs. Applying a run requires at minimum "Write" permission on the workspace
 - C) The apply button is disabled because the run is in "plan pending review" status — any user including those with "Plan" permission can confirm applies once a teammate with "Admin" access approves the review gate
 - D) CLI-only: applies can only be confirmed via `terraform apply` from the CLI — the HCP Terraform UI always requires Admin permission to confirm an apply regardless of other permission levels
+
+---
 
 ### Question 93 — `terraform_remote_state` Reading a Sensitive Output from Another Workspace
 
@@ -2107,6 +2292,8 @@ Which TWO statements accurately describe the behaviour?
 - C) In the `compute` workspace, `data.terraform_remote_state.networking.outputs.db_password` is treated as a sensitive value — it will be redacted in the compute workspace's plan and apply output because the sensitivity marking propagates from the producing workspace through the remote state data source into the consuming workspace
 - D) Any resource in the `compute` workspace that references this value must also declare `sensitive = true` explicitly on the resource block — failing to do so causes an apply-time sensitivity violation error
 
+---
+
 ### Question 94 — VCS Integration Only Triggers Runs on the Configured Branch
 
 **Difficulty**: Medium
@@ -2123,6 +2310,8 @@ Why did no run trigger, and when would a speculative plan appear?
 - B) HCP Terraform VCS workspaces only trigger runs based on the configured branch. A direct push to a feature branch triggers no run. A speculative plan is triggered when the developer **opens a pull request** targeting the configured branch (e.g., `feature/add-security-groups` → `main`) — the speculative plan is displayed in the PR. A push or merge to `main` triggers a plan-and-apply run
 - C) Feature branch pushes trigger speculative plans only when the branch name matches a `branch_prefix_filter` pattern configured in the workspace — the run was not triggered because no prefix filter was configured
 - D) GitHub must be configured to send a new webhook event each time a feature branch is created — without this one-time setup step per branch, HCP Terraform's webhook is unaware of commits to new branches
+
+---
 
 ### Question 95 — Legacy CLI Import Succeeds But `terraform plan` Shows Replacement
 
@@ -2163,6 +2352,8 @@ Why does Terraform plan a replacement immediately after a successful import?
 - C) The replacement is triggered because `engine = "mysql"` without an explicit `engine_version` causes Terraform to interpret this as a request to replace the instance with the latest MySQL version
 - D) The state lock from `terraform import` expires after 60 seconds — running `terraform plan` after the lock expires causes Terraform to lose the import context and plan a full replacement
 
+---
+
 ### Question 96 — Soft-Mandatory Policy Failure: Which Roles Can Override
 
 **Difficulty**: Medium
@@ -2179,6 +2370,8 @@ Can the Admin user override the soft-mandatory policy failure and allow the run 
 - B) Yes — a workspace Admin can override a `soft-mandatory` policy failure by clicking "Override & Continue" in the HCP Terraform UI. The override is recorded in the audit trail. The team should remediate the underlying policy violation (add the `CostCenter` tag) in a follow-up change
 - C) No — `soft-mandatory` policy failures can only be overridden by the HCP Terraform organisation Owner; workspace-level Admin cannot override policy failures regardless of workspace permission
 - D) Yes — any user with at least "Write" workspace permission can override a `soft-mandatory` failure, because Write is sufficient to trigger and approve all run types
+
+---
 
 ### Question 97 — Run Triggers Must Be Explicitly Configured — No Implicit Chaining
 
@@ -2197,6 +2390,8 @@ What is the explanation?
 - C) Run triggers only function between workspaces in the same HCP Terraform Project — workspaces in separate Projects cannot trigger each other
 - D) Run triggers work in the reverse direction only — the consuming workspace (`compute`) must be configured to trigger the producing workspace (`networking`), not the other way around
 
+---
+
 ### Question 98 — Cost Estimation Appears in HCP Terraform Run After Planning, Before Apply
 
 **Difficulty**: Medium
@@ -2213,6 +2408,8 @@ At which point in the HCP Terraform run lifecycle does cost estimation appear, a
 - B) Cost estimation runs after the plan phase and is displayed in the run's plan review UI — the same screen where a user would click "Confirm & Apply." It shows the projected monthly cost change (e.g., "+$972.00/month") broken down by resource, before any apply is triggered. The manager can review the cost impact before approving
 - C) Cost estimation runs during `terraform plan` on the engineer's local machine when the `TF_VAR_cost_estimation=true` environment variable is set — the estimate appears in terminal output before the plan summary
 - D) Cost estimation requires a separate API call after the plan completes — the team must query the HCP Terraform API endpoint `/runs/{run-id}/cost-estimate` to retrieve the data; it is not automatically displayed in the run UI
+
+---
 
 ### Question 99 — Generated Config Must Be Reviewed Before Apply; Skipping Review Causes Destructive Plan
 
@@ -2246,6 +2443,8 @@ Which TWO statements accurately explain what happened and what the correct workf
 - C) The import workflow requires a post-import verification step: run `terraform plan` after the import apply and confirm the output is "No changes. Your infrastructure matches the configuration." If any changes appear, the generated configuration must be adjusted to match the actual resource attributes before proceeding
 - D) The `lifecycle_rule` and `force_destroy` attributes disappeared because Terraform automatically strips lifecycle-sensitive attributes from generated configs during the apply phase as a safety mechanism
 
+---
+
 ### Question 100 — Two Configurations Sharing the Same HCP Terraform Workspace Causes State Collision
 
 **Difficulty**: Hard
@@ -2275,6 +2474,8 @@ Which TWO statements accurately explain what happened and the correct architectu
 - B) HCP Terraform merges state from multiple configurations into a single workspace — this is expected shared-workspace behaviour and is safe as long as resource names do not collide
 - C) The correct architecture is one dedicated workspace per environment — `app-production` and `app-staging`. Each workspace maintains independent state, run history, variables, and access permissions. For configuration that must be shared across workspaces (such as provider credentials or common tags), variable sets are the appropriate mechanism
 - D) The collision is caused by the missing `prefix` argument in the `cloud` block — setting `prefix = "prod-"` and `prefix = "staging-"` in the respective configurations would allow them to coexist safely within the same `app-shared` workspace by namespacing their state
+
+---
 
 ### Question 101 — `terraform show -json` for Machine-Readable State in Scripts
 

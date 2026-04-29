@@ -1,5 +1,7 @@
 # Terraform Associate Exam Questions
 
+---
+
 ### Question 1
 
 **Difficulty:** Easy
@@ -12,6 +14,8 @@ A) Compute diff between desired and current state → Refresh current state from
 B) Refresh current state from cloud provider → Parse configuration files → Compute diff → Output plan
 C) Parse and validate configuration files → Refresh current state by querying the cloud provider API → Compute the diff between desired and current state → Output the plan
 D) Output plan → Compute diff → Parse configuration files → Refresh current state
+
+---
 
 ### Question 2
 
@@ -26,6 +30,8 @@ B) Run `terraform init` to initialize the working directory and download provide
 C) Review the `terraform plan` output to verify intended changes
 D) Run `terraform apply` to provision the infrastructure
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -38,6 +44,8 @@ A) `terraform init` must be run BEFORE `terraform plan` or `terraform apply` —
 B) `terraform apply` can be run BEFORE `terraform init` — Terraform automatically detects missing providers and installs them on demand during apply
 C) When using a saved plan file (`terraform plan -out=plan.tfplan`), the plan step always PRECEDES the apply step — `terraform apply plan.tfplan` executes the previously saved plan without re-planning
 D) `terraform destroy` is always run BEFORE `terraform plan` to clear existing state so the plan can calculate what needs to be created
+
+---
 
 ### Question 4
 
@@ -52,6 +60,8 @@ B) Show the plan → Read configuration → Query the cloud API → Compute the 
 C) Read configuration (desired state) → Query the cloud provider API to refresh current state → Compute diff between desired state and refreshed state → Output plan proposing to recreate the deleted instance
 D) Compute the diff immediately using the cached state file → Output plan → Optionally refresh state afterward
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -64,6 +74,8 @@ A) Terraform (most restrictive) → AWS CloudFormation → ARM Templates (least 
 B) AWS CloudFormation and ARM Templates (both single-cloud, tied for most restrictive) → Terraform (multi-cloud, least restrictive)
 C) Terraform = ARM Templates (both limited to two clouds each) → CloudFormation (broadest)
 D) CloudFormation (most restrictive, AWS-only) → ARM Templates → Terraform (least restrictive, supports only AWS and Azure)
+
+---
 
 ### Question 6
 
@@ -78,6 +90,8 @@ B) Run 1: "1 added, 0 changed, 0 destroyed" → Run 2: "No changes. Infrastructu
 C) Run 1: "1 added" → Run 2: "1 added" → Run 3: "1 added" (Terraform recreates the resource on every apply)
 D) Run 1: "No changes" → Run 2: "1 added" → Run 3: "No changes" (Terraform skips the first apply if no state file exists)
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -90,6 +104,8 @@ A) Edit the Terraform state file directly to match the new cloud attribute → R
 B) Run `terraform destroy` to remove the drifted resource → Rewrite the configuration → Run `terraform apply` to recreate it with the correct tag
 C) Run `terraform plan` to detect the drift and see the attribute difference → Review the plan output showing the tag change → Run `terraform apply` to restore desired state → Confirm with a second `terraform plan` showing no changes
 D) Run `terraform apply -auto-approve` immediately → Run `terraform plan` afterward to verify the state matches
+
+---
 
 ### Question 8
 
@@ -104,6 +120,8 @@ B) Repeatability — the same configuration can be applied immediately to create
 C) Audit trail — a history of who changed what and when only accumulates as version-controlled commits build up over multiple changes over time
 D) Disaster recovery — the configuration can be reapplied to recreate infrastructure from scratch on day one if needed
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -116,6 +134,8 @@ A) Terraform queries the cloud provider API to refresh current state BEFORE comp
 B) Terraform computes the diff BEFORE refreshing current state — the diff is computed from the cached state file and the refresh is optional and performed afterward
 C) The diff between desired and current state is computed AFTER both inputs are known — Terraform requires both the configuration (desired state) and the refreshed provider state (current state) before it can determine what changes are needed
 D) Terraform refreshes state only when it detects a difference in configuration — if the `.tf` files have not changed since the last run, no API calls are made to providers
+
+---
 
 ### Question 10
 
@@ -130,6 +150,8 @@ B) Declarative: the DESIRED END STATE is specified first in the configuration fi
 C) Both models require the operator to specify steps in order — declarative tools simply abstract the steps using a higher-level syntax
 D) Declarative and imperative models are identical in ordering; the difference is only in which tools are used
 
+---
+
 ### Question 11
 
 **Difficulty:** Medium
@@ -142,6 +164,8 @@ A) Manually reprovision the infrastructure in the new region via the console →
 B) Run `terraform destroy` in the failed region → Update the provider region → Run `terraform init` → Run `terraform plan`
 C) Clone the repository containing the Terraform configuration → Update the provider region variable → Run `terraform init` to initialise in the new region → Run `terraform apply` to recreate all infrastructure from code
 D) Restore servers from backup → Configure networking manually → Update the Terraform state file to reflect the recovered resources
+
+---
 
 ### Question 12
 
@@ -156,6 +180,8 @@ B) (1) Parse and validate configuration files (desired state) → (2) Query clou
 C) (1) Write updated state file → (2) Compute diff → (3) Parse configuration → (4) Execute changes → (5) Query providers
 D) (1) Query providers → (2) Execute changes → (3) Parse configuration → (4) Compute diff → (5) Write state
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -168,6 +194,8 @@ A) In a shell script, operations are executed in the exact sequence they are wri
 B) In Terraform, the operator must explicitly write `aws_vpc` blocks before `aws_subnet` blocks in the configuration file to ensure the VPC is created before the subnet; in a shell script, commands must also be explicitly ordered, but using `aws ec2` CLI calls instead of HCL blocks — the ordering constraint is the same in both models
 C) A shell script applies the same sequence of commands regardless of current state — running it twice against a cloud environment that already has the resources will create duplicates; Terraform determines which operations are needed by comparing desired to current state and applies ZERO operations when the state already matches, even though the same configuration was used
 D) Both Terraform and shell scripts determine the order of operations dynamically at runtime based on the current state of the infrastructure — the only difference is the language used to express the operations
+
+---
 
 ### Question 1
 
@@ -182,6 +210,8 @@ B) Terraform verifies the downloaded binary's cryptographic hash
 C) Terraform reads the `required_providers` block in the configuration to determine which providers are needed
 D) Terraform writes the provider version to `.terraform.lock.hcl`
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -194,6 +224,8 @@ A) Cloud provider API → Provider plugin binary → Terraform Core
 B) Terraform Core → Provider plugin binary (via gRPC) → Cloud provider API (via HTTPS)
 C) Provider plugin binary → Terraform Core (via gRPC) → Cloud provider API
 D) Terraform Core → Cloud provider API (via HTTPS) → Provider plugin binary (via gRPC)
+
+---
 
 ### Question 3
 
@@ -208,6 +240,8 @@ B) `terraform.tfstate.backup` is created AFTER `terraform.tfstate` is updated �
 C) There is only ever ONE `terraform.tfstate.backup` file on disk — each apply overwrites the previous backup with the state from the BEGINNING of that apply run
 D) Terraform keeps 10 rotating backup files (`.backup.1` through `.backup.10`) — it never overwrites a backup until all 10 slots are full
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -220,6 +254,8 @@ A) Delete `.terraform.lock.hcl` manually → Run `terraform plan` → Commit the
 B) Run `terraform init -upgrade` to resolve the newest version within the existing constraint and update the lock file → Review the updated `.terraform.lock.hcl` → Run `terraform plan` to verify there are no unexpected changes → Commit the updated lock file to version control
 C) Edit `.terraform.lock.hcl` directly to change the version field from `5.28.0` to `5.31.0` → Run `terraform apply`
 D) Change the version constraint from `~> 5.0` to `= 5.31.0` → Run `terraform init` → Change the constraint back to `~> 5.0`
+
+---
 
 ### Question 5
 
@@ -234,6 +270,8 @@ B) `.tf` configuration files (desired state) → `terraform.tfstate` (known/cach
 C) `terraform.tfstate` → Live cloud API → `.tf` files — the plan is computed after all three are gathered in this order
 D) Live cloud API → `.tf` files → `terraform.tfstate` — state is always read last to avoid stale comparisons
 
+---
+
 ### Question 6
 
 **Difficulty:** Medium
@@ -246,6 +284,8 @@ A) Run `terraform apply` first to destroy and recreate the instance — then ren
 B) Rename in HCL → run `terraform plan` → run `terraform apply -refresh-only` to skip the destroy
 C) Run `terraform state mv aws_instance.web aws_instance.app_server` FIRST to update the state file to the new name → THEN rename the block in the HCL configuration → run `terraform plan` to confirm "No changes"
 D) Edit `terraform.tfstate` directly to change the resource name → rename in HCL → run `terraform plan`
+
+---
 
 ### Question 7
 
@@ -260,6 +300,8 @@ B) Remove the resource block from the HCL configuration → Run `terraform apply
 C) Run `terraform state rm aws_s3_bucket.logs` FIRST to remove the resource from state (this does NOT delete the real bucket) → THEN remove the resource block from the HCL configuration → Run `terraform plan` to confirm "No changes"
 D) Run `terraform state push` → Remove the resource block → Run `terraform apply`
 
+---
+
 ### Question 8
 
 **Difficulty:** Medium
@@ -272,6 +314,8 @@ A) `terraform state show` → `terraform state list` → `terraform show`
 B) `terraform state list` (enumerate all managed resources and their addresses) → `terraform state show <specific_address>` (display all attributes of the specific resource of interest)
 C) `terraform state pull` → `terraform show` → `terraform state list`
 D) `terraform show` → `terraform state rm` → `terraform state list`
+
+---
 
 ### Question 9
 
@@ -286,6 +330,8 @@ B) On SUBSEQUENT `terraform init` runs (lock file already exists), Terraform dow
 C) Running `terraform init -upgrade` is the ONLY supported way to advance a locked provider to a newer version — it re-resolves the version constraint, downloads the newer binary, and UPDATES the lock file with the new version and hashes
 D) The lock file is read during `terraform apply` but NEVER during `terraform init` — it is exclusively an apply-time verification mechanism
 
+---
+
 ### Question 10
 
 **Difficulty:** Medium
@@ -298,6 +344,8 @@ A) Refresh live state from cloud API → Compare refreshed state to `terraform.t
 B) Read `terraform.tfstate` for last-known attributes → Refresh actual state by calling cloud provider APIs → Compute diff between desired (config), known (state), and actual (live) → Output the plan to the operator
 C) Compute diff from config and state file → Refresh live state only if a difference is found → Re-compute diff including live state → Output plan
 D) Query cloud API for actual state → Write new `terraform.tfstate` with actual values → Compute diff against config → Output plan
+
+---
 
 ### Question 11
 
@@ -312,6 +360,8 @@ B) (1) Read `required_providers` block → (2) Read existing `.terraform.lock.hc
 C) (1) Check `.terraform/providers/` cache → (2) Read `required_providers` → (3) Read lock file → (4) Download newest version → (5) Verify hash
 D) (1) Delete existing `.terraform.lock.hcl` → (2) Re-resolve providers from registry → (3) Download → (4) Write new lock file
 
+---
+
 ### Question 12
 
 **Difficulty:** Hard
@@ -324,6 +374,8 @@ A) (1) Inconsistent plan outputs because each engineer's state file may diverge 
 B) (1) The team cannot use version constraints because local state does not support them → (2) Provider plugins are lost when the laptop is off → (3) State corruption
 C) (1) All applies succeed identically because local state files are automatically merged → (2) Encryption fails because local state is cloud-hosted → (3) Lock file conflicts
 D) (1) Remote backends are created automatically to compensate → (2) Terraform rejects local state after the second apply → (3) Plan output is suppressed
+
+---
 
 ### Question 13
 
@@ -338,6 +390,8 @@ B) Both provider plugin installation and state file updates occur simultaneously
 C) The `terraform.tfstate` file is written BEFORE provider plugin installation — Terraform pre-creates a state file skeleton during init and populates it as providers are downloaded
 D) Provider plugin installation (during `terraform init`) must be completed and the lock file committed BEFORE running `terraform apply` in a CI pipeline; the state file is written at the END of `terraform apply` after all resource changes have been made — this ordering ensures that if apply is interrupted, the state reflects only the changes that actually completed up to that point
 
+---
+
 ### Question 1
 
 **Difficulty:** Easy
@@ -350,6 +404,8 @@ A) Run `terraform apply -auto-approve` first to provision resources, then run `t
 B) Run `terraform plan -out=plan.tfplan` first to generate and serialise the execution plan to a file, THEN run `terraform apply plan.tfplan` in a later stage to execute those exact changes
 C) Run `terraform apply plan.tfplan` first — Terraform generates the plan file automatically before applying
 D) Run `terraform output` first to capture existing values, then run `terraform plan -out`, then run `terraform apply`
+
+---
 
 ### Question 2
 
@@ -364,6 +420,8 @@ B) `terraform plan` — plan downloads providers as a side effect and enables va
 C) `terraform init` — it downloads the provider plugins and sets up the working directory; without it, `terraform validate` cannot access the provider schema required to check argument names and types
 D) `terraform apply` — providers are installed on-demand during the first apply
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -376,6 +434,8 @@ A) `terraform destroy` is equivalent to running `terraform apply -destroy` — b
 B) `terraform destroy` can be safely run BEFORE `terraform init` — it uses the existing state file without needing provider plugins
 C) `terraform destroy` must be preceded by a successful `terraform init` in the working directory — it requires provider plugins to call cloud APIs to delete resources
 D) Running `terraform plan -destroy` BEFORE `terraform destroy` is the recommended way to preview what will be deleted — it generates the same destroy plan without executing it, allowing review before committing to destruction
+
+---
 
 ### Question 4
 
@@ -390,6 +450,8 @@ B) Run `terraform taint aws_instance.web` to mark the resource as tainted → Ru
 C) Run `terraform plan -replace="aws_instance.web"` to preview that the instance will be replaced → Review the `-/+` destroy-and-recreate entry in the plan → Run `terraform apply -replace="aws_instance.web"` to execute the replacement
 D) Run `terraform state rm aws_instance.web` to remove it from state → Run `terraform apply` to recreate it fresh
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -402,6 +464,8 @@ A) `terraform workspace select staging` → `terraform workspace new staging` (s
 B) `terraform workspace list` (optional — confirm `staging` does not already exist) → `terraform workspace new staging` (creates the workspace AND automatically switches to it — no separate select command needed)
 C) `terraform workspace new staging` → `terraform workspace select staging` → `terraform workspace select default` (you must immediately switch back to default and then re-select staging for the switch to take effect)
 D) `terraform workspace new staging` (creates the workspace but stays in `default`) → `terraform workspace select staging` (required to switch after creation)
+
+---
 
 ### Question 6
 
@@ -416,6 +480,8 @@ B) Terraform evaluates ONLY `aws_db_instance.primary` with no consideration of o
 C) Terraform first builds the full dependency graph for all resources, then FILTERS the graph to include only `aws_db_instance.primary` and the resources it directly or indirectly DEPENDS ON — only that filtered set is refreshed and diffed; a warning is emitted that the plan may be incomplete
 D) Terraform evaluates `aws_db_instance.primary` first and then processes all remaining resources in dependency order — `-target` only changes the starting point, not the scope
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -428,6 +494,8 @@ A) Terraform runs `terraform validate` to confirm the applied configuration is s
 B) Terraform writes the updated state to `terraform.tfstate` (or the configured remote backend) to record the newly created or changed resource attributes — this is the final step after all API calls to the cloud provider have completed
 C) Terraform runs a second plan to verify no drift was introduced by the apply
 D) Terraform prints the execution plan a second time to confirm the changes that were made
+
+---
 
 ### Question 8
 
@@ -442,6 +510,8 @@ B) `terraform plan` should come BEFORE `terraform validate` in CI — plan catch
 C) `terraform validate` should come BEFORE `terraform plan` because validate is offline and fast; it catches reference errors and type mismatches without querying cloud provider APIs, saving time and API quota when the configuration has obvious static errors
 D) The order of `fmt -check`, `validate`, and `plan` in a pipeline does not matter — they are all read-only and have no interdependencies
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -454,6 +524,8 @@ A) `terraform state list` → `terraform output` — state list shows outputs, o
 B) `terraform output` (shows all declared output values) → `terraform state show <address>` (shows ALL attributes stored in state for a specific resource, including computed values not surfaced as outputs)
 C) `terraform show` → `terraform output -json` — show must precede output to make the outputs available
 D) `terraform apply` must be re-run before `terraform output` will return values — outputs are cleared between applies
+
+---
 
 ### Question 10
 
@@ -468,6 +540,8 @@ B) Run `terraform plan` → Run `terraform import aws_s3_bucket.logs my-existing
 C) Write the `resource "aws_s3_bucket" "logs"` HCL block first → Run `terraform init` (if not already initialised) → Run `terraform import aws_s3_bucket.logs my-existing-bucket` to populate state with the existing resource's attributes → Run `terraform plan` to verify the configuration matches the imported state and shows "No changes"
 D) Run `terraform state pull` → Write the HCL block → Run `terraform import` → Run `terraform apply`
 
+---
+
 ### Question 11
 
 **Difficulty:** Hard
@@ -480,6 +554,8 @@ A) (1) `terraform apply plan.tfplan` → (2) `terraform plan -out=plan.tfplan` �
 B) (1) `terraform init` (install providers and configure backend) → (2) `terraform fmt -check` (fail fast on style issues) → (3) `terraform validate` (offline static analysis) → (4) `terraform plan -out=plan.tfplan` (generate and save plan for review) → (5) `terraform apply plan.tfplan` (execute the saved plan in a separate, gated stage)
 C) (1) `terraform validate` → (2) `terraform fmt -check` → (3) `terraform init` → (4) `terraform apply -auto-approve` → (5) `terraform plan`
 D) (1) `terraform fmt -check` → (2) `terraform init` → (3) `terraform plan -out` → (4) `terraform validate` → (5) `terraform apply`
+
+---
 
 ### Question 12
 
@@ -494,6 +570,8 @@ B) `terraform plan -refresh=false` queries the cloud provider API AFTER computin
 C) In a standard `terraform plan`, the sequence is: parse config → query provider APIs (refresh) → compute diff → output plan; in `terraform plan -refresh=false`, the sequence is: parse config → read `terraform.tfstate` (no API calls) → compute diff → output plan — the provider API query step is entirely absent
 D) Both `terraform plan` and `terraform plan -refresh=false` always make the same number of API calls — the `-refresh=false` flag only changes how the results are displayed, not how many times the provider is queried
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -506,6 +584,8 @@ A) (1) Immediately destroy `aws_instance.web` via the cloud API → (2) Immediat
 B) (1) Parse configuration → (2) Refresh current state → (3) Compute the diff, marking `aws_instance.web` for destroy-then-recreate (`-/+`) regardless of whether its attributes have changed → (4) Display the plan and prompt for confirmation → (5) Destroy the existing instance → (6) Create a new instance → (7) Write updated state
 C) (1) Mark `aws_instance.web` as tainted in state → (2) Run a standard plan → (3) Prompt for confirmation → (4) Apply all changes including the tainted resource
 D) (1) Run `terraform validate` → (2) Refresh state → (3) Compute diff → (4) Apply immediately without confirmation → (5) Write state
+
+---
 
 ### Question 1
 
@@ -520,6 +600,8 @@ B) The three resources are destroyed in parallel because all destroy operations 
 C) `aws_subnet.public` — Terraform always begins destruction in the middle of the dependency chain
 D) `aws_instance.web` — Terraform destroys in REVERSE dependency order; the most-dependent resource (the one at the "leaf" of the graph) is always destroyed first, followed by resources it depended on
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -532,6 +614,8 @@ A) (1) Run `terraform state mv aws_instance.app aws_instance.web` to rename in s
 B) (1) Rename the resource block in HCL → (2) Add a `moved { from = aws_instance.app; to = aws_instance.web }` block → (3) Run `terraform apply` — Terraform updates the state address; after a successful apply the `moved` block can optionally be removed
 C) (1) Add a `moved` block → (2) Run `terraform init` → (3) Rename the resource block in HCL → (4) Run `terraform apply`
 D) (1) Run `terraform apply` with the old name to record the current state → (2) Add a `moved` block → (3) Rename the HCL block → (4) Run `terraform apply` again
+
+---
 
 ### Question 3
 
@@ -546,6 +630,8 @@ B) Data sources whose filter arguments are fully known at plan time are read dur
 C) Data sources whose filter arguments depend on computed values from other resources (values not yet known until those resources are created) are **deferred to the apply phase** — the plan shows these data source results as "(known after apply)" and any resources that depend on them inherit the same uncertainty
 D) Data sources are always read during the apply phase, never during planning, because Terraform cannot guarantee state stability at plan time
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -558,6 +644,8 @@ A) `aws_lb_target_group_attachment.web` → `aws_instance.web` → `aws_security
 B) All three are created simultaneously because Terraform maximises parallelism and resolves dependencies dynamically at runtime
 C) `aws_security_group.web` → `aws_instance.web` → `aws_lb_target_group_attachment.web` (the dependency root is created first; resources are created in topological order from least-dependent to most-dependent)
 D) `aws_instance.web` → `aws_security_group.web` → `aws_lb_target_group_attachment.web` (compute resources always take priority over networking and attachment resources)
+
+---
 
 ### Question 5
 
@@ -582,6 +670,8 @@ B) Terraform replaces the ASG first, then updates the launch template — the AS
 C) Terraform updates the launch template in-place (`~`) and separately schedules the ASG for replacement during the next maintenance window
 D) Terraform updates `aws_launch_template.web` first (or creates the new version), and then — because the `replace_triggered_by` constraint is satisfied — marks `aws_autoscaling_group.web` for replacement (`-/+`) in the SAME plan; both changes are applied in dependency order: template first, then ASG replacement
 
+---
+
 ### Question 6
 
 **Difficulty:** Medium
@@ -594,6 +684,8 @@ A) (1) Delete the `resource "aws_s3_bucket" "legacy"` block from HCL → (2) Run
 B) (1) Run `terraform state rm aws_s3_bucket.legacy` → (2) Delete the resource block from HCL → (3) Run `terraform apply` (shows no changes because state entry is gone)
 C) (1) Add a `removed { from = aws_s3_bucket.legacy; lifecycle { destroy = false } }` block to the configuration (the original resource block can be deleted simultaneously) → (2) Run `terraform apply` — Terraform removes the state entry for the bucket but makes no API calls to delete the cloud resource
 D) (1) Set `prevent_destroy = true` in the resource's lifecycle block → (2) Delete the resource block → (3) Run `terraform apply` — `prevent_destroy` automatically retains the resource in AWS when the block is removed
+
+---
 
 ### Question 7
 
@@ -621,6 +713,8 @@ B) Because `count` uses stable string keys, inserting "beta" at index 1 only shi
 C) Terraform's plan shows: `aws_s3_bucket.buckets[1]` updated from "gamma" to "beta" (or replaced if the `bucket` argument is immutable), `aws_s3_bucket.buckets[2]` updated from "delta" to "gamma", and `aws_s3_bucket.buckets[3]` created as "delta" — inserting an item in the middle shifts all subsequent integer indexes, causing Terraform to interpret those as attribute changes or replacements on existing resources
 D) Terraform destroys all four buckets and recreates them in the new order — any insertion into a `count`-managed list always causes a full teardown
 
+---
+
 ### Question 8
 
 **Difficulty:** Medium
@@ -643,6 +737,8 @@ B) Terraform creates only `aws_s3_bucket.buckets["beta"]` — the resources keye
 C) Terraform creates `aws_s3_bucket.buckets["beta"]` and also plans an update on `aws_s3_bucket.buckets["gamma"]` because adding a new key between "alpha" and "gamma" shifts the alphabetical position of "gamma"
 D) Terraform plans four creates and four destroys — `for_each` with `toset()` always triggers a full replacement when the set contents change
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -655,6 +751,8 @@ A) Implicit dependencies and `depends_on` both result in the same topological ex
 B) `depends_on` is processed BEFORE implicit dependency edges during graph construction — resources listed in `depends_on` always execute before any attribute-referenced dependencies
 C) When a resource has BOTH an implicit dependency (attribute reference to resource A) AND a `depends_on = [resource_B]` declaration, Terraform creates resource A and resource B before the dependent resource — both dependency edges are respected and combined in the graph; the dependent resource starts only after ALL its dependencies (implicit and explicit) have completed
 D) Implicit dependencies override `depends_on` declarations — if a resource references an attribute of resource A, any `depends_on = [resource_B]` on the same resource is silently ignored
+
+---
 
 ### Question 10
 
@@ -669,6 +767,8 @@ B) The `provider "aws" { alias = "us-west"; region = "us-west-2" }` block must b
 C) Run `terraform workspace new us-west` — workspace creation automatically registers a new provider alias for the workspace's region
 D) Add `providers = { aws = aws.us-west }` to the module block in the root configuration — this implicitly creates the alias without a separate `provider` block
 
+---
+
 ### Question 11
 
 **Difficulty:** Hard
@@ -681,6 +781,8 @@ A) Terraform processes all resource blocks in the order they appear in `.tf` fil
 B) (1) Terraform builds the full DAG by scanning all resource attribute references and `depends_on` declarations → (2) Resources with no dependencies (graph roots) are started IMMEDIATELY and in PARALLEL (up to the `-parallelism` limit, default 10) → (3) As each resource operation completes, Terraform evaluates which newly unblocked resources (those whose dependencies have all completed) can now start → (4) Those newly unblocked resources begin execution in parallel → (5) This wave-by-wave parallel execution continues until all resources in the graph are complete
 C) Terraform executes all resources sequentially in a single thread — parallelism only applies to provider API calls within a single resource operation, not to separate resource operations
 D) (1) Build DAG → (2) Execute all resources in strict alphabetical order by resource address (e.g., `aws_instance` before `aws_vpc`) → (3) Dependencies are checked after each resource completes and missing dependencies cause a rollback
+
+---
 
 ### Question 12
 
@@ -715,6 +817,8 @@ B) During plan: Terraform cannot read `data.aws_eip.app_ip` because `aws_instanc
 C) Terraform fails at the plan stage with a permanent error — data sources that depend on computed resource attributes can never be used in the same configuration that creates those resources
 D) During plan: the data source is read with a nil value, causing `aws_route53_record.app` to be created with an empty `records` list; during apply, a second apply is required to correct the DNS record with the real IP
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -727,6 +831,8 @@ A) `create_before_destroy = true` is "viral" — if resource A has `create_befor
 B) `create_before_destroy = true` is isolated to the resource it is declared on — dependent resources are never affected and always use the default destroy-then-create replacement order regardless of what their dependencies are doing
 C) When resource A has `create_before_destroy = true` and is being replaced, the sequence for the entire sub-graph involving A and its dependent B is: (1) create new A → (2) create new B (pointing to new A) → (3) destroy old B → (4) destroy old A — preserving the create-before-destroy guarantee at every level
 D) `create_before_destroy = true` only affects the `terraform destroy` command — it has no effect during `terraform apply` replacements triggered by configuration changes
+
+---
 
 ### Question 1
 
@@ -752,6 +858,8 @@ B) Terraform returns an error — duplicate keys across merged maps are not allo
 C) `"t3.large"` — when `merge()` encounters a key that exists in multiple maps, the value from the LAST argument containing that key overwrites all earlier values; maps are applied left to right and the rightmost map wins any conflict
 D) The result is undefined — `merge()` does not guarantee which value wins for duplicate keys
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -771,6 +879,8 @@ B) `flatten()` reverses the list first, then removes nesting; the result is `["f
 C) `flatten()` recursively unwraps all levels of nested lists into a single flat list, processing outer elements first and inner elements in their original order; the result is `["a", "b", "c", "d", "e", "f"]`
 D) `flatten()` raises an error when it encounters lists nested more than two levels deep
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -784,6 +894,8 @@ B) `compact()` sorts the list alphabetically before removing empty strings and n
 C) `distinct(["a", "b", "a", "c", "b"])` processes the list LEFT TO RIGHT and keeps only the FIRST occurrence of each value, discarding all subsequent duplicates while preserving original order — the result is `["a", "b", "c"]`
 D) `distinct()` keeps the LAST occurrence of each duplicate value rather than the first — values encountered later in the list overwrite earlier entries
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -796,6 +908,8 @@ A) Step 1: Borrow 8 bits from the host space → Step 2: Apply netnum `3` → St
 B) Step 1: Start with base prefix `"10.0.0.0/16"` → Step 2: Borrow `newbits=8` additional bits, extending the prefix from `/16` to `/24` — creating a subnet pool where each subnet spans 256 addresses → Step 3: Select subnet number `netnum=3` (zero-based), counting up from `10.0.0.0/24` → Result: `"10.0.3.0/24"`
 C) Step 1: Divide the address space by `newbits=8` → Step 2: Multiply by `netnum=3` → Step 3: Add to base → Result: `"10.0.6.0/24"`
 D) Step 1: Start with base `/16` → Step 2: Apply `netnum=3` directly as the third octet → Step 3: Append `/8` as the new mask → Result: `"10.0.3.0/8"`
+
+---
 
 ### Question 5
 
@@ -815,6 +929,8 @@ A) (1) Apply `upper(name)` to every element first → (2) Apply `startswith()` f
 B) (1) For each element, evaluate the `if` condition — `startswith(name, "a")` — FIRST → (2) If the condition is `true`, THEN evaluate the value expression `upper(name)` → (3) Add the result to the output list → (4) After all elements, return the final list
 C) (1) Sort the input list alphabetically → (2) Apply the `if` filter → (3) Apply `upper()` to surviving elements → return list
 D) The `if` condition and `upper()` expression are evaluated simultaneously for every element — Terraform evaluates both regardless of whether the condition is true or false
+
+---
 
 ### Question 6
 
@@ -841,6 +957,8 @@ B) Terraform evaluates `var.config["http_port"]` FIRST — it errors because the
 C) `try()` short-circuits at the first error and returns `null` — none of the fallback expressions are evaluated once an error occurs
 D) Terraform evaluates the expressions in REVERSE order (last to first) — `8080` is evaluated first as the "base case," then earlier expressions are checked to see if they would override it
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -853,6 +971,8 @@ A) `zipmap()` sorts the keys list alphabetically first, then pairs in sorted ord
 B) `zipmap()` pairs by POSITION: `keys[0]` → `values[0]`, `keys[1]` → `values[1]`, `keys[2]` → `values[2]` — the order of the keys list directly determines which value each key receives; result: `{ z = 100, a = 200, m = 300 }`
 C) `zipmap()` pairs by POSITION but applies the values in reverse order — `keys[0]` receives the last value; result: `{ z = 300, a = 200, m = 100 }`
 D) `zipmap()` sorts both lists independently then pairs in sorted order — result: `{ a = 100, m = 200, z = 300 }`
+
+---
 
 ### Question 8
 
@@ -880,6 +1000,8 @@ B) The `type = number` constraint is evaluated FIRST — Terraform rejects `"not
 C) Both checks run simultaneously — Terraform returns both a type error and a validation error at the same time
 D) The `validation` block runs BEFORE the `type` constraint because validation is defined closer to the bottom of the variable block
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -892,6 +1014,8 @@ A) (1) Declare the output in the child module → (2) Reference `module.network.
 B) (1) Declare `output "vpc_id"` in the child module → (2) Reference `module.network.vpc_id` in the root module → (3) Run `terraform plan` — at this point, if `aws_vpc.main` does not yet exist, the reference shows `"(known after apply)"` → (4) Run `terraform apply` — Terraform creates `aws_vpc.main`, writes its `id` to state, evaluates the child module output, and the parent's reference is now populated with the real VPC ID for that apply and all subsequent plans
 C) (1) Run `terraform apply` first with only the child module → (2) Add the output declaration → (3) Run `terraform apply` a second time to propagate the output to the parent
 D) Module outputs are only available when queried with `terraform output module.network.vpc_id` — they cannot be referenced inline in other resource arguments
+
+---
 
 ### Question 10
 
@@ -906,6 +1030,8 @@ B) For a LIST: Terraform generates blocks in original list order (index 0 first,
 C) For a MAP: Terraform generates blocks in the order the key-value pairs were declared in the `.tf` file — declaration order is preserved; for a LIST: blocks are generated in reverse list order
 D) Terraform always generates `dynamic` blocks in the same order regardless of the collection type — ordering is determined by the block's `content` expression, not the `for_each` collection
 
+---
+
 ### Question 11
 
 **Difficulty:** Medium
@@ -918,6 +1044,8 @@ A) `toset()` removes duplicate values FIRST — deduplication occurs when the `t
 B) `for_each` iterates the original list first, detects duplicates at iteration time, and silently skips them — `toset()` is a no-op hint that does not actually transform the collection before iteration
 C) When `for_each` uses a set produced by `toset()`, the resource instances are created in LEXICOGRAPHIC (alphabetical) key order — the original positional order of the list is NOT preserved because sets are unordered, and Terraform sorts set keys alphabetically for deterministic plan output
 D) `toset()` preserves the original list order when converting to a set — the set iterates in the same order as the source list
+
+---
 
 ### Question 12
 
@@ -940,6 +1068,8 @@ B) Terraform reads ALL input sources during initialisation/planning, then applie
 C) Terraform uses the value from `terraform.tfvars` by default and only checks `TF_VAR_*` env vars if `terraform.tfvars` does not exist; the CLI flag is only applied on interactive runs; final value: `"staging"`
 D) Terraform errors when a variable is set from more than two sources simultaneously — only two input methods can be active at once
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -952,6 +1082,8 @@ A) When a variable has both a `type` constraint and a `validation` block, Terraf
 B) When a variable has both a `type` constraint and a `validation` block, the `validation` condition is evaluated FIRST — the type constraint is only checked afterward as a secondary safeguard
 C) When `for_each` uses a `map(string)`, Terraform iterates keys in lexicographic order — when `for_each` uses a `set(string)` (from `toset()`), Terraform ALSO iterates in lexicographic order; both map and set `for_each` produce resource instances in alphabetical key order, making the ordering behavior consistent regardless of whether the source was a map or a set
 D) When `for_each` uses a `map`, resource instances are created in the declaration order of the map's key-value pairs in the `.tf` file — when `for_each` uses a `set`, instances are created in the original list order before `toset()` was applied
+
+---
 
 ### Question 1
 
@@ -966,6 +1098,8 @@ B) precondition → validation block → resource change → postcondition → c
 C) validation block (before plan) → precondition (before the resource is changed, during apply) → resource change → postcondition (after the resource is changed, during apply) → check assertion (after all resource operations complete)
 D) All four mechanisms run simultaneously at the start of `terraform apply` — Terraform batches condition evaluation before any infrastructure changes occur
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -979,6 +1113,8 @@ B) The instance HAS already been created in AWS — the API call completed and t
 C) The instance was created and then automatically destroyed when the postcondition failed — Terraform rolls back the resource change
 D) The instance is in a `tainted` state — it exists in AWS but is flagged in state as needing replacement on the next apply
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -991,6 +1127,8 @@ A) A `validation` block fires BEFORE `terraform plan` evaluates any infrastructu
 B) A `validation` block fires AFTER `terraform plan` has completed, when the engineer is reviewing the plan output — it provides a final check before the engineer approves the apply
 C) A `validation` block always fires BEFORE any `precondition` in the same configuration — validation is the earliest condition mechanism in the Terraform workflow because it runs before planning begins, while preconditions run during apply
 D) A `validation` block fires AFTER `precondition` blocks because preconditions run at the planning phase while validation runs at the apply phase
+
+---
 
 ### Question 4
 
@@ -1020,6 +1158,8 @@ B) (1) Evaluate the `assert` condition immediately using the current value of `a
 C) (1) Wait for all resource apply operations to complete → (2) Resolve `aws_lb.web.dns_name` from state → (3) Construct the URL and execute the HTTP request (scoped data source evaluation) → (4) Read `data.http.probe.status_code` → (5) Evaluate the `assert` condition using the status code → (6) If `false`, emit a warning; the apply still exits successfully
 D) The scoped `data` source and the `assert` condition are evaluated simultaneously — Terraform resolves both in a single pass and does not guarantee which is evaluated first
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -1032,6 +1172,8 @@ A) `terraform validate` evaluates variable `validation` blocks and preconditions
 B) `terraform validate` only runs during `terraform plan` — running it as a standalone command is equivalent to running `terraform plan -target=none` and will trigger validation blocks
 C) `terraform validate` checks HCL syntax for well-formedness and verifies that resource configurations conform to provider schemas — it does NOT evaluate variable `validation` block conditions, `precondition`/`postcondition` expressions, or `check` block assertions; the empty string passes `terraform validate` without error; the validation failure only surfaces when `terraform plan` or `terraform apply` processes the variable value
 D) `terraform validate` triggers all three condition mechanisms in a dry-run mode — conditions are evaluated but failures are shown as warnings rather than errors
+
+---
 
 ### Question 6
 
@@ -1067,6 +1209,8 @@ B) (1) The child module marks `internal_api_key` as sensitive → (2) When the r
 C) Sensitive outputs from child modules are automatically decrypted and re-encrypted at module boundaries — the root module sees the plaintext value but it is re-masked before being written to state
 D) Sensitivity propagation only works when both the child output AND the root module resource argument are explicitly marked `sensitive = true` — a partial declaration causes Terraform to error during plan
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -1079,6 +1223,8 @@ A) (1) Hardcode the Vault token in the provider block → (2) Store a copy of th
 B) (1) Declare the `vault` provider with the Vault server address and authentication method → (2) Declare a `data "vault_generic_secret"` (or equivalent) source that reads the desired secret path from Vault → (3) Reference the data source attributes (e.g., `data.vault_generic_secret.db_creds.data["password"]`) directly in the resource block — credentials are fetched from Vault at plan/apply time and never stored in `.tf` configuration files
 C) (1) Export credentials as environment variables → (2) Read them in Terraform using `var.` references → (3) Pass them to resources — the Vault provider is not required for this pattern
 D) (1) Run `vault kv get` in a shell script to extract credentials → (2) Write the output to a `.tfvars` file → (3) Run `terraform apply -var-file=credentials.tfvars` — this is the recommended Vault integration sequence
+
+---
 
 ### Question 8
 
@@ -1109,6 +1255,8 @@ B) Terraform evaluates the `precondition` BEFORE making any API call to AWS for 
 C) Terraform fails during `terraform plan` when the `precondition` expression is evaluated — the failure occurs before apply begins
 D) The precondition halts all resource processing in the entire apply — all previously planned changes are rolled back when a precondition fails
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -1121,6 +1269,8 @@ A) A `validation` block's `condition` can ONLY reference `var.<variable_name>` �
 B) A `validation` block's `condition` can reference any value in the same module — locals, data sources, and other variables are all available — because validation runs simultaneously with planning
 C) A `precondition` block's `condition` CAN reference data source attributes, other resource attributes, and module outputs — because it runs DURING `terraform apply`, when data sources have already been read and other resources in the dependency graph may already be in a known state; data sources in particular are evaluated during the planning phase, making their attributes available to precondition conditions
 D) A `precondition` block's `condition` is as restricted as a `validation` block — it can only reference `var.*` and `local.*` values; references to data sources in a precondition cause a configuration error
+
+---
 
 ### Question 10
 
@@ -1135,6 +1285,8 @@ B) The `check` block runs ONLY during `terraform apply`, not during `terraform p
 C) The `check` block runs on EVERY `terraform plan` AND every `terraform apply`, including clean plans with no changes — this is a key design distinction from `precondition`/`postcondition`, which only fire when their specific resource is being created, updated, or destroyed; even a no-change plan evaluates all check assertions and reports warnings for any that fail
 D) The `check` block only runs when explicitly triggered with `terraform check` — it is not automatically evaluated during plan or apply
 
+---
+
 ### Question 11
 
 **Difficulty:** Medium
@@ -1147,6 +1299,8 @@ A) Terraform evaluates ALL three `validation` blocks independently and reports A
 B) Terraform evaluates the validation blocks in declaration order, stops at the FIRST failure, and reports only the first `error_message` — subsequent validation blocks are skipped; the engineer must fix and re-run to discover additional failures
 C) Terraform evaluates all `validation` blocks in parallel and reports only the last failure (highest priority wins)
 D) Multiple `validation` blocks on a single variable are not supported — Terraform returns a configuration error if more than one `validation` block is declared for the same variable
+
+---
 
 ### Question 12
 
@@ -1161,6 +1315,8 @@ B) (1) Precondition evaluated → (2) If passes: API call to create/update insta
 C) (1) Postcondition evaluated with previous `self` attributes → (2) API call → (3) Precondition evaluated → (4) Read-back → (5) State write
 D) (1) Precondition evaluated → (2) Postcondition evaluated → (3) API call → (4) Read-back → (5) State write; both conditions are evaluated BEFORE the API call to maximize safety
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -1173,6 +1329,8 @@ A) A scoped data source inside a `check` block is evaluated AFTER all regular re
 B) A scoped data source inside a `check` block is evaluated BEFORE all resource operations begin — the check block runs first so it can determine health before any changes are made; a top-level data source runs after apply completes
 C) A scoped data source inside a `check` block can be referenced by other resources in the same module — its results are visible to the full module scope; a top-level data source is restricted to use within the `check` block only
 D) A scoped data source inside a `check` block is evaluated ONLY as part of its parent `check` block — its result CANNOT be referenced by any resource, local, or output outside the check block; a top-level data source CAN be referenced anywhere in the module; this scoping rule means the two types have completely different visibility and lifetime within the module evaluation sequence
+
+---
 
 ### Question 1
 
@@ -1187,6 +1345,8 @@ B) (1) Run `terraform init` — this registers the new module source in `.terraf
 C) (1) Run `terraform apply -auto-approve` — the apply command installs modules before executing; no separate `terraform init` is needed for local path modules
 D) (1) Copy the module files into the `.terraform/modules/` directory manually; (2) Run `terraform plan`; (3) Run `terraform apply`
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -1199,6 +1359,8 @@ A) (1) The root module assigns a value in the `module` block; (2) Terraform auto
 B) (1) The child module declares the variable in its own `variables.tf` (or anywhere in the module's `.tf` files); (2) The root module explicitly assigns a value to that variable inside the `module` block argument list; (3) Resources inside the child module reference `var.<name>` to consume the value — the value flows DOWN from root to child, never automatically inherited
 C) (1) The root module declares the variable in its `variables.tf`; (2) The child module automatically inherits any root variable that shares the same name — no explicit assignment is needed; (3) Resources inside the child module reference `var.<name>` as usual
 D) (1) Resources inside the child module declare the values they need inline; (2) Terraform infers which root variables to pass based on matching names; (3) The root module `module` block is optional if the variable names match
+
+---
 
 ### Question 3
 
@@ -1213,6 +1375,8 @@ B) The root module can reference any attribute of any resource inside a child mo
 C) A child module's `output` block must be declared BEFORE its `resource` blocks in the same `.tf` file — if `outputs.tf` is processed after `main.tf`, the output may not resolve correctly
 D) Module outputs are resolved sequentially: the child module's `output` block uses a resource attribute expression (e.g., `aws_vpc.main.id`) — this expression is evaluated AFTER the resource has been planned or applied, not before; during planning, the output value may be "(known after apply)" if the resource is being created; after a successful apply, the output holds the real attribute value
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -1225,6 +1389,8 @@ A) (1) Run `terraform apply` — Terraform downloads the module automatically du
 B) (1) Add the `module` block with `source = "terraform-aws-modules/vpc/aws"` and `version = "~> 5.0"` plus required input arguments; (2) Run `terraform init` — Terraform contacts the registry, resolves the version constraint, and downloads the module source to `.terraform/modules/`; (3) Run `terraform plan` — Terraform evaluates the module's resources and generates a proposed execution plan; (4) Review the plan; (5) Run `terraform apply` to create the VPC and its dependent resources
 C) (1) Run `terraform init` first (before adding any `module` block) — this pre-fetches available modules; (2) Add the `module` block; (3) Run `terraform plan`; (4) Run `terraform apply`
 D) (1) Download the module source from GitHub manually; (2) Place it in `./modules/vpc/`; (3) Change `source` to `"./modules/vpc"`; (4) Run `terraform init`; (5) Run `terraform plan`; (6) Run `terraform apply`
+
+---
 
 ### Question 5
 
@@ -1239,6 +1405,8 @@ B) (1) Engineer changes `version = "~> 5.0"` in the configuration → (2) Runs `
 C) (1) Engineer changes `version = "~> 5.0"` → (2) Runs `terraform init` without `-upgrade` → (3) Terraform may use the previously cached `4.x` version if it is still recorded in the lock file and does not re-evaluate the updated constraint; to force Terraform to download the new version matching `~> 5.0`, the correct sequence is: update the `version` constraint → run `terraform init -upgrade` (the `-upgrade` flag instructs Terraform to re-evaluate version constraints and update the lock file with newer versions) → run `terraform plan`
 D) To upgrade a module version, the engineer must delete `.terraform/modules/` entirely, then run `terraform init`, then run `terraform plan` — `terraform init -upgrade` has no effect on module version selection
 
+---
+
 ### Question 6
 
 **Difficulty:** Medium
@@ -1251,6 +1419,8 @@ A) (1) `main.tf` first — declare resources before you know what variables you 
 B) (1) `variables.tf` — declare the module's input interface first so you know what values the module accepts; (2) `main.tf` — write resources that reference `var.<name>` values you just declared; (3) `outputs.tf` — expose resource attribute values (e.g., `aws_db_instance.main.endpoint`) for callers to consume; (4) `versions.tf` — declare required Terraform and provider version constraints; (5) `README.md` — document the module's purpose, inputs, outputs, and usage examples
 C) (1) `README.md` first — document the module before writing any code; (2) `versions.tf`; (3) `outputs.tf` — outputs must be declared before resources so Terraform knows what to expose; (4) `main.tf`; (5) `variables.tf` last — variables are optional and can be added only if needed
 D) The file creation order is strictly enforced by Terraform — `versions.tf` must always be processed before `variables.tf` and `main.tf`; Terraform returns an error if these files are created out of order
+
+---
 
 ### Question 7
 
@@ -1273,6 +1443,8 @@ B) `terraform plan` succeeds but uses the previously cached `v1.2.0` code from `
 C) `terraform plan` fails with an error indicating that the module source has changed and `terraform init` must be re-run — changing the `?ref=` value (or any part of the `source` URL) is treated as a source change that requires `terraform init` to re-download and cache the new ref before plan can proceed
 D) `terraform plan` fails with a Git authentication error — the `?ref=` parameter is a Git fetch argument and can only be evaluated by re-running `terraform init -upgrade`
 
+---
+
 ### Question 8
 
 **Difficulty:** Medium
@@ -1285,6 +1457,8 @@ A) (1) Root module output resolves first using `module.a.subnet_id` → (2) Modu
 B) (1) Module B's resources are created first (because they are the deepest dependency) → (2) Module B's `output "subnet_id"` resolves to the real `aws_subnet.main.id` value → (3) Module A's `output "subnet_id"` resolves using `module.b.subnet_id` (now a known value) → (4) Root module's `output "subnet_id"` resolves using `module.a.subnet_id` (now a known value) — outputs propagate UP the module call chain from deepest to shallowest
 C) All three outputs resolve simultaneously at the end of apply — Terraform batches all output evaluation into a single post-apply step regardless of nesting depth
 D) Module A's outputs resolve first because the root module calls module A directly — module B is processed independently and its output is injected into module A afterward
+
+---
 
 ### Question 9
 
@@ -1299,6 +1473,8 @@ B) For a **local path module**, `terraform init` downloads the files from the lo
 C) For a **registry module**, `terraform init` must be run BEFORE `terraform plan` — without it, plan fails; for a **local path module**, `terraform plan` can be run without prior `terraform init` because no downloading is required — the files are already present on disk
 D) For a **local path module**, changing the files inside the module directory takes effect on the NEXT `terraform plan` without re-running `terraform init` — because `terraform plan` reads the module source directly from the local path; for a **registry module**, changing the cached files in `.terraform/modules/` is overwritten the next time `terraform init` is run — the cached source is managed by Terraform and should not be hand-edited
 
+---
+
 ### Question 10
 
 **Difficulty:** Medium
@@ -1311,6 +1487,8 @@ A) (1) Delete `./modules/vpc`; (2) Run `terraform destroy` to remove the existin
 B) (1) Update the `module "vpc"` block: replace `source = "./modules/vpc"` with `source = "terraform-aws-modules/vpc/aws"` and add `version = "~> 5.0"`; (2) Align input argument names to match the registry module's expected variables (the local and registry modules may use different variable names); (3) Update any root module references to module outputs (output names may differ between modules); (4) Run `terraform init` — Terraform downloads the registry module; (5) Run `terraform plan` — review carefully; the plan may show resource replacements if argument names or resource naming patterns changed; (6) Run `terraform apply` after confirming the plan is acceptable
 C) (1) Run `terraform init` first with the old source still in place; (2) Update `source` to the registry reference; (3) Run `terraform init` again; (4) Run `terraform apply -replace=module.vpc` to force recreation
 D) (1) Add a SECOND `module` block for the registry module alongside the existing local module block; (2) Run `terraform init`; (3) Run `terraform apply`; (4) Then delete the local module block and run `terraform apply` again
+
+---
 
 ### Question 11
 
@@ -1325,6 +1503,8 @@ B) (1) During `terraform plan`: `aws_vpc.main` is planned for creation — its `
 C) (1) During `terraform plan`: `module.networking.vpc_id` shows `null` because the VPC does not exist yet; (2) During `terraform apply`: the value transitions from `null` to the real ID — `null` and `(known after apply)` are equivalent in plan output
 D) If a child module output depends on a `(known after apply)` resource attribute, `terraform plan` aborts with an error — plans cannot proceed when any module output is unresolvable at plan time
 
+---
+
 ### Question 12
 
 **Difficulty:** Hard
@@ -1337,6 +1517,8 @@ A) (1) Add `module` block → (2) Run `terraform apply` directly in production �
 B) (1) Search `registry.terraform.io` and review the module's source code, examples, and README for correctness and security posture; (2) Pin the module to a specific version constraint (e.g., `version = "= 5.4.0"` or `"~> 5.4"`) in a non-production environment first — never use an unpinned module in production; (3) Add the `module` block with the pinned source and version and all required inputs; (4) Run `terraform init` to download and cache the module; (5) Run `terraform plan` in a non-production environment and carefully review the proposed resources; (6) Run `terraform apply` in non-production and verify the infrastructure behaves as expected; (7) Lock the exact version in `.terraform.lock.hcl` and commit the lockfile to version control; (8) Promote the same pinned version and lockfile to production; (9) Run `terraform init` in the production workspace (uses lockfile-recorded version); (10) Run `terraform plan` in production and review; (11) Run `terraform apply` in production
 C) (1) Add `module` block without a `version` argument — unpinned modules always use the latest version which is inherently the most secure; (2) Run `terraform init`; (3) Run `terraform apply` — the registry guarantees module correctness so no further review is needed
 D) (1) Clone the module's GitHub repository; (2) Run a security scan on the source; (3) Copy the module files to a local path; (4) Change `source` to the local path; (5) Remove the `version` argument — local modules do not support `version`; (6) Run `terraform init`; (7) Run `terraform apply` — using a local copy is always preferred over registry modules in production
+
+---
 
 ### Question 13
 
@@ -1351,6 +1533,8 @@ B) Module OUTPUT values are always fully resolved during `terraform plan` — ev
 C) Module INPUT variables are resolved AFTER `terraform apply` completes — they cannot be evaluated during planning because input values may change between plan and apply
 D) Module OUTPUT values are resolved AFTER the apply phase of the specific resources that the output expression references — if `output "vpc_id"` references `aws_vpc.main.id` and that VPC is being created in this apply run, the output value is `(known after apply)` during planning and resolves to the real ID only after the VPC resource is applied; this means module outputs that depend on newly created resources become real values LATER in the apply run than module inputs (which are resolved at plan time from already-known expressions)
 
+---
+
 ### Question 1
 
 **Difficulty:** Easy
@@ -1363,6 +1547,8 @@ A) (1) Run `terraform apply` to create the bucket → (2) Add the `import` block
 B) (1) Add an `import` block to the configuration (`to = aws_s3_bucket.legacy` and `id = "existing-bucket-name"`); (2) Run `terraform plan -generate-config-out=generated.tf` — Terraform validates the import and writes an HCL resource block for the existing resource; (3) Review and adjust the generated configuration; (4) Run `terraform apply` — Terraform imports the bucket into state; (5) Remove (or leave as documentation) the `import` block; (6) Run `terraform plan` to confirm the output is "No changes" — the configuration now matches state
 C) (1) Write a `resource "aws_s3_bucket" "legacy" {}` block first; (2) Run `terraform import aws_s3_bucket.legacy existing-bucket-name`; (3) Run `terraform plan -generate-config-out=generated.tf`; (4) Run `terraform apply`
 D) (1) Add the `import` block and resource block simultaneously; (2) Run `terraform apply -auto-approve`; (3) Remove the `import` block; (4) Run `terraform plan -generate-config-out` to retroactively generate documentation
+
+---
 
 ### Question 2
 
@@ -1377,6 +1563,8 @@ B) The order in which the two variables are exported in the shell does not affec
 C) Only `TF_LOG_PATH` is needed — setting it alone automatically enables `DEBUG`-level logging; `TF_LOG` is optional
 D) `TF_LOG` and `TF_LOG_PATH` must be set inside the Terraform configuration using `terraform.tfvars` — shell environment variables are not supported for log control
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -1389,6 +1577,8 @@ A) `terraform init -migrate-state` must ALWAYS be run BEFORE `terraform init -re
 B) When changing a backend configuration, `terraform init -migrate-state` copies existing state from the OLD backend to the NEW backend DURING the `terraform init` process — state migration happens as part of init, before any plan or apply; the local state file (or previous remote state) is preserved in the old location as a backup; after a successful migration, subsequent plan/apply commands use state from the new backend
 C) `terraform init -reconfigure` copies all existing state to the new backend AND reconfigures the backend — it is a superset of `-migrate-state` and should always be preferred
 D) `terraform init -reconfigure` updates the backend configuration WITHOUT migrating existing state — it discards the link to the old state location and starts fresh with the new backend configuration; any existing local state is effectively abandoned (not deleted from disk, but no longer used by subsequent Terraform operations); `-reconfigure` is appropriate when you intentionally want to ignore previous state (e.g., starting fresh) but dangerous when you expect state continuity
+
+---
 
 ### Question 4
 
@@ -1403,6 +1593,8 @@ B) (1) Run `terraform apply` to push current state to S3 automatically; (2) Add 
 C) (1) Add the backend block; (2) Run `terraform plan` — plan auto-migrates state before generating the plan
 D) (1) Create the S3 bucket; (2) Run `terraform state push` to upload state; (3) Add the backend block; (4) Run `terraform init`
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -1415,6 +1607,8 @@ A) (1) Delete the DynamoDB lock record manually in the AWS console; (2) Re-run `
 B) (1) Delete `terraform.tfstate.backup` and re-run `terraform apply` — the backup lock entry is the cause
 C) (1) Confirm that no other `terraform apply` or `terraform plan` process is actually running — check CI/CD pipeline queues, remote workstations, and HCP Terraform run history; (2) Only after confirming the lock is stale (left by a process that died or was killed): run `terraform force-unlock a1b2c3d4-e5f6-7890-abcd-ef1234567890` using the exact lock ID from the error message; (3) Run `terraform apply` again — the lock is now available and the operation proceeds normally; (4) Investigate and fix the root cause of why the previous process did not release the lock
 D) (1) Run `terraform force-unlock` immediately without checking whether another process is running — the command is safe and idempotent; (2) Run `terraform apply`
+
+---
 
 ### Question 6
 
@@ -1429,6 +1623,8 @@ B) (1) Developer creates a feature branch and opens a pull request targeting `ma
 C) (1) Developer merges to `main` first → (2) HCP Terraform triggers a speculative plan → (3) If the plan is clean, an apply is auto-queued
 D) (1) Developer runs `terraform plan` locally → (2) Uploads the saved plan to HCP Terraform → (3) HCP Terraform applies the uploaded plan
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -1441,6 +1637,8 @@ A) `hard-mandatory` (least restrictive, warning only) → `soft-mandatory` (bloc
 B) `advisory` → `hard-mandatory` → `soft-mandatory` — the middle level blocks the run while the others allow continuation
 C) `advisory` (least restrictive — a failed policy check generates a **warning only**; the run is NOT blocked and proceeds to apply normally; the failure is informational); `soft-mandatory` (middle — a failed policy check **blocks the run**; however, an authorized user can override the policy failure and allow the run to continue to apply); `hard-mandatory` (most restrictive — a failed policy check **blocks the run** AND **cannot be overridden** by any user, including organization owners; the only way to continue is to fix the policy or the code)
 D) All three levels block the run — they differ only in who can see the policy failure notification, not in whether the run continues
+
+---
 
 ### Question 8
 
@@ -1455,6 +1653,8 @@ B) (1) Rename the resource block in the `.tf` file from `"old_name"` to `"new_na
 C) (1) Run `terraform state mv aws_instance.old_name aws_instance.new_name` FIRST before changing any `.tf` file; (2) Rename the resource block in the `.tf` file; (3) Run `terraform plan`; (4) Run `terraform apply`
 D) Both B and C describe valid sequences — `terraform state mv` can be run either before or after renaming the resource block in the configuration; the outcome is identical in either case
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -1467,6 +1667,8 @@ A) The **producing workspace** (the one whose outputs are being read) must have 
 B) The `terraform_remote_state` data source resolves its outputs during `terraform init` — the producing workspace's state is downloaded at init time, not at plan time; re-running `terraform plan` in the consuming workspace does NOT pick up new outputs from the producing workspace unless `terraform init` is re-run
 C) The **consuming workspace** must trigger a new plan/apply run AFTER the producing workspace updates its state — if workspace A (networking) applies and updates `output "vpc_id"`, workspace B (compute) must run a new plan that reads the freshly updated state to get the new `vpc_id` value; workspace B's existing state does not automatically refresh from workspace A's outputs without a new run
 D) Both workspaces must be in the same HCP Terraform organization AND the same project — cross-project `terraform_remote_state` references are not supported
+
+---
 
 ### Question 10
 
@@ -1481,6 +1683,8 @@ B) (1) Write a `resource "aws_security_group" "web" {}` block in the configurati
 C) (1) Run `terraform import`; (2) Run `terraform plan -generate-config-out=generated.tf`; (3) Run `terraform apply`
 D) (1) Run `terraform state pull > backup.tfstate`; (2) Run `terraform import`; (3) Run `terraform plan`
 
+---
+
 ### Question 11
 
 **Difficulty:** Medium
@@ -1494,6 +1698,8 @@ B) (1) The HCP Terraform worker that will execute the run requests a **short-liv
 C) (1) HCP Terraform generates a new AWS IAM user for each run → (2) Uses those credentials for the plan → (3) Deletes the IAM user after the run
 D) OIDC credentials are resolved at `terraform init` time, not during plan — the credentials are cached for 24 hours across multiple runs
 
+---
+
 ### Question 12
 
 **Difficulty:** Hard
@@ -1506,6 +1712,8 @@ A) (1) Merge triggers run → (2) Apply → (3) Policy check → (4) Plan → (5
 B) (1) Merge to VCS branch triggers a new run in HCP Terraform; (2) **Plan phase** — HCP Terraform clones the repository, initializes providers, and executes `terraform plan`; plan output is streamed to the UI; (3) **Policy check phase** — Sentinel evaluates the plan output against all assigned policy sets; because the policy is `soft-mandatory` and passes, the run proceeds; if it had failed, an authorized user could override; (4) **Cost estimation phase** (if enabled) — estimated monthly cost delta is computed from the plan; (5) **Awaiting confirmation** — because manual apply is required, the run pauses and shows the plan + cost estimate to team; a team member must click "Confirm & Apply" (or "Discard"); (6) **Apply phase** — `terraform apply` executes the approved plan; state is updated; (7) **Applied** — run completes successfully
 C) (1) Merge → (2) Cost estimation → (3) Plan → (4) Policy check → (5) Apply
 D) (1) Merge → (2) Plan → (3) Apply → (4) Policy check → (5) State updated — policy checks always run after apply, not before
+
+---
 
 ### Question 13
 

@@ -1,5 +1,7 @@
 # Terraform Associate Exam Questions
 
+---
+
 ### Question 1 — State Addresses Created by count
 
 **Difficulty**: Easy
@@ -24,6 +26,8 @@ How many resource addresses does Terraform record in state after a successful ap
 - C) 3 — `aws_instance.app.0`, `aws_instance.app.1`, `aws_instance.app.2`
 - D) 1 — Terraform groups all instances under a single `aws_instance.app` state entry
 
+---
+
 ### Question 2 — count = 0 Effect on Resource
 
 **Difficulty**: Easy
@@ -47,6 +51,8 @@ What does this configuration tell Terraform about the `aws_instance.bastion` res
 - B) Zero instances of this resource should exist; if any currently exist, Terraform plans to destroy them
 - C) This is a syntax error — `count` must be at least 1
 - D) Terraform creates the resource but does not assign it an AMI or instance type
+
+---
 
 ### Question 3 — Identifying Declarative vs Imperative from Snippets
 
@@ -79,6 +85,8 @@ What is the correct characterisation of each snippet's approach?
 - B) Snippet A is declarative; Snippet B is imperative
 - C) Snippet A is imperative; Snippet B is declarative
 - D) Both are imperative — they both invoke AWS APIs to create resources
+
+---
 
 ### Question 4 — Multi-Provider Config Provider Count
 
@@ -118,6 +126,8 @@ How many provider plugins must `terraform init` download for this configuration 
 - C) 2 — one provider plugin shared between AWS and Azure resources
 - D) 4 — one plugin per resource block
 
+---
+
 ### Question 5 — What "Idempotent" Means for This Apply Output
 
 **Difficulty**: Medium
@@ -137,6 +147,8 @@ What does this output tell you about the relationship between the configuration 
 - B) Terraform destroyed existing resources before recreating them with zero net change
 - C) The infrastructure already matched the desired state — no actions were needed, demonstrating idempotency
 - D) The configuration is empty — no resource blocks are declared
+
+---
 
 ### Question 6 — Provider Constraint on Cloud Scope
 
@@ -160,6 +172,8 @@ Which TWO statements correctly identify the tools described? (Select two.)
 - C) Tool C is AWS CloudFormation — it is AWS-only and uses templates without explicit provider blocks
 - D) Tool C is Azure ARM templates — it uses templates but supports multi-cloud via a provider concept
 
+---
+
 ### Question 7 — Documentation Role of Config Files
 
 **Difficulty**: Medium
@@ -173,6 +187,8 @@ A new engineer joins a team and is given read access to the Git repository conta
 - B) Only the list of resource types — attributes and values are hidden by variable references
 - C) The complete intended infrastructure topology: resource types, configurations, dependencies, and relationships — because configuration files serve as living documentation
 - D) Only the most recently applied state — older configurations require the state file to reconstruct
+
+---
 
 ### Question 8 — Interpreting Tool Type from Snippet
 
@@ -211,6 +227,8 @@ What category does each snippet belong to?
 - C) The YAML snippet is from Terraform's YAML provider; the HCL snippet is from CloudFormation
 - D) Both are declarative configuration management tools in the Ansible/Terraform ecosystem
 
+---
+
 ### Question 9 — Audit Trail Interpretation from Git Log
 
 **Difficulty**: Medium
@@ -232,6 +250,8 @@ What IaC benefit does this log directly demonstrate?
 - B) Speed — automated provisioning is faster than manual console changes
 - C) Audit trail — every infrastructure change is a version-controlled commit with author and timestamp
 - D) Idempotency — running the same configuration multiple times produces the same result
+
+---
 
 ### Question 10 — CloudFormation vs Terraform Multi-Cloud Snippet
 
@@ -261,6 +281,8 @@ The snippet simultaneously manages resources in AWS (`aws_vpc`) and Azure (`azur
 - B) Azure ARM templates — they natively support AWS resources through an Azure bridge provider
 - C) Terraform — its provider plugin model supports multiple cloud providers in a single configuration
 - D) Neither — no IaC tool supports declaring AWS and Azure resources in the same configuration file
+
+---
 
 ### Question 11 — Interpreting "Drift" from a State vs Cloud Comparison
 
@@ -293,6 +315,8 @@ Which TWO statements correctly interpret this plan output? (Select two.)
 - C) The `~` symbol before `aws_db_instance.primary` means the resource will be destroyed and recreated
 - D) Terraform plans to update `instance_class` and `backup_retention_period` in-place to match the desired state in the configuration
 
+---
+
 ### Question 12 — Reading a `~> 5.0` Version Constraint
 
 **Difficulty**: Easy
@@ -319,6 +343,8 @@ What version range does `"~> 5.0"` permit for the AWS provider?
 - B) Any version >= `5.0` and < `6.0` — minor and patch updates within major version 5
 - C) Any version >= `5.0.0` and < `5.1.0` — patch updates within minor version 5.0 only
 - D) Any version >= `5.0` with no upper limit
+
+---
 
 ### Question 13 — Resolving a Short-Form Provider Source Address
 
@@ -347,6 +373,8 @@ The `source` value is written as `"hashicorp/aws"`. What is the fully qualified 
 - C) `releases.hashicorp.com/terraform/aws`
 - D) `terraform.io/providers/hashicorp/aws`
 
+---
+
 ### Question 14 — `sensitive = true` on an Output Block
 
 **Difficulty**: Easy
@@ -369,6 +397,8 @@ A developer claims that `sensitive = true` fully protects this password from exp
 - B) Incorrect — `sensitive = true` hides the password from terminal output but it is stored in plaintext in `terraform.tfstate`
 - C) Correct — `sensitive = true` prevents the password from being written to state altogether
 - D) Incorrect — `sensitive = true` has no effect; the password appears in plaintext in both the terminal and the state file
+
+---
 
 ### Question 15 — `~> 5.0.0` vs `~> 5.0` Constraint Range
 
@@ -396,6 +426,8 @@ How does the range permitted by `"~> 5.0.0"` differ from `"~> 5.0"`?
 - B) `"~> 5.0.0"` allows a wider range — it permits `5.x` and `6.x` versions
 - C) `"~> 5.0.0"` allows a narrower range — only patch updates are permitted (>= `5.0.0` and < `5.1.0`)
 - D) `"~> 5.0.0"` is identical to `"= 5.0.0"` and pins exactly version `5.0.0`
+
+---
 
 ### Question 16 — Default Provider Selection When Alias Exists
 
@@ -429,6 +461,8 @@ In which AWS region will `aws_instance.api` be created?
 - C) Terraform returns an error because the `provider` argument is required when multiple configurations of the same provider exist
 - D) Both regions simultaneously — Terraform creates one instance per provider configuration
 
+---
+
 ### Question 17 — Lock File `hashes` Field Purpose
 
 **Difficulty**: Medium
@@ -455,6 +489,8 @@ What do the `hashes` entries in this lock file provide?
 - B) Cryptographic checksums that allow Terraform to verify the downloaded provider binary has not been tampered with
 - C) A record of which team member last ran `terraform init` to install this provider version
 - D) Encoded authentication tokens used to download the provider from the registry
+
+---
 
 ### Question 18 — State JSON `id` Field Role
 
@@ -493,6 +529,8 @@ Which field in this state excerpt is the primary link between the Terraform reso
 - C) `id` — `"i-0aaa1111bb2222cc3"` is the AWS-assigned instance ID that Terraform uses to reference the real resource in API calls
 - D) `name` — `"db_server"` is registered as the unique identifier in the AWS API
 
+---
+
 ### Question 19 — Provider Alias Reference on a Resource
 
 **Difficulty**: Medium
@@ -526,6 +564,8 @@ What does `provider = aws.west` on the `aws_instance.replica` resource accomplis
 - C) It overrides the provider's configuration at runtime to use a custom region named `aws.west`
 - D) It causes a validation error because the `provider` argument cannot be set on individual resources — only at module level
 
+---
+
 ### Question 20 — Lock File Content After `terraform init`
 
 **Difficulty**: Medium
@@ -557,6 +597,8 @@ After running `terraform init`, which TWO statements correctly describe what is 
 - C) The lock file records the Terraform workspace name active at the time `init` was run
 - D) The lock file records the path to the `.terraform/providers/` cache directory on the local machine
 
+---
+
 ### Question 21 — Reading the `!=` Version Constraint
 
 **Difficulty**: Medium
@@ -583,6 +625,8 @@ What does this version constraint tell `terraform init` to do?
 - B) Install any available AWS provider version except `5.0.0`
 - C) This is a syntax error — the `!=` operator is not supported in provider version constraints
 - D) Exclude the entire `5.x` version family from consideration
+
+---
 
 ### Question 22 — State Attributes Displayed by `terraform state show`
 
@@ -618,6 +662,8 @@ Which TWO statements correctly describe what `terraform state show aws_instance.
 - C) The command displays only the `id` attribute — all other attributes require `terraform refresh` before they appear in `state show`
 - D) `terraform state show` retrieves the instance's current live attributes from the AWS API, not from the state file
 
+---
+
 ### Question 23 — Comparing Two `~>` Constraints
 
 **Difficulty**: Hard
@@ -641,6 +687,8 @@ Which TWO statements correctly describe the version range each constraint allows
 - B) Constraint A (`~> 4.0`) allows versions >= `4.0` and < `4.1` — only `4.0.x` patch versions
 - C) Constraint B (`~> 4.67.0`) allows versions >= `4.67.0` and < `4.68.0` — only patch updates within `4.67`
 - D) Constraint B (`~> 4.67.0`) allows versions >= `4.67.0` and < `5.0` — any version from `4.67` onward within major 4
+
+---
 
 ### Question 24 — Lock File After `terraform init -upgrade`
 
@@ -667,6 +715,8 @@ AWS provider `5.31.0` has since been released. `terraform init -upgrade` is run.
 - B) The `version` field updates to `5.31.0` and the `hashes` field updates to reflect the new binary's checksums; `constraints` remains `"~> 5.0"` unchanged
 - C) The `constraints` field changes to `"= 5.31.0"` to pin the exact new version; `version` and `hashes` also update
 - D) The `version` field updates to `5.31.0` but the `hashes` field remains unchanged because hashes are stable across versions
+
+---
 
 ### Question 25 — Identifying the Pure-Create Resource in a Plan
 
@@ -703,6 +753,8 @@ Which resource does the `+` symbol (without any `-`) indicate will be **created 
 - C) `aws_instance.web` — the `~` symbol includes a create for the updated attributes
 - D) All three resources will result in newly created objects after apply
 
+---
+
 ### Question 26 — `terraform console` Evaluating a Map with `length`
 
 **Difficulty**: Easy
@@ -722,6 +774,8 @@ What value does the console return?
 - B) `3`
 - C) `{"us-east-1", "us-west-2", "eu-west-1"}` — the set of keys in the map
 - D) An error — `length()` is not a valid built-in function in `terraform console`
+
+---
 
 ### Question 27 — Reading `terraform workspace list` Output
 
@@ -745,6 +799,8 @@ Which workspace is currently selected?
 - B) `dev` — it is listed second, indicating it was most recently used
 - C) `staging` — the `*` prefix marks the currently active workspace
 - D) `production` — it is the last workspace listed, indicating it is the current context
+
+---
 
 ### Question 28 — Interpreting a `-/+` Plan Block
 
@@ -770,6 +826,8 @@ What does the `-/+` symbol on `aws_instance.app` indicate Terraform will do duri
 - B) The instance will be imported from an existing cloud resource with a new Terraform address
 - C) The existing instance will be destroyed and a brand-new instance will be created (replacement)
 - D) The change is deferred — Terraform will update the instance on the next apply cycle, not the current one
+
+---
 
 ### Question 29 — `terraform output -json` Structure
 
@@ -802,6 +860,8 @@ Which `terraform output` flag produces this structured JSON format that includes
 - C) `terraform output -json`
 - D) `terraform output -show-types`
 
+---
+
 ### Question 30 — `terraform fmt -check` vs `terraform fmt -diff`
 
 **Difficulty**: Medium
@@ -823,6 +883,8 @@ Which TWO statements correctly describe the behaviour of these two flags? (Selec
 - C) `-diff` displays the formatting changes that would be made as a unified diff, without writing any changes to disk
 - D) `-check` modifies files to canonical format and then verifies the result, exiting with code 0 on success
 
+---
+
 ### Question 31 — `terraform show plan.tfplan`
 
 **Difficulty**: Medium
@@ -843,6 +905,8 @@ What does `terraform show release.tfplan` display?
 - B) The human-readable contents of the saved plan file — the resource changes that would be applied when `terraform apply release.tfplan` is run
 - C) The Terraform configuration files compiled into a single canonical HCL representation
 - D) A comparison between the saved plan and the current live infrastructure to detect drift since the plan was saved
+
+---
 
 ### Question 32 — Inline `-var` Flag Override
 
@@ -872,6 +936,8 @@ What value does `var.instance_type` take during this plan run?
 - C) `"t3.large"` — the inline `-var` flag value overrides the default declared in `variables.tf`
 - D) Both values are used — Terraform creates a `t3.micro` instance and a `t3.large` instance to satisfy both declarations
 
+---
+
 ### Question 33 — Interpreting an Update Plan Block
 
 **Difficulty**: Medium
@@ -895,6 +961,8 @@ Which TWO statements correctly interpret this output? (Select two.)
 - B) `vpc_id` is not changing — lines without a `~` or `+/-` prefix show attributes that remain the same
 - C) Both `description` and `name` will be updated in-place without destroying the security group
 - D) The `->` arrow on individual attribute lines means those attributes will be moved to a different resource address
+
+---
 
 ### Question 34 — `terraform init -migrate-state` Backend Block
 
@@ -922,6 +990,8 @@ They run `terraform init` and Terraform detects existing local state in `terrafo
 - C) `terraform init -reconfigure` — replaces the backend configuration and migrates state in one step
 - D) `terraform init -backend=true` — enables the backend and imports the local state file
 
+---
+
 ### Question 35 — `-auto-approve` with a Saved Plan File
 
 **Difficulty**: Medium
@@ -941,6 +1011,8 @@ What is the effect of including `-auto-approve` when a saved plan file (`release
 - B) `-auto-approve` is required alongside a saved plan file to unlock the apply — without it, the apply is blocked
 - C) `-auto-approve` is required to prevent Terraform from re-planning after loading the saved plan file
 - D) `-auto-approve` is redundant — applying a saved plan file never prompts for confirmation; the plan has already been reviewed
+
+---
 
 ### Question 36 — Plan Summary with Only Replacements
 
@@ -962,6 +1034,8 @@ The full plan output shows exactly two resources, both marked with `-/+` (replac
 - C) `0 to change` confirms that no resource will be modified in-place — both operations require a destroy-then-create cycle
 - D) The "2 to add" and "2 to destroy" must refer to four different resource addresses — adds and destroys are always distinct resources
 
+---
+
 ### Question 37 — `terraform apply -replace` Plan Symbol
 
 **Difficulty**: Hard
@@ -981,6 +1055,8 @@ What symbol does the plan output show for `aws_instance.web`, and what does that
 - B) `~` — the instance will be updated in-place because the configuration is unchanged
 - C) `-/+` — the instance will be destroyed and recreated even though no configuration change triggered it
 - D) `+` — a second instance will be created alongside the existing one before the original is removed
+
+---
 
 ### Question 38 — `create_before_destroy` Replacement Order
 
@@ -1009,6 +1085,8 @@ The AMI referenced by `data.aws_ami.ubuntu.id` changes. Terraform determines tha
 - C) Terraform updates the existing instance in-place — `create_before_destroy` prevents any destroy operation
 - D) Terraform creates both instances simultaneously and destroys whichever completes last
 
+---
+
 ### Question 39 — Distinguishing a Data Source Reference from a Resource Reference
 
 **Difficulty**: Easy
@@ -1033,6 +1111,8 @@ Which of the two attribute references — `data.aws_ami.ubuntu.id` and `aws_subn
 - C) Both are data source references — all attribute references in Terraform begin with a provider keyword
 - D) Neither is a data source reference — both reference managed resources declared with a `resource` block
 
+---
+
 ### Question 40 — `moved` Block Address After Apply
 
 **Difficulty**: Easy
@@ -1055,6 +1135,8 @@ The `aws_instance.server` resource is running in AWS and tracked in state. After
 - B) Both `aws_instance.server` and `aws_instance.api` — state records both addresses until the block is removed
 - C) `aws_instance.api` — the state file is updated to use the new address; the real EC2 instance is not touched
 - D) The instance is destroyed and a new instance is created under `aws_instance.api`
+
+---
 
 ### Question 41 — Three-Resource Implicit Dependency Chain
 
@@ -1088,6 +1170,8 @@ Which resource is created **last**, and what in the HCL determines this ordering
 - C) `aws_instance.web` — it references `aws_subnet.public.id`, which itself references `aws_vpc.main.id`, creating a three-level dependency chain
 - D) All three are created in parallel — HCL declaration order is the only ordering Terraform respects
 
+---
+
 ### Question 42 — `ignore_changes` on a Modified Attribute
 
 **Difficulty**: Medium
@@ -1115,6 +1199,8 @@ The AMI in the AWS account has been manually changed from `ami-0abc123` to `ami-
 - C) Terraform returns an error because `ignore_changes` cannot be used with the `ami` argument
 - D) Terraform destroys the instance and recreates it with the new AMI
 
+---
+
 ### Question 43 — `removed` Block with `destroy = false`
 
 **Difficulty**: Medium
@@ -1140,6 +1226,8 @@ The `aws_s3_bucket.legacy` bucket currently exists in AWS and is tracked in stat
 - B) The bucket remains in AWS unchanged — Terraform removes it from state but does not destroy the real cloud resource
 - C) The bucket is moved to a new state address `aws_s3_bucket.removed_legacy` as an archived entry
 - D) Terraform returns an error because `destroy = false` is not a valid lifecycle argument inside a `removed` block
+
+---
 
 ### Question 44 — `depends_on` Ordering Guarantee
 
@@ -1170,6 +1258,8 @@ What ordering does the `depends_on` on `aws_instance.app` guarantee?
 - B) `aws_iam_role_policy.s3_access` is fully applied before `aws_instance.app` is created, even though no attribute of the policy is directly referenced by the instance
 - C) Both resources are created in parallel — `depends_on` only affects destroy ordering, not create ordering
 - D) Terraform returns a warning because `depends_on` is redundant when both resources reference the same IAM role
+
+---
 
 ### Question 45 — `replace_triggered_by` with a Specific Attribute
 
@@ -1203,6 +1293,8 @@ How does `replace_triggered_by = [aws_launch_template.web.image_id]` differ from
 - C) Referencing an attribute reference is a syntax error — `replace_triggered_by` only accepts full resource addresses, not attribute paths
 - D) Referencing `aws_launch_template.web.image_id` makes the trigger one-directional — changes to the ASG no longer propagate back to the launch template
 
+---
+
 ### Question 46 — `terraform apply -parallelism=1`
 
 **Difficulty**: Medium
@@ -1222,6 +1314,8 @@ The configuration manages 8 independent resources with no dependency relationshi
 - B) Terraform creates exactly one resource at a time in strict sequence, even though all 8 could safely run in parallel
 - C) Terraform returns an error — `-parallelism` must be set to at least 2 when independent resources exist
 - D) `-parallelism=1` is the default value and has no effect; Terraform always applies one resource at a time without this flag
+
+---
 
 ### Question 47 — `lifecycle` Block with Multiple Arguments
 
@@ -1251,6 +1345,8 @@ Which TWO statements correctly describe the behaviour this `lifecycle` block enf
 - B) If `engine_version` is upgraded in the AWS console, `terraform plan` will propose reverting it to `"14.5"`
 - C) If a replacement of the database is required, Terraform will provision the new instance before deleting the old one
 - D) `prevent_destroy = true` only protects against `terraform destroy` — it does not block replacements triggered by config changes
+
+---
 
 ### Question 48 — Data Source Block TWO Correct Statements
 
@@ -1284,6 +1380,8 @@ Which TWO statements correctly describe this configuration? (Select two.)
 - B) The `filter` block inside the `data` source instructs Terraform to create a new Ubuntu AMI if no existing AMI matches the pattern
 - C) The reference `data.aws_ami.ubuntu.id` uses the `data.` prefix to distinguish it as a data source reference, not a managed resource reference
 - D) The `most_recent = true` argument causes Terraform to create a new AMI version on every `terraform plan` to ensure freshness
+
+---
 
 ### Question 49 — Parallel vs Sequential Resource Creation
 
@@ -1320,6 +1418,8 @@ Which statement correctly describes how Terraform schedules creation of these th
 - C) `aws_instance.web` is created first because it is declared last — Terraform processes bottom-up
 - D) All three are created in parallel because Terraform always maximises concurrency regardless of references
 
+---
+
 ### Question 50 — `moved` Block into a Module
 
 **Difficulty**: Hard
@@ -1342,6 +1442,8 @@ The S3 bucket `aws_s3_bucket.app_data` exists in state and in AWS. A `module "st
 - B) Terraform destroys the existing bucket at `aws_s3_bucket.app_data` and creates a new bucket inside the `module.storage` module
 - C) After a successful `terraform apply`, the `moved` block can be safely removed from the configuration — the state already records the updated address
 - D) The `moved` block must remain in the configuration permanently to prevent Terraform from flagging the address difference on each subsequent plan
+
+---
 
 ### Question 51 — `locals` String Interpolation Result
 
@@ -1367,6 +1469,8 @@ What is the value of `local.full_name`?
 - C) `"my-app-production"` — both local references are resolved and joined with a hyphen
 - D) Terraform returns an error because a local cannot reference another local in the same block
 
+---
+
 ### Question 52 — `for` Expression: List Brackets vs Map Braces
 
 **Difficulty**: Easy
@@ -1391,6 +1495,8 @@ What are the types of `local.result_a` and `local.result_b`?
 - C) `local.result_a` is a map; `local.result_b` is a list — braces indicate a list in Terraform
 - D) Both are maps — Terraform converts all `for` expression outputs to maps for consistency
 
+---
+
 ### Question 53 — `zipmap()` Result
 
 **Difficulty**: Easy
@@ -1414,6 +1520,8 @@ What is the value of `local.region_map`?
 - B) `{ "us-east-1" = "prod-east", "eu-west-1" = "prod-west" }` — the first list provides keys and the second provides values
 - C) `{ "prod-east" = "us-east-1", "prod-west" = "eu-west-1" }` — `zipmap` uses the second list as keys
 - D) Terraform returns an error because `zipmap` requires both lists to have the same value type
+
+---
 
 ### Question 54 — `dynamic` Block with Custom `iterator` Name
 
@@ -1456,6 +1564,8 @@ Inside the `content` block, what does `rule.value.from_port` reference, and why 
 - C) `rule` is a reserved keyword in Terraform that automatically references the loop variable regardless of the `iterator` setting
 - D) `ingress.value.from_port` should always be used in `content` blocks; `rule` is only valid outside the `dynamic` block
 
+---
+
 ### Question 55 — `for` Map Comprehension with Key Transformation
 
 **Difficulty**: Medium
@@ -1485,6 +1595,8 @@ What is the value of `local.env_labels`?
 - C) `{ DEV = "US-EAST-1", PROD = "EU-WEST-1" }` — `upper()` is applied to both keys and values
 - D) Terraform returns an error because `upper()` cannot be called in the key position of a `for` expression
 
+---
+
 ### Question 56 — `cidrhost()` Returns a Host IP
 
 **Difficulty**: Medium
@@ -1509,6 +1621,8 @@ What is the value of `local.gateway_ip`?
 - C) `"10.0.0.1"` — `cidrhost()` subtracts from the network address
 - D) `"10.0.1.0/24"` — `cidrhost()` returns the full CIDR notation, not a bare IP
 
+---
+
 ### Question 57 — `concat()` Combines Two Lists
 
 **Difficulty**: Medium
@@ -1532,6 +1646,8 @@ What is the value of `local.all_ips`?
 - B) `[["10.0.1.10", "10.0.1.11"], ["10.0.2.10"]]` — `concat()` creates a nested list preserving the original structure
 - C) `{ web = ["10.0.1.10", "10.0.1.11"], app = ["10.0.2.10"] }` — `concat()` converts the lists to a map
 - D) `"10.0.1.10,10.0.1.11,10.0.2.10"` — `concat()` joins the lists into a comma-separated string
+
+---
 
 ### Question 58 — `jsonencode()` Output Type
 
@@ -1562,6 +1678,8 @@ What is the type of `local.policy`, and how is it used in practice?
 - C) `map(string)` — `jsonencode()` flattens all nested structures into a flat string-to-string map
 - D) `list(string)` — `jsonencode()` converts each top-level key into a separate string element
 
+---
+
 ### Question 59 — `validation` Block Condition Evaluation
 
 **Difficulty**: Medium
@@ -1588,6 +1706,8 @@ An engineer runs `terraform plan -var="environment=test"`. What happens?
 - B) Terraform evaluates `contains(["dev", "staging", "production"], "test")` as `false` and raises a validation error with the `error_message` before planning begins
 - C) The plan proceeds and Terraform issues a warning, but does not fail
 - D) Terraform evaluates the condition as `true` because `"test"` is not `null`
+
+---
 
 ### Question 60 — `can()` and `try()` on a Missing Map Key
 
@@ -1618,6 +1738,8 @@ Which TWO statements correctly describe the values of `local.has_retry` and `loc
 - B) `local.has_retry` is `true` — `can()` returns `true` whenever the variable exists, regardless of its keys
 - C) `local.safe_retry` is `5` — `try()` evaluates `var.config["retry_count"]`, gets an error because the key is absent, then returns the fallback value `5`
 - D) `local.safe_retry` is `null` — `try()` always returns `null` when the primary expression fails
+
+---
 
 ### Question 61 — `for_each` Map: Identifying `each.value` for a Named Key
 
@@ -1655,6 +1777,8 @@ For the resource instance `aws_instance.servers["app"]`, what is the `instance_t
 - C) `"t3.small"` — `each.value` for the `"app"` key resolves to `"t3.small"` from `var.instance_sizes`
 - D) `each.key` — `instance_type` takes the key name, not the value
 
+---
+
 ### Question 62 — `for` Expression with `if` Filter on a Map
 
 **Difficulty**: Hard
@@ -1686,6 +1810,8 @@ Which TWO statements correctly describe `local.admins`? (Select two.)
 - C) `local.admins` contains exactly two elements: the names of users whose role equals `"admin"`
 - D) `local.admins` contains all four user names — the `if` clause is only advisory and does not exclude elements
 
+---
+
 ### Question 63 — `for` Expression with `cidrsubnet()` Applied to Index
 
 **Difficulty**: Hard
@@ -1711,6 +1837,8 @@ Which TWO statements correctly describe `local.subnet_cidrs`? (Select two.)
 - B) The first element of `local.subnet_cidrs` is `"10.0.1.0/24"` — `idx` starts at 1 for `for` expressions over lists
 - C) The third element of `local.subnet_cidrs` is `"10.0.2.0/24"` — `idx` is 2 for the third element, and `cidrsubnet("10.0.0.0/16", 8, 2)` produces that CIDR
 - D) `local.subnet_cidrs` is a map keyed by AZ name — iterating a list with `for idx, az in ...` produces a map
+
+---
 
 ### Question 64 — `validation` Condition with `startswith()`
 
@@ -1738,6 +1866,8 @@ Which value satisfies this `validation` condition?
 - B) `"T3.micro"` — the prefix `"T3."` is equivalent to `"t3."` in Terraform comparisons
 - C) `"t3.small"` — the value begins with `"t3."`, satisfying the `startswith()` condition
 - D) `"m5.t3.large"` — contains `"t3."` somewhere in the string
+
+---
 
 ### Question 65 — `self` Reference in a `postcondition`
 
@@ -1769,6 +1899,8 @@ What does `self` refer to inside the `postcondition`, and when is this block eva
 - C) `self` refers to the entire Terraform module containing the resource; it is evaluated during `terraform validate`
 - D) `self` is a shorthand for `this` and refers to the variable block declaring the resource type
 
+---
+
 ### Question 66 — `check` Block `error_message` Interpolation
 
 **Difficulty**: Easy
@@ -1797,6 +1929,8 @@ The health endpoint returns HTTP status `503`. What does Terraform display?
 - B) No message — `check` blocks produce only a generic "assertion failed" notice without custom text
 - C) `"Health check failed: got 200, expected 200."` — the message always interpolates the expected value
 - D) Terraform raises a fatal error instead of a warning because the endpoint is unreachable
+
+---
 
 ### Question 67 — Variable with Two `validation` Blocks
 
@@ -1829,6 +1963,8 @@ Which value satisfies **both** validation conditions?
 - B) `1023` — one below the unprivileged port boundary
 - C) `8080` — an unprivileged port within the valid range
 - D) `70000` — above the maximum valid port number
+
+---
 
 ### Question 68 — `precondition` Referencing a Data Source Attribute
 
@@ -1865,6 +2001,8 @@ The data source resolves to an AMI with `architecture = "arm64"`. What happens d
 - C) Terraform silently skips the architecture check and creates the instance because the type constraint is satisfied
 - D) The plan succeeds but apply pauses for interactive confirmation before creating the instance
 
+---
+
 ### Question 69 — `check` Block Without a Scoped Data Source
 
 **Difficulty**: Medium
@@ -1889,6 +2027,8 @@ After `terraform apply`, the ASG is created spanning only one availability zone,
 - B) Terraform emits a warning with the `error_message` and completes apply successfully — the ASG is created
 - C) Terraform destroys the ASG and recreates it across 2 AZs to satisfy the assertion
 - D) The `check` block is ignored because it does not contain a scoped `data` source
+
+---
 
 ### Question 70 — Sensitivity Propagation Through `locals` to Two Outputs
 
@@ -1926,6 +2066,8 @@ Which output requires `sensitive = true` to be explicitly added, and why?
 - C) Only `db_url_output` — `local.db_url` interpolates the sensitive variable, making it sensitive; `local.greeting` does not reference any sensitive value
 - D) Only `greeting_output` — it is the non-sensitive output and must be explicitly marked to prevent accidental exposure
 
+---
+
 ### Question 71 — Lifecycle Block with Both `precondition` and `postcondition`
 
 **Difficulty**: Medium
@@ -1962,6 +2104,8 @@ Which TWO statements correctly describe when each condition is evaluated? (Selec
 - C) If `var.db_instance_class` is `"db.t3.micro"`, the `precondition` fails and the database is never created
 - D) `self.endpoint` in the `postcondition` refers to the endpoint from the previous state, not the newly provisioned instance
 
+---
+
 ### Question 72 — Sensitive Variable Through `local` to Resource Argument
 
 **Difficulty**: Medium
@@ -1995,6 +2139,8 @@ What does `terraform plan` display for the `value` argument of `aws_ssm_paramete
 - C) `"Server=db.example.com;Password=(sensitive value)"` — Terraform partially redacts only the sensitive portion
 - D) An error — locals cannot interpolate sensitive variables; they must be referenced directly in resource arguments
 
+---
+
 ### Question 73 — `validation` with `&&` — Identifying Values That Pass
 
 **Difficulty**: Medium
@@ -2021,6 +2167,8 @@ Which TWO values satisfy **both** parts of the `&&` condition? (Select two.)
 - B) `"192.168.1.0/24"` — standard private CIDR
 - C) `"10.0.1.0"` — starts with `"10."` and `split(".", "10.0.1.0")` produces 4 segments
 - D) `"10.0.0"` — starts with `"10."` but only 3 dot-separated segments
+
+---
 
 ### Question 74 — `precondition` with `can(regex())` Pattern
 
@@ -2056,6 +2204,8 @@ What does this `precondition` check, and what is the effect of using `can()` aro
 - B) It checks that the AMI ID returned by the data source matches the expected `ami-xxxxxxxx` format before the instance is created; `can()` catches a regex error (e.g., if the AMI ID is null) and returns `false` instead of propagating the error
 - C) It runs after the instance is created and inspects `self.ami`; `can()` is required to access `self` attributes safely
 - D) It runs during `terraform validate` and does not require provider credentials; `can()` provides the null-safety needed for offline validation
+
+---
 
 ### Question 75 — Three Condition Mechanisms for `var.env = "dev"`
 
@@ -2105,6 +2255,8 @@ With `var.env = "dev"`, which TWO statements correctly describe Terraform's beha
 - C) Snippet 2's `precondition` fails — `"dev" == "prod"` is `false`; apply halts before `aws_instance.web` is created
 - D) Snippet 3's `check` block fails — `"dev" != ""` is `false`, so a warning is emitted
 
+---
+
 ### Question 76 — S3 Backend `encrypt = true`
 
 **Difficulty**: Easy
@@ -2133,6 +2285,8 @@ What does the `encrypt = true` argument configure?
 - C) It enables server-side encryption (SSE) on the state object stored in S3, so the file is encrypted at rest in the bucket
 - D) It generates and rotates a local encryption key stored in `.terraform/` that wraps all sensitive values
 
+---
+
 ### Question 77 — Module Source Git `?ref=` Query Parameter
 
 **Difficulty**: Easy
@@ -2154,6 +2308,8 @@ What does the `?ref=v2.0.0` query parameter specify?
 - B) It sets a registry version constraint equivalent to `version = "~> 2.0"` for the module
 - C) It pins the module source to the `v2.0.0` git ref — which may be a tag, branch name, or commit SHA
 - D) It instructs `terraform init` to validate that a GitHub Release named `v2.0.0` exists before downloading
+
+---
 
 ### Question 78 — Module Output Reference with List Index
 
@@ -2184,6 +2340,8 @@ What does `module.networking.public_subnet_ids[0]` evaluate to?
 - C) The entire `public_subnet_ids` list — the `[0]` notation on a module output selects the full output, not a single element
 - D) An error — module output references cannot be indexed with `[0]`; the full list must be assigned to a local first
 
+---
+
 ### Question 79 — DynamoDB Lock Table `hash_key = "LockID"`
 
 **Difficulty**: Medium
@@ -2212,6 +2370,8 @@ Why must `hash_key` be set to exactly `"LockID"`, and not any other name?
 - B) The Terraform S3 backend hardcodes the partition key attribute name `"LockID"` when writing and reading lock records — using any other name causes locking to fail
 - C) `"LockID"` is required by the DynamoDB service API for all tables that will be accessed by AWS SDKs
 - D) The value `"LockID"` is stored as the item value and must match the S3 bucket name in the backend block
+
+---
 
 ### Question 80 — Module `for_each` Map — Instance Addresses
 
@@ -2242,6 +2402,8 @@ What are the state addresses for the two module instances?
 - C) `module.production` and `module.staging` — the map key replaces the module block label in state
 - D) `module.vpc.production` and `module.vpc.staging` — dot notation is used for map-keyed module instances
 
+---
+
 ### Question 81 — S3 Backend `key` Argument
 
 **Difficulty**: Medium
@@ -2268,6 +2430,8 @@ What does the `key` argument specify?
 - C) The S3 object key (path and filename within the bucket) where Terraform writes and reads the state file
 - D) The KMS key ID for server-side encryption — required when the bucket enforces SSE-KMS
 
+---
+
 ### Question 82 — Module `count = 2` — Instance Addresses and `count.index`
 
 **Difficulty**: Medium
@@ -2292,6 +2456,8 @@ Which TWO statements correctly describe the instances created by this `count = 2
 - B) The two instances are addressed as `module.web_server_0` and `module.web_server_1` — underscores replace brackets for count-indexed modules
 - C) Inside the `module` block, `count.index` is available in argument expressions such as `"web-${count.index}"`, evaluating to `0` for the first instance and `1` for the second
 - D) `count.index` is not usable within a `module` block — it is only valid inside `resource` blocks
+
+---
 
 ### Question 83 — Module `depends_on` Argument
 
@@ -2323,6 +2489,8 @@ What does `depends_on = [aws_iam_role_policy_attachment.lambda_logs]` achieve in
 - B) It creates an explicit dependency edge ensuring that `aws_iam_role_policy_attachment.lambda_logs` is fully applied before any resource inside `module.lambda_function` is created
 - C) It applies the dependency only to the first resource declared inside the module — subsequent module resources still run in parallel with the policy attachment
 - D) It is redundant because Terraform already infers this dependency from the `role_arn = aws_iam_role.lambda.arn` attribute reference
+
+---
 
 ### Question 84 — Missing Required Variable in Module Call
 
@@ -2358,6 +2526,8 @@ What error does `terraform plan` produce with this configuration?
 - C) Terraform raises an error because the required input variable `db_password` has no value — it has no default and is not passed in the `module` block
 - D) Terraform raises an error because `instance_class` is not passed — all module variables must be explicitly provided
 
+---
+
 ### Question 85 — `terraform state list` Output — Module Resource Address Format
 
 **Difficulty**: Medium
@@ -2382,6 +2552,8 @@ Which TWO statements correctly describe what this output reveals about the confi
 - C) `aws_security_group.web` is managed by a child module — the absence of a `module.` prefix means Terraform omitted the module path for brevity
 - D) `module.vpc.aws_subnet.public[0]` and `module.vpc.aws_subnet.public[1]` are two separate modules with numeric labels
 
+---
+
 ### Question 86 — `version = "~> 5.0"` Registry Constraint Range
 
 **Difficulty**: Medium
@@ -2404,6 +2576,8 @@ What range of module versions does `"~> 5.0"` allow `terraform init` to select?
 - B) Any version `>= 5.0` with no upper bound — including `6.0`, `7.0`, and beyond
 - C) Any version `>= 5.0` and `< 6.0` — the `~>` operator locks the major version and allows the minor to increment freely
 - D) Any version `>= 5.0.0` and `< 5.1.0` — the constraint only allows patch releases within `5.0.x`
+
+---
 
 ### Question 87 — Module `providers` Argument with Provider Aliases
 
@@ -2449,6 +2623,8 @@ What does the `providers` argument in each `module` block achieve?
 - C) It creates a new isolated provider instance scoped only to that module — the root module loses access to the provider credentials passed to the child
 - D) It is required for all module blocks — without a `providers` argument, child modules cannot access any provider configuration
 
+---
+
 ### Question 88 — Nested Module Variable Passing Chain
 
 **Difficulty**: Hard
@@ -2486,6 +2662,8 @@ Which TWO statements correctly describe the outcome of running `terraform plan`?
 - C) The value `"prod"` flows from the root through `module.app` into `module.db` as a module-scope global because all three declare a `variable "env"` with the same name
 - D) To resolve the error, the `module "db"` block inside `modules/app/main.tf` must explicitly pass `env = var.env`, where `var.env` refers to the `env` input of `modules/app`
 
+---
+
 ### Question 89 — `import` Block `to` Argument
 
 **Difficulty**: Easy
@@ -2509,6 +2687,8 @@ What does the `to` argument specify?
 - C) The destination file path where Terraform writes the generated HCL configuration for the imported resource
 - D) The key path within the state file where the imported resource will be stored
 
+---
+
 ### Question 90 — `terraform show plan.tfplan`
 
 **Difficulty**: Easy
@@ -2530,6 +2710,8 @@ What does the second command render?
 - C) A human-readable view of the saved execution plan in `plan.tfplan`, showing the proposed creates, updates, and destroys
 - D) An error — `terraform show` can only read the current state file and does not accept a plan file as an argument
 
+---
+
 ### Question 91 — `TF_LOG=WARN` Message Filtering
 
 **Difficulty**: Easy
@@ -2550,6 +2732,8 @@ Which log messages does setting `TF_LOG=WARN` produce during the apply?
 - B) WARN and ERROR messages — the log level acts as a minimum severity threshold
 - C) INFO, WARN, and ERROR messages — WARN is a mid-level filter that includes less-verbose levels above it
 - D) All log levels — WARN enables logging but does not filter by severity
+
+---
 
 ### Question 92 — `terraform plan -generate-config-out` Produced File
 
@@ -2582,6 +2766,8 @@ Which command produced this file, and under what conditions?
 - C) `terraform state show aws_s3_bucket.legacy_assets > generated.tf` — the state show output was redirected into a file
 - D) `terraform init` — provider initialisation generates scaffold configuration files for each resource type the provider supports
 
+---
+
 ### Question 93 — `cloud` Block with `tags` Workspace Selector
 
 **Difficulty**: Medium
@@ -2609,6 +2795,8 @@ Which workspaces in the `acme-corp` organisation does this configuration connect
 - B) Any workspace that has AT LEAST ONE of the listed tags: either `component=networking` OR `env=production`
 - C) Any workspace that has ALL of the listed tags: both `component=networking` AND `env=production`
 - D) Only the workspace whose name matches the first tag value: `"component=networking"`
+
+---
 
 ### Question 94 — `terraform_remote_state` Output Reference Value
 
@@ -2650,6 +2838,8 @@ What is the value of `output.app_subnet`?
 - C) The ARN of the subnet — `terraform_remote_state` resolves subnet IDs to ARNs automatically
 - D) `null` — cross-workspace remote state output references always evaluate to null during the first plan
 
+---
+
 ### Question 95 — `TF_LOG_PROVIDER=TRACE` Without `TF_LOG`
 
 **Difficulty**: Medium
@@ -2671,6 +2861,8 @@ What logging does Terraform produce?
 - B) TRACE-level logs for provider plugins only; Terraform core produces no logs
 - C) TRACE-level logs for all components — setting `TF_LOG_PROVIDER=TRACE` implicitly enables `TF_LOG=TRACE` for core as well
 - D) An error is raised — `TF_LOG_PROVIDER` requires `TF_LOG` to be configured first to establish a baseline level
+
+---
 
 ### Question 96 — Sentinel Policy Snippet Interpretation
 
@@ -2703,6 +2895,8 @@ Which TWO statements correctly describe this policy? (Select two.)
 - B) If a resource has `tags` explicitly set to an empty map `{}`, it is added to the `untagged` collection and causes a policy failure
 - C) A policy failure at `soft-mandatory` can be overridden by a user who has the "Manage Policy Overrides" permission, allowing the run to proceed
 - D) If the `main` rule returns `false`, the run is blocked and cannot proceed under any circumstances regardless of user permissions
+
+---
 
 ### Question 97 — `workspaces.name` vs `workspaces.tags` in `cloud` Block
 
@@ -2744,6 +2938,8 @@ What is the key behavioral difference between Config A and Config B?
 - C) Both configurations connect to the same workspace — `name = "production"` and `tags = ["env=production"]` are equivalent expressions when the workspace name matches the tag value
 - D) Config B connects to the HCP Terraform default workspace; `tags` is a UI display filter and not a workspace selector
 
+---
+
 ### Question 98 — `import` Block vs CLI Import Differences
 
 **Difficulty**: Medium
@@ -2773,6 +2969,8 @@ Which TWO statements correctly describe a difference between Method A and Method
 - C) Method A requires a pre-existing `resource "aws_instance" "app"` block just like Method B — both methods require the resource block to already exist
 - D) Method A and Method B produce identical results in every way — the `import` block is simply a declarative wrapper around the same imperative operation
 
+---
+
 ### Question 99 — `TF_TOKEN_app_terraform_io` vs `terraform login`
 
 **Difficulty**: Medium
@@ -2794,6 +2992,8 @@ What does setting `TF_TOKEN_app_terraform_io` achieve, and why is it preferred o
 - B) It provides authentication to HCP Terraform via an environment variable, avoiding the need to store a token file on disk — the recommended approach for CI/CD pipelines where no persistent home directory exists
 - C) It sets a short-lived session token scoped to the current shell; `terraform login` generates a longer-lived token with broader permissions
 - D) The variable is consumed only by `terraform init`; subsequent `plan` and `apply` commands require re-exporting the variable in separate shell steps
+
+---
 
 ### Question 100 — `hard-mandatory` Sentinel Policy Override Attempt by Owner
 
@@ -2819,6 +3019,8 @@ An engineer creates an `aws_s3_bucket` without encryption. The `main` rule evalu
 - B) The override button is visible but is disabled with a tooltip explaining that `hard-mandatory` policies cannot be overridden via the UI
 - C) There is no override option presented in the HCP Terraform UI — `hard-mandatory` policies display the failure with no mechanism to proceed
 - D) The override succeeds only if the Owner is also a member of the team that manages the failing policy set
+
+---
 
 ### Question 101 — Three Logging Variables in Combination
 

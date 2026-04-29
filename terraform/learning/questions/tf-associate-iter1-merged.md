@@ -1,6 +1,9 @@
 # Terraform Associate Exam Questions
 
+---
+
 ### Question 1 — IaC Definition
+
 
 **Difficulty**: Easy
 **Answer Type**: one
@@ -13,6 +16,9 @@ Which of the following best defines Infrastructure as Code (IaC)?
 - B) The practice of managing and provisioning infrastructure through machine-readable configuration files instead of manual processes
 - C) A scripting approach where an operator runs CLI commands in sequence to build servers
 - D) A monitoring strategy that detects when infrastructure deviates from a known baseline
+
+---
+
 ### Question 2 — Desired State vs Current State
 
 **Difficulty**: Easy
@@ -26,6 +32,9 @@ In the context of Terraform, what does "desired state" refer to?
 - B) The previous version of infrastructure before the last `terraform apply`
 - C) What your `.tf` configuration files say the infrastructure should look like
 - D) The contents of the `terraform.tfstate` file after the last successful apply
+
+---
+
 ### Question 3 — Idempotency
 
 **Difficulty**: Medium
@@ -39,6 +48,9 @@ A Terraform configuration that creates three EC2 instances is applied successful
 - B) Terraform destroys the existing instances and recreates them
 - C) Terraform reports that no changes are needed and makes no modifications
 - D) Terraform returns an error because the resources already exist
+
+---
+
 ### Question 4 — Declarative vs Imperative
 
 **Difficulty**: Medium
@@ -52,6 +64,9 @@ Which statement correctly describes the declarative approach used by Terraform?
 - B) You describe the desired end state of your infrastructure and Terraform determines the steps required to reach it
 - C) You provide Terraform with shell scripts that it executes in order on the target cloud provider
 - D) You specify only the resources to delete; Terraform infers what should be created from provider defaults
+
+---
+
 ### Question 5 — IaC Benefits
 
 **Difficulty**: Medium
@@ -65,6 +80,9 @@ Which TWO of the following are recognized benefits of managing infrastructure wi
 - B) Every infrastructure change is captured as a version-controlled commit, providing a full audit trail
 - C) Provider-specific web consoles become unnecessary and are disabled by the IaC tool
 - D) Identical environments can be reproduced reliably from the same configuration code
+
+---
+
 ### Question 6 — Multi-Cloud Support
 
 **Difficulty**: Medium
@@ -78,6 +96,9 @@ Which of the following best describes Terraform's approach to managing resources
 - B) Terraform can manage resources across AWS, Azure, GCP, and other providers within a single workflow using provider plugins
 - C) Terraform delegates cross-cloud provisioning to AWS CloudFormation, which acts as a broker
 - D) Terraform supports only one cloud provider per workspace; multi-cloud requires separate root modules that cannot share state
+
+---
+
 ### Question 7 — IaC Tooling Landscape
 
 **Difficulty**: Medium
@@ -91,6 +112,9 @@ An operator wants to provision infrastructure on both AWS and Azure from a singl
 - B) Azure Resource Manager (ARM) templates
 - C) Terraform
 - D) Google Cloud Deployment Manager
+
+---
+
 ### Question 8 — Drift Detection
 
 **Difficulty**: Medium
@@ -104,6 +128,9 @@ What is "infrastructure drift" in the context of IaC?
 - B) A discrepancy between the infrastructure described in configuration files and the actual infrastructure that exists in the cloud
 - C) The latency introduced when Terraform communicates with a remote cloud API
 - D) A versioning conflict between two different Terraform providers
+
+---
+
 ### Question 9 — IaC vs Manual Provisioning
 
 **Difficulty**: Medium
@@ -117,6 +144,9 @@ Which TWO of the following are drawbacks of manually provisioning infrastructure
 - B) Manual changes leave no automatic version-controlled audit trail of who changed what and when
 - C) Manually provisioned environments are difficult to reproduce identically, leading to environment inconsistencies
 - D) Web consoles do not support creating virtual machines or networking resources
+
+---
+
 ### Question 10 — Declarative vs Imperative Tools
 
 **Difficulty**: Hard
@@ -130,6 +160,9 @@ A team currently uses Ansible playbooks to configure servers step by step and is
 - B) Both Ansible and Terraform are declarative; they differ only in the cloud providers they support
 - C) Ansible playbooks are primarily imperative — specifying steps to execute; Terraform is declarative — specifying the desired end state
 - D) Terraform is imperative for resource creation but declarative for resource deletion
+
+---
+
 ### Question 11 — IaC and Disaster Recovery
 
 **Difficulty**: Hard
@@ -143,6 +176,9 @@ A production environment is completely lost due to a datacenter failure. The tea
 - B) The team can run `terraform apply` using the existing configuration to recreate the entire environment reproducibly, with the state backup used to avoid recreating already-restored resources
 - C) The team must first run `terraform import` for every resource before any apply can proceed
 - D) IaC helps only if the same Terraform version that created the original infrastructure is installed
+
+---
+
 ### Question 12 — IaC Audit Trail
 
 **Difficulty**: Medium
@@ -156,6 +192,9 @@ Which TWO of the following capabilities does storing Terraform configuration in 
 - B) A historical record of every infrastructure change, including who made it and when
 - C) The ability to review proposed infrastructure changes through pull requests before they are applied
 - D) Real-time synchronization of cloud resources with the repository without needing `terraform apply`
+
+---
+
 ### Question 13 — Provider Definition
 
 **Difficulty**: Easy
@@ -169,6 +208,9 @@ Which of the following best describes a Terraform provider?
 - B) A plugin that bridges Terraform's HCL configuration to a target cloud or service API
 - C) A built-in Terraform block that defines authentication credentials in a `.tf` file
 - D) A version of the Terraform CLI binary compiled for a specific operating system
+
+---
+
 ### Question 14 — Provider Tiers
 
 **Difficulty**: Easy
@@ -182,6 +224,9 @@ Terraform providers are classified into three tiers. Which tier is maintained di
 - B) Partner
 - C) Official
 - D) Verified
+
+---
+
 ### Question 15 — Plugin Architecture Communication
 
 **Difficulty**: Medium
@@ -195,6 +240,9 @@ How does Terraform Core communicate with a provider plugin during execution?
 - B) Via HTTP REST API calls to a locally running provider web server
 - C) Via gRPC, with the provider running as a separate process from Terraform Core
 - D) Through shared memory mapped files in the `.terraform/` directory
+
+---
+
 ### Question 16 — Provider Source Address Format
 
 **Difficulty**: Medium
@@ -208,6 +256,9 @@ A `required_providers` block declares `source = "hashicorp/aws"`. What is the fu
 - B) `registry.terraform.io/hashicorp/aws`
 - C) `releases.hashicorp.com/hashicorp/aws`
 - D) `hashicorp.com/terraform/providers/aws`
+
+---
+
 ### Question 17 — `terraform init` Provider Download
 
 **Difficulty**: Medium
@@ -221,6 +272,9 @@ When `terraform init` is run, where are provider plugins downloaded to?
 - B) `terraform.tfstate`
 - C) `.terraform/providers/`
 - D) `providers.lock/`
+
+---
+
 ### Question 18 — Dependency Lock File
 
 **Difficulty**: Medium
@@ -234,6 +288,9 @@ What is the purpose of the `.terraform.lock.hcl` file, and how should it be trea
 - B) It records exact provider versions and checksums installed; it must be committed to version control
 - C) It is a temporary cache file generated on each `terraform init` run and should be added to `.gitignore`
 - D) It stores encrypted provider credentials and must be committed but kept private
+
+---
+
 ### Question 19 — Pessimistic Constraint Operator
 
 **Difficulty**: Medium
@@ -247,6 +304,9 @@ A `required_providers` block specifies `version = "~> 5.0"` for the AWS provider
 - B) Any version >= 5.0.0 with no upper limit
 - C) Any version >= 5.0 and < 6.0 (minor and patch updates within major version 5)
 - D) Any version >= 5.0.0 and < 5.1.0 (patch updates only within minor version 5.0)
+
+---
+
 ### Question 20 — Provider Alias
 
 **Difficulty**: Medium
@@ -260,6 +320,9 @@ When is a provider `alias` required in a Terraform configuration?
 - B) When more than one configuration of the same provider is needed, such as managing resources in multiple regions
 - C) Whenever a provider version constraint is specified in the `required_providers` block
 - D) When Terraform is run with a non-default workspace
+
+---
+
 ### Question 21 — What `terraform.tfstate` Stores
 
 **Difficulty**: Medium
@@ -273,6 +336,9 @@ What does the `terraform.tfstate` file contain?
 - B) A log of every `terraform apply` command that has been executed
 - C) A JSON mapping of Terraform resource addresses to their real-world resource IDs and attributes
 - D) The compiled binary representation of a Terraform execution plan
+
+---
+
 ### Question 22 — Three Sources During Plan
 
 **Difficulty**: Medium
@@ -286,6 +352,9 @@ When `terraform plan` runs, Terraform compares information from multiple sources
 - B) The `.tf` configuration files representing the desired state
 - C) The `terraform.tfstate` file representing the last-known resource state
 - D) The `.terraform.lock.hcl` file representing installed provider versions
+
+---
+
 ### Question 23 — Local vs Remote State
 
 **Difficulty**: Hard
@@ -299,6 +368,9 @@ Which of the following is a characteristic of local Terraform state that makes i
 - B) Local state provides no locking mechanism, meaning concurrent `terraform apply` runs by different team members can corrupt state
 - C) Local state is automatically deleted after each `terraform apply` completes
 - D) Local state cannot store resource attribute values, only resource addresses
+
+---
+
 ### Question 24 — `sensitive = true` and State
 
 **Difficulty**: Hard
@@ -312,6 +384,9 @@ A Terraform output is declared with `sensitive = true`. What is the effect of th
 - B) The value is redacted from `terraform.tfstate` entirely and stored in a separate secrets file
 - C) The value is masked in terminal output but is still stored in plaintext in `terraform.tfstate`
 - D) The value is masked in terminal output and also removed from any remote backend storage
+
+---
+
 ### Question 25 — `terraform state` Commands
 
 **Difficulty**: Medium
@@ -325,6 +400,9 @@ Which TWO `terraform state` subcommands would be appropriate for inspecting stat
 - B) `terraform state list`
 - C) `terraform state push`
 - D) `terraform state show`
+
+---
+
 ### Question 26 — Core Workflow Sequence
 
 **Difficulty**: Easy
@@ -338,6 +416,9 @@ Which of the following represents the correct core Terraform workflow sequence?
 - B) `init → fmt → validate → plan → apply → destroy`
 - C) `fmt → init → plan → validate → apply → destroy`
 - D) `init → plan → validate → fmt → apply → destroy`
+
+---
+
 ### Question 27 — `terraform init` Purpose
 
 **Difficulty**: Easy
@@ -351,6 +432,9 @@ Which of the following is a primary action performed by `terraform init`?
 - B) It downloads required provider plugins into the `.terraform/` directory
 - C) It validates that all resource configurations are syntactically correct
 - D) It formats all `.tf` files in the working directory to canonical style
+
+---
+
 ### Question 28 — When to Re-run `terraform init`
 
 **Difficulty**: Medium
@@ -364,6 +448,9 @@ In which TWO situations must `terraform init` be re-run? (Select two.)
 - B) When an output value is added to an existing module
 - C) When the backend configuration is changed to a different provider
 - D) When a variable default value is updated in `variables.tf`
+
+---
+
 ### Question 29 — `terraform validate` Network Requirement
 
 **Difficulty**: Medium
@@ -377,6 +464,9 @@ Which statement correctly describes `terraform validate`?
 - B) It performs a live API call to confirm that the AMI ID or other resource identifiers in the config are valid
 - C) It checks configuration syntax and internal references without requiring network access or provider credentials
 - D) It generates a full execution plan and outputs the number of resources that will be created, updated, or destroyed
+
+---
+
 ### Question 30 — `terraform fmt` Flags
 
 **Difficulty**: Medium
@@ -390,6 +480,9 @@ What is the purpose of the `-check` flag on `terraform fmt`?
 - B) It validates the syntax of all HCL files but does not reformat them
 - C) It exits with a non-zero exit code if any files need reformatting, without modifying them — useful for CI pipelines
 - D) It checks whether provider versions are compatible with the current Terraform version
+
+---
+
 ### Question 31 — `terraform plan -out` Flag
 
 **Difficulty**: Medium
@@ -403,6 +496,9 @@ What is the benefit of running `terraform plan -out=plan.tfplan` followed by `te
 - B) It guarantees that the exact set of changes reviewed in `plan` is applied, with no drift between the two steps
 - C) It compresses the plan file so that it can be stored in version control alongside `.tf` files
 - D) It allows `terraform apply` to run without any state file present
+
+---
+
 ### Question 32 — Plan Output Symbols
 
 **Difficulty**: Medium
@@ -416,6 +512,9 @@ In `terraform plan` output, what does the symbol `-/+` indicate will happen to a
 - B) The resource will be imported into state from an existing infrastructure object
 - C) The resource will be destroyed and then recreated (replacement)
 - D) The resource will be moved to a different Terraform workspace
+
+---
+
 ### Question 33 — `terraform apply -auto-approve`
 
 **Difficulty**: Medium
@@ -429,6 +528,9 @@ What does the `-auto-approve` flag do when passed to `terraform apply`?
 - B) It skips the interactive confirmation prompt before applying changes — commonly used in CI/CD pipelines
 - C) It approves all individual resource creation steps sequentially without pausing
 - D) It causes Terraform to apply changes to approved resources only and skip unapproved ones
+
+---
+
 ### Question 34 — `terraform apply -replace`
 
 **Difficulty**: Medium
@@ -442,6 +544,9 @@ Which command is the current (Terraform 1.5+) recommended way to force a specifi
 - B) `terraform apply -replace="aws_instance.web"`
 - C) `terraform destroy -target=aws_instance.web` followed by `terraform apply`
 - D) `terraform state rm aws_instance.web` followed by `terraform apply`
+
+---
+
 ### Question 35 — `terraform output -raw`
 
 **Difficulty**: Medium
@@ -455,6 +560,9 @@ What does `terraform output -raw db_password` return, and when is this flag usef
 - B) The raw string value with no surrounding quotes — useful when piping the value into scripts or other commands
 - C) The encrypted form of the output value for use with external secrets managers
 - D) A diff showing the current output value versus the previous apply's value
+
+---
+
 ### Question 36 — `terraform console` Purpose
 
 **Difficulty**: Medium
@@ -468,6 +576,9 @@ What is the primary purpose of `terraform console`?
 - B) To provide an interactive REPL where Terraform expressions and built-in functions can be tested
 - C) To monitor the progress of a running `terraform apply` operation in real time
 - D) To inspect and modify resource attributes in the state file interactively
+
+---
+
 ### Question 37 — `terraform destroy` Equivalence
 
 **Difficulty**: Hard
@@ -481,6 +592,9 @@ Which statement about `terraform destroy` is correct?
 - B) `terraform destroy` is equivalent to `terraform apply -destroy` and both prompt for confirmation by default
 - C) `terraform destroy` only removes resources created in the current workspace, while `terraform apply -destroy` removes all workspaces
 - D) `terraform destroy` is deprecated and has been replaced by `terraform apply -destroy` in Terraform 1.5+
+
+---
+
 ### Question 38 — `terraform fmt` and `terraform validate` Scope
 
 **Difficulty**: Hard
@@ -494,6 +608,9 @@ Which TWO of the following issues would `terraform validate` detect but `terrafo
 - B) A variable referenced in a resource block that is not declared anywhere in the configuration
 - C) Misaligned `=` signs in argument assignments
 - D) An unsupported argument name passed to a resource type
+
+---
+
 ### Question 39 — Resource Block Syntax
 
 **Difficulty**: Easy
@@ -507,6 +624,9 @@ Which of the following correctly shows the required structure of a Terraform res
 - B) `resource "aws_instance" "web" { ... }`
 - C) `resource aws_instance web { ... }`
 - D) `provider "aws_instance" "web" { ... }`
+
+---
+
 ### Question 40 — Data Source Purpose
 
 **Difficulty**: Easy
@@ -520,6 +640,9 @@ What is the purpose of a `data` block in a Terraform configuration?
 - B) To query an existing infrastructure object in read-only mode without creating or managing it
 - C) To store sensitive values such as passwords and API keys securely
 - D) To declare default values for input variables used across modules
+
+---
+
 ### Question 41 — Data Source Reference Format
 
 **Difficulty**: Medium
@@ -533,6 +656,9 @@ A data source is declared as `data "aws_ami" "ubuntu" { ... }`. What is the corr
 - B) `data.ubuntu.aws_ami.id`
 - C) `data.aws_ami.ubuntu.id`
 - D) `source.aws_ami.ubuntu.id`
+
+---
+
 ### Question 42 — Meta-Arguments Available to All Resources
 
 **Difficulty**: Medium
@@ -546,6 +672,9 @@ Which TWO of the following are valid meta-arguments that can be added to any Ter
 - B) `depends_on`
 - C) `backend`
 - D) `lifecycle`
+
+---
+
 ### Question 43 — Implicit vs Explicit Dependencies
 
 **Difficulty**: Medium
@@ -559,6 +688,9 @@ What causes Terraform to automatically create an implicit dependency between two
 - B) One resource's argument referencing an attribute of another resource (e.g., `aws_vpc.main.id`)
 - C) Both resources being declared in the same `.tf` file
 - D) A `var.*` or `local.*` value being used in both resource blocks
+
+---
+
 ### Question 44 — `depends_on` Use Case
 
 **Difficulty**: Medium
@@ -572,6 +704,9 @@ In which situation should `depends_on` be used in a Terraform resource block?
 - B) To force a resource to be replaced instead of updated in-place
 - C) To express a dependency that Terraform cannot detect through attribute references, such as an IAM policy attachment
 - D) To ensure a resource is created before any data sources in the configuration are read
+
+---
+
 ### Question 45 — `lifecycle` `create_before_destroy`
 
 **Difficulty**: Medium
@@ -585,6 +720,9 @@ What is the effect of setting `create_before_destroy = true` in a resource's `li
 - B) Terraform provisions the replacement resource first and only destroys the old resource after the new one is ready, minimising downtime
 - C) Terraform creates the resource before any `terraform plan` is executed
 - D) Terraform ensures the resource is created before all other resources in the configuration, regardless of dependencies
+
+---
+
 ### Question 46 — `lifecycle` `prevent_destroy`
 
 **Difficulty**: Medium
@@ -598,6 +736,9 @@ What happens when `prevent_destroy = true` is set in a resource's `lifecycle` bl
 - B) Terraform prompts the user for a special override passphrase before allowing the destroy
 - C) Terraform returns an error and refuses to create a plan that includes destroying the resource
 - D) Terraform creates a backup of the resource in a separate workspace before destroying it
+
+---
+
 ### Question 47 — `lifecycle` `ignore_changes`
 
 **Difficulty**: Medium
@@ -611,6 +752,9 @@ What is the purpose of the `ignore_changes` argument in a resource's `lifecycle`
 - B) It tells Terraform to ignore drift on specified attributes, so changes to those attributes outside Terraform do not trigger an update
 - C) It suppresses `terraform plan` output for the listed attributes to keep logs concise
 - D) It forces Terraform to skip validation of the listed arguments during `terraform validate`
+
+---
+
 ### Question 48 — `replace_triggered_by` Lifecycle Argument
 
 **Difficulty**: Medium
@@ -624,6 +768,9 @@ What does the `replace_triggered_by` argument in a `lifecycle` block do?
 - B) It causes the resource to be destroyed and recreated whenever any resource or attribute listed in the argument changes
 - C) It triggers a `terraform plan` automatically when a listed resource is modified outside Terraform
 - D) It forces the resource to be replaced on every `terraform apply` regardless of any changes
+
+---
+
 ### Question 49 — `moved` Block Purpose
 
 **Difficulty**: Hard
@@ -637,6 +784,9 @@ What is the purpose of the `moved` block in Terraform?
 - B) It renames or relocates a resource address in the state file without destroying and recreating the real infrastructure
 - C) It moves a resource's configuration from one `.tf` file to another and updates imports automatically
 - D) It transfers a resource's state to a different Terraform workspace while keeping the resource in the current cloud account
+
+---
+
 ### Question 50 — Default Parallelism
 
 **Difficulty**: Hard
@@ -650,6 +800,9 @@ What is the default number of concurrent operations Terraform uses during `terra
 - B) Default is 10; change with `terraform apply -parallelism=<n>`
 - C) Default is unlimited; Terraform always maximises concurrency up to available CPU cores
 - D) Default is 1 (sequential); change with `terraform apply -parallel=true`
+
+---
+
 ### Question 51 — When Data Sources Are Read
 
 **Difficulty**: Medium
@@ -663,6 +816,9 @@ During which TWO phases can a Terraform data source be read? (Select two.)
 - B) During the `plan` phase, when the data source's query arguments are fully known
 - C) During the `apply` phase, when the data source's query arguments depend on a value not known until apply
 - D) During `terraform validate`, when syntax is checked
+
+---
+
 ### Question 52 — Variable Input Precedence
 
 **Difficulty**: Medium
@@ -676,6 +832,9 @@ A Terraform variable named `region` has a `default` of `"us-east-1"` in its decl
 - B) `"eu-west-1"` — `terraform.tfvars` overrides environment variables
 - C) `"ap-southeast-1"` — `TF_VAR_*` environment variables have higher precedence than `.tfvars` files
 - D) Terraform raises an error because the variable is set in multiple places
+
+---
+
 ### Question 53 — Variable Block Argument: `sensitive`
 
 **Difficulty**: Medium
@@ -689,6 +848,9 @@ What is the effect of declaring `sensitive = true` on an input variable?
 - B) The variable's value is hidden in terminal output during `plan` and `apply` but is still stored in plaintext in the state file
 - C) The variable's value is excluded from the state file entirely
 - D) The variable cannot be passed via environment variables — only via `-var` flag
+
+---
+
 ### Question 54 — Validation Block Scope
 
 **Difficulty**: Medium
@@ -702,6 +864,9 @@ Which of the following expressions is valid inside a variable's `validation` blo
 - B) `local.environment != ""`
 - C) `contains(["dev", "staging", "prod"], var.environment)`
 - D) `data.aws_ami.ubuntu.id != ""`
+
+---
+
 ### Question 55 — Locals vs Input Variables
 
 **Difficulty**: Easy
@@ -715,6 +880,9 @@ What is the key difference between a `locals` block and a `variable` block in Te
 - B) Variables are external inputs that can be set by the caller; locals are internal computed values that cannot be set from outside the module
 - C) Locals are shared across all modules in a configuration; variables are scoped to a single module
 - D) Variables must always have a `default` value; locals do not require a value expression
+
+---
+
 ### Question 56 — Module Output Reference Syntax
 
 **Difficulty**: Medium
@@ -728,6 +896,9 @@ A root configuration uses a child module declared as `module "network" { ... }`.
 - B) `output.network.vpc_id`
 - C) `module.network.vpc_id`
 - D) `var.network.vpc_id`
+
+---
+
 ### Question 57 — `count` vs `for_each` — Preferred Usage
 
 **Difficulty**: Easy
@@ -741,6 +912,9 @@ Why is `for_each` generally preferred over `count` when creating multiple resour
 - B) `for_each` uses named keys to identify instances, so removing one item does not force recreation of all subsequent instances
 - C) `for_each` is faster to apply because it uses parallel execution; `count` is sequential
 - D) `for_each` allows resources to span multiple providers; `count` is limited to a single provider
+
+---
+
 ### Question 58 — `count.index` and Splat Expressions
 
 **Difficulty**: Medium
@@ -754,6 +928,9 @@ A resource is declared with `count = 3`. What does the splat expression `aws_ins
 - B) A map of index-to-ID pairs: `{ 0 = "i-aaa", 1 = "i-bbb", 2 = "i-ccc" }`
 - C) A list containing the `id` attribute of all three instances
 - D) An error — splat expressions only work with `for_each`, not `count`
+
+---
+
 ### Question 59 — `for_each` with a Set — `each.key` vs `each.value`
 
 **Difficulty**: Medium
@@ -767,6 +944,9 @@ When `for_each` is assigned a **set** of strings (e.g., `toset(["alice", "bob"])
 - B) `each.key` and `each.value` are both equal to the set element string
 - C) `each.key` is the set element string; `each.value` is always `null` for sets
 - D) Sets do not support `each.key` — only `each.value` is available
+
+---
+
 ### Question 60 — `for` Expression with Filter
 
 **Difficulty**: Medium
@@ -780,6 +960,9 @@ Which `for` expression correctly produces a list of names from `var.names` that 
 - B) `[for name in var.names : name if length(name) > 4]`
 - C) `[for name in var.names | length(name) > 4 : name]`
 - D) `filter(var.names, n => length(n) > 4)`
+
+---
+
 ### Question 61 — `lookup` Function
 
 **Difficulty**: Medium
@@ -793,6 +976,9 @@ What does `lookup({a = 1, b = 2}, "c", 99)` return?
 - B) An error — `lookup` raises an exception when the key is not found
 - C) `99` — the third argument is returned as the default when the key is not found
 - D) `0` — `lookup` always returns 0 for missing numeric map entries
+
+---
+
 ### Question 62 — `cidrsubnet` Function
 
 **Difficulty**: Hard
@@ -806,6 +992,9 @@ What does `cidrsubnet("10.0.0.0/16", 8, 2)` return?
 - B) `"10.0.1.0/24"`
 - C) `"10.0.2.0/24"`
 - D) `"10.2.0.0/24"`
+
+---
+
 ### Question 63 — `flatten` vs `compact` Functions
 
 **Difficulty**: Hard
@@ -819,6 +1008,9 @@ Which TWO statements correctly describe the difference between `flatten()` and `
 - B) `compact(["a", "", null, "b"])` returns `["a", "b"]` by removing empty strings and null values
 - C) `flatten()` removes duplicate values from a flat list
 - D) `compact()` recursively unwraps nested lists into a single flat list
+
+---
+
 ### Question 64 — `templatefile` vs `file` Functions
 
 **Difficulty**: Medium
@@ -832,6 +1024,9 @@ Which TWO statements correctly describe the difference between `file()` and `tem
 - B) `templatefile(path, vars)` renders the file as a template, substituting `${var_name}` placeholders with values from the `vars` map
 - C) `file()` supports `.tpl` template files; `templatefile()` only supports `.txt` files
 - D) `templatefile()` can only reference Terraform input variables; it cannot reference locals or computed values
+
+---
+
 ### Question 65 — Three Condition Mechanisms Overview
 
 **Difficulty**: Easy
@@ -845,6 +1040,9 @@ Which of the following correctly lists all three Terraform mechanisms for assert
 - B) `validation` block, `precondition`/`postcondition` in `lifecycle`, `check` block
 - C) `validation` block, `check` block, `enforce` block
 - D) `precondition` block, `postcondition` block, `verify` block
+
+---
+
 ### Question 66 — `validation` Block — When It Runs
 
 **Difficulty**: Easy
@@ -858,6 +1056,9 @@ When does a `validation` block inside a `variable` declaration run?
 - B) During `terraform init`, when providers are downloaded
 - C) Before `terraform plan`, as part of input variable evaluation
 - D) Only when explicitly triggered by `terraform validate`
+
+---
+
 ### Question 67 — `validation` Block Condition Constraints
 
 **Difficulty**: Medium
@@ -871,6 +1072,9 @@ Which restriction applies to the `condition` expression inside a variable `valid
 - B) It can only reference `var.<variable_name>` — not resources, data sources, or locals
 - C) It must use only built-in string functions; numeric comparisons are not allowed
 - D) It can reference any variable in the same module but not variables from child modules
+
+---
+
 ### Question 68 — `precondition` vs `postcondition` — Timing
 
 **Difficulty**: Medium
@@ -884,6 +1088,9 @@ What is the key timing difference between a `precondition` and a `postcondition`
 - B) `precondition` runs before the resource is changed during apply; `postcondition` runs after the resource change completes
 - C) `precondition` validates input variables; `postcondition` validates output values
 - D) Both run at the same time — the distinction is only in the error message text
+
+---
+
 ### Question 69 — `self` in `postcondition`
 
 **Difficulty**: Medium
@@ -897,6 +1104,9 @@ What does `self` refer to in a `postcondition` block within a resource's `lifecy
 - B) The provider that manages the resource
 - C) The resource instance that was just created or updated
 - D) The previous state of the resource before the change
+
+---
+
 ### Question 70 — `check` Block Failure Behaviour
 
 **Difficulty**: Medium
@@ -910,6 +1120,9 @@ What happens when an `assert` condition inside a `check` block evaluates to `fal
 - B) Terraform pauses and prompts the user to confirm whether to continue despite the failed assertion
 - C) A warning is displayed but the apply continues and completes successfully
 - D) The resource associated with the `check` block is marked as tainted for replacement on the next run
+
+---
+
 ### Question 71 — `check` Block Introduction Version
 
 **Difficulty**: Medium
@@ -923,6 +1136,9 @@ In which version of Terraform was the `check` block introduced?
 - B) Terraform 1.3
 - C) Terraform 1.5
 - D) Terraform 1.7
+
+---
+
 ### Question 72 — `check` Block Optional Data Source
 
 **Difficulty**: Medium
@@ -936,6 +1152,9 @@ What is the purpose of including a `data` block inside a `check` block?
 - B) To provide a scoped, read-only data source that is used only within that `check` block's assertions
 - C) To declare a dependency so the check runs after a specific resource is created
 - D) To override the provider used for the assertion data retrieval
+
+---
+
 ### Question 73 — Sensitive Output `sensitive = true`
 
 **Difficulty**: Medium
@@ -949,6 +1168,9 @@ An output block is declared with `sensitive = true`. What is the effect on how T
 - B) The output value is shown in plan output but hidden during `terraform output` commands
 - C) The output value is redacted in terminal display but still stored in plaintext in the state file
 - D) The output is excluded from `terraform output` and cannot be retrieved programmatically
+
+---
+
 ### Question 74 — Sensitive Data in State — Critical Fact
 
 **Difficulty**: Hard
@@ -962,6 +1184,9 @@ A team marks their database password variable and output as `sensitive = true`. 
 - B) `sensitive = true` protects values in transit between modules but not in the final state file
 - C) `sensitive = true` only controls terminal display — all attribute values are always stored in plaintext in the state file regardless of this setting
 - D) The state file should be unreadable — the engineer must have the wrong version of Terraform
+
+---
+
 ### Question 75 — Mitigations for Sensitive Data in State
 
 **Difficulty**: Hard
@@ -975,6 +1200,9 @@ Which TWO of the following are correct mitigations for the risk that sensitive v
 - B) Use a remote backend that supports encryption at rest, such as S3 with server-side encryption or HCP Terraform
 - C) Never commit `terraform.tfstate` to source control and restrict access to the state storage location
 - D) Use the `prevent_destroy` lifecycle argument to prevent state files from being accidentally deleted
+
+---
+
 ### Question 76 — Comparing the Three Condition Mechanisms
 
 **Difficulty**: Medium
@@ -988,6 +1216,9 @@ Which TWO of the following statements correctly describe how Terraform condition
 - B) A failed `check` block assertion causes `terraform apply` to roll back all changes made in the current run
 - C) A failed `precondition` block halts `terraform apply` before the resource is modified
 - D) A failed `postcondition` block converts the failing resource to a warning and allows subsequent resources to continue applying
+
+---
+
 ### Question 77 — Root Module Definition
 
 **Difficulty**: Easy
@@ -1001,6 +1232,9 @@ What is the Terraform **root module**?
 - B) The working directory from which you run `terraform apply`, containing the top-level configuration files
 - C) A published module on the Terraform Registry that all other modules depend on
 - D) The `main.tf` file specifically — variables.tf and outputs.tf belong to child modules
+
+---
+
 ### Question 78 — Valid Module Source Types
 
 **Difficulty**: Medium
@@ -1014,6 +1248,9 @@ Which TWO of the following are valid values for the `source` argument in a `modu
 - B) `"hashicorp/consul/aws"` — a Terraform Registry module reference
 - C) `"provider::aws::vpc"` — a provider-namespaced module reference
 - D) `"module.networking"` — a reference to another module in the same configuration
+
+---
+
 ### Question 79 — Double-Slash `//` in Module Source
 
 **Difficulty**: Medium
@@ -1027,6 +1264,9 @@ In the module source `"github.com/org/infra-modules//modules/vpc"`, what does th
 - B) It separates the repository root from a subdirectory path within the repository
 - C) It indicates that the module should be downloaded twice for redundancy
 - D) It is a typo — only a single slash is valid in module source paths
+
+---
+
 ### Question 80 — `version` Argument Restriction
 
 **Difficulty**: Medium
@@ -1040,6 +1280,9 @@ For which module source type is the `version` argument valid?
 - B) Git URLs only (`"git::https://..."`)
 - C) Terraform Registry and private registry sources only
 - D) All source types support the `version` argument
+
+---
+
 ### Question 81 — Module Cache Location
 
 **Difficulty**: Easy
@@ -1053,6 +1296,9 @@ Where does `terraform init` cache downloaded child module source code?
 - B) `terraform.tfstate` alongside the state data
 - C) `.terraform/modules/` in the current working directory
 - D) `/tmp/terraform-modules/` in a system temporary directory
+
+---
+
 ### Question 82 — Variable Inheritance Between Modules
 
 **Difficulty**: Medium
@@ -1066,6 +1312,9 @@ A root module declares `variable "region" { default = "us-east-1" }`. A child mo
 - B) The child module inherits the variable only if it is declared in both `variables.tf` files
 - C) Variables are never automatically inherited — the root module must explicitly pass the value as an input argument in the `module` block
 - D) Variables are inherited only for built-in types (string, number, bool); complex types must be passed explicitly
+
+---
+
 ### Question 83 — Standard Module File Structure
 
 **Difficulty**: Medium
@@ -1079,6 +1328,9 @@ Which TWO files are part of the standard, recommended Terraform module file stru
 - B) `state.tf` — declares the backend configuration for the module's state
 - C) `providers.tf` — required to re-declare the provider in every child module
 - D) `outputs.tf` — declares the output values exposed by the module
+
+---
+
 ### Question 84 — Backend Block Location in HCL
 
 **Difficulty**: Medium
@@ -1092,6 +1344,9 @@ Where must the `backend` block be declared in a Terraform configuration?
 - B) Inside the `terraform {}` block, which is typically placed in `versions.tf` or `main.tf`
 - C) Inside a `provider` block, alongside authentication credentials
 - D) In `terraform.tfvars` as a backend-specific variable assignment
+
+---
+
 ### Question 85 — `terraform.tfstate.backup` Purpose
 
 **Difficulty**: Medium
@@ -1105,6 +1360,9 @@ What does `terraform.tfstate.backup` contain when using the local backend?
 - B) The state from the most recent apply — a single snapshot of the previous state, not a full history
 - C) A backup of the state from 24 hours ago, automatically updated on a daily schedule
 - D) An encrypted copy of the current state file for disaster recovery
+
+---
+
 ### Question 86 — `terraform init -migrate-state` vs `-reconfigure`
 
 **Difficulty**: Medium
@@ -1118,6 +1376,9 @@ What is the difference between `terraform init -migrate-state` and `terraform in
 - B) `-migrate-state` copies existing state to the new backend; `-reconfigure` reinitialises the backend without migrating existing state
 - C) `-reconfigure` is for switching from local to remote backends; `-migrate-state` is for switching between two remote backends
 - D) Both flags are identical — they are aliases for the same operation
+
+---
+
 ### Question 87 — S3 Backend State Locking
 
 **Difficulty**: Medium
@@ -1131,6 +1392,9 @@ When using the S3 backend, which AWS service provides state locking, and what at
 - B) AWS Systems Manager Parameter Store with a parameter named `terraform-lock`
 - C) DynamoDB with a table attribute named `LockID`
 - D) CloudWatch Events with a rule named after the state file key
+
+---
+
 ### Question 88 — `terraform force-unlock` Usage
 
 **Difficulty**: Hard
@@ -1144,6 +1408,9 @@ When should `terraform force-unlock <LOCK_ID>` be used, and what is the risk?
 - B) It should be used only when you are certain no other `terraform apply` or `plan` is actively running — using it while another operation holds the lock can corrupt state
 - C) It should be used whenever `terraform plan` runs slowly, as it removes lock contention caused by stale read locks
 - D) It can only be run by the user who created the lock; other users receive a permission error
+
+---
+
 ### Question 89 — `plan -refresh-only` vs `apply -refresh-only`
 
 **Difficulty**: Hard
@@ -1157,6 +1424,9 @@ Which TWO statements correctly describe the behaviour of the `-refresh-only` fla
 - B) `terraform apply -refresh-only` modifies cloud resources to match the Terraform configuration, resolving drift by re-applying desired state
 - C) `terraform apply -refresh-only` updates the state file to reflect the current actual state of cloud resources, without creating, modifying, or destroying any infrastructure
 - D) `terraform plan -refresh-only` is equivalent to `terraform refresh`, which is a deprecated command that both refreshes state and applies the plan in one step
+
+---
+
 ### Question 90 — `import` Block vs CLI Import
 
 **Difficulty**: Easy
@@ -1170,6 +1440,9 @@ What is the primary advantage of using an `import` block (Terraform 1.5+) over t
 - B) The `import` block can be previewed with `terraform plan` before changes are applied, and can optionally generate HCL configuration automatically
 - C) The `import` block supports all resource types; the CLI command only supports AWS resources
 - D) The `import` block requires no existing resource block in configuration; the CLI command requires one
+
+---
+
 ### Question 91 — `import` Block Syntax
 
 **Difficulty**: Easy
@@ -1183,6 +1456,9 @@ Which two arguments are required in an `import` block?
 - B) `resource` and `cloud_id`
 - C) `to` and `id`
 - D) `address` and `provider_id`
+
+---
+
 ### Question 92 — CLI Import Pre-Requisite
 
 **Difficulty**: Medium
@@ -1196,6 +1472,9 @@ What must exist in the Terraform configuration before running `terraform import 
 - B) An `import` block referencing the same resource address
 - C) A `resource "aws_s3_bucket" "assets" {}` block must already exist in the configuration files
 - D) A `data "aws_s3_bucket" "assets" {}` block must exist to look up the bucket first
+
+---
+
 ### Question 93 — `terraform plan -generate-config-out`
 
 **Difficulty**: Medium
@@ -1209,6 +1488,9 @@ What does `terraform plan -generate-config-out=generated.tf` do?
 - B) Generates HCL resource configuration for resources referenced in `import` blocks and writes it to `generated.tf`
 - C) Exports all existing resources in state as HCL configuration into `generated.tf`
 - D) Generates a Terraform provider configuration block and appends it to `generated.tf`
+
+---
+
 ### Question 94 — `TF_LOG` Verbosity Order
 
 **Difficulty**: Medium
@@ -1222,6 +1504,9 @@ Which ordering correctly lists Terraform's `TF_LOG` levels from **most verbose**
 - B) `TRACE > DEBUG > INFO > WARN > ERROR > OFF`
 - C) `DEBUG > TRACE > INFO > WARN > ERROR > OFF`
 - D) `INFO > DEBUG > TRACE > WARN > ERROR > OFF`
+
+---
+
 ### Question 95 — `TF_LOG_PATH` and Separate Core/Provider Logging
 
 **Difficulty**: Medium
@@ -1235,6 +1520,9 @@ Which TWO statements correctly describe Terraform's logging environment variable
 - B) `TF_LOG_CORE=DEBUG` and `TF_LOG_PROVIDER=TRACE` allow setting different log levels for Terraform core and provider plugins independently
 - C) `TF_LOG_PATH` must be set to an absolute path; relative paths are not supported
 - D) Setting `TF_LOG_PROVIDER=TRACE` also automatically sets `TF_LOG_CORE=TRACE`
+
+---
+
 ### Question 96 — HCP Terraform `cloud` Block
 
 **Difficulty**: Medium
@@ -1248,6 +1536,9 @@ What is the preferred way to connect a Terraform configuration to HCP Terraform 
 - B) `cloud` block with `organization` and `workspaces` arguments
 - C) `cloud` block with `hostname` and `workspace_id` arguments
 - D) `provider "tfe"` block with `organization` and `token` arguments
+
+---
+
 ### Question 97 — `terraform login` Token Storage
 
 **Difficulty**: Medium
@@ -1261,6 +1552,9 @@ Where does `terraform login` store the HCP Terraform API token after a successfu
 - B) `.terraform/credentials.json` in the current working directory
 - C) `~/.terraform.d/credentials.tfrc.json` in the user's home directory
 - D) The token is never stored on disk — it is only held in memory for the current session
+
+---
+
 ### Question 98 — HCP Terraform Run Types
 
 **Difficulty**: Medium
@@ -1274,6 +1568,9 @@ Which HCP Terraform run type runs a plan but **never applies** — typically tri
 - B) Speculative plan
 - C) Plan-and-apply run
 - D) Dry-run
+
+---
+
 ### Question 99 — HCP Terraform Policy Enforcement Levels
 
 **Difficulty**: Medium
@@ -1287,6 +1584,9 @@ Which HCP Terraform policy enforcement level **blocks a run** when a policy fail
 - B) `soft-mandatory`
 - C) `hard-mandatory`
 - D) `blocking`
+
+---
+
 ### Question 100 — Variable Sets in HCP Terraform
 
 **Difficulty**: Medium
@@ -1300,6 +1600,9 @@ What is the purpose of a **variable set** in HCP Terraform?
 - B) A reusable collection of Terraform or environment variables that can be assigned to multiple workspaces or an entire organisation
 - C) A list of sensitive variable names whose values are automatically redacted from run logs
 - D) A JSON file that defines default variable values, similar to `terraform.tfvars`
+
+---
+
 ### Question 101 — HCP Terraform Workspace Permissions
 
 **Difficulty**: Hard
@@ -1313,6 +1616,9 @@ Which TWO statements correctly describe HCP Terraform workspace-level permission
 - B) The **Plan** permission allows a user to trigger full plan-and-apply runs without any additional approval
 - C) The **Read** permission allows a user to view run history, state, and variables but not trigger any runs
 - D) The **Admin** permission is required to change workspace variables — the Write permission does not allow variable changes
+
+---
+
 ### Question 102 — Dynamic Provider Credentials (OIDC)
 
 **Difficulty**: Hard

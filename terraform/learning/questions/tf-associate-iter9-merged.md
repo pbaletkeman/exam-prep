@@ -1,5 +1,7 @@
 # Terraform Associate Exam Questions
 
+---
+
 ### Question 1
 
 **Difficulty:** Easy
@@ -12,6 +14,8 @@ A) AWS CloudFormation supports multi-cloud deployments including AWS, Azure, and
 B) Azure ARM templates (Bicep) and AWS CloudFormation can be used interchangeably to deploy resources to either cloud
 C) Terraform is unique among common IaC provisioning tools in natively supporting multi-cloud deployments from a single configuration — a single set of `.tf` files can contain AWS, Azure, and GCP resources managed by their respective provider plugins
 D) Bicep supports deployment to AWS via a compatibility layer maintained by Microsoft, making it a viable alternative to Terraform for multi-cloud teams
+
+---
 
 ### Question 2
 
@@ -26,6 +30,8 @@ B) Idempotency guarantees that Terraform will never destroy existing resources �
 C) An idempotent operation produces the same end state regardless of how many times it is executed, given unchanged inputs
 D) If the infrastructure already matches the configuration, `terraform apply` will report "No changes. Your infrastructure matches the configuration." and make no modifications
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -38,6 +44,8 @@ A) When infrastructure is defined in version-controlled configuration files, eve
 B) IaC eliminates the need for state management entirely — because all infrastructure is defined in code, no state file is required; Terraform operates purely from configuration files on every run
 C) IaC enables disaster recovery: an entire environment can be rebuilt from the configuration files after a catastrophic failure — the code contains all the definitions needed to recreate servers, networks, databases, and other resources from scratch
 D) Writing infrastructure in any IaC tool automatically encrypts all cloud resources and enforces security best practices — IaC tooling applies encryption by default without any additional configuration
+
+---
 
 ### Question 4
 
@@ -52,6 +60,8 @@ B) "Desired state" is expressed in the Terraform configuration files (`.tf` file
 C) "Desired state" and "current state" refer to the same data — they represent identical views of infrastructure from the perspective of the configuration and the cloud respectively
 D) Desired state can only be expressed in JSON format; HCL (HashiCorp Configuration Language) is a human-readable display format that Terraform converts internally to JSON before reading the desired state
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -64,6 +74,8 @@ A) In a declarative IaC approach, the engineer writes a sequence of step-by-step
 B) Declarative IaC configurations describe the desired end state of infrastructure — the engineer specifies WHAT should exist, and the tool determines whether to create, update, or destroy resources to reach that state
 C) Declarative IaC tools like Terraform always delete all existing resources before recreating them on every apply to ensure a clean, known state — this destroy-and-recreate pattern guarantees the infrastructure matches the configuration exactly
 D) Declarative and imperative IaC approaches are functionally identical in practice — both result in the same infrastructure being created and neither approach has an advantage over the other for managing drift
+
+---
 
 ### Question 6
 
@@ -78,6 +90,8 @@ B) Terraform detects drift during `terraform plan` by querying the cloud provide
 C) Once drift is detected in a managed environment, Terraform automatically reconciles it in the background without any engineer intervention — no plan or apply command needs to be run; the tool continuously monitors and self-heals
 D) Running `terraform plan -refresh-only` shows drift between the actual cloud resources and the last recorded state, without proposing configuration-driven changes — it is useful for investigating what has changed in the cloud
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -90,6 +104,8 @@ A) Ansible and Terraform are both purely declarative tools — neither supports 
 B) Both Ansible and Terraform maintain a state file that tracks all managed infrastructure resources — without this state file, neither tool can detect drift or compute a plan
 C) Ansible is primarily used for configuration management (installing software, managing files, configuring services) and is considered more imperative in style — it executes tasks in sequence from a playbook; Terraform is a declarative provisioning tool — it describes desired infrastructure state and reconciles differences
 D) Terraform and Ansible serve identical purposes and are completely interchangeable — choosing one over the other is a matter of team preference with no functional difference
+
+---
 
 ### Question 8
 
@@ -104,6 +120,8 @@ B) When infrastructure is defined in version-controlled configuration files, eve
 C) IaC audit trails are only available in paid tiers of IaC platforms like HCP Terraform — when using community Terraform with local state and a simple Git repository, no audit trail is generated
 D) An IaC audit trail in Git records only resource deletions — resource creation and attribute updates are not tracked in version control; a separate change management system is required for complete auditability
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -116,6 +134,8 @@ A) Terraform's declarative model means it always deletes all existing resources 
 B) The repeatability benefit of IaC means that running the same Terraform configuration in two different environments (e.g., staging and production) will produce structurally identical infrastructure — the same code deploys the same resources
 C) "ClickOps" — provisioning infrastructure manually through a web console — is fully equivalent to IaC for audit trail purposes because cloud providers record all console actions in services like AWS CloudTrail
 D) IaC tools like Terraform are only practical for large-scale deployments managing hundreds of cloud resources — for small projects with only a few resources, IaC provides no meaningful advantage over manual provisioning and adds unnecessary complexity
+
+---
 
 ### Question 10
 
@@ -130,6 +150,8 @@ B) With IaC, an entire infrastructure environment can be rebuilt from the config
 C) IaC only aids disaster recovery for stateless applications — stateful services such as databases and message queues cannot be described in IaC configuration and must be recreated manually
 D) The disaster recovery benefit of IaC is limited to recreating the same infrastructure in the exact same region — cross-region or cross-account recovery requires a different set of IaC tools
 
+---
+
 ### Question 11
 
 **Difficulty:** Medium
@@ -142,6 +164,8 @@ A) Both Pulumi and Terraform support multi-cloud infrastructure provisioning usi
 B) Pulumi allows engineers to write infrastructure code in general-purpose programming languages (Python, TypeScript, Go, C#) — unlike Terraform's HCL which is a domain-specific language purpose-built for infrastructure configuration
 C) Pulumi uses an imperative approach to infrastructure while Terraform uses a declarative approach — this is the primary and most important architectural difference between the two tools
 D) Both Pulumi and Terraform maintain a state file that records the current tracked state of deployed resources and use it to compute diffs on subsequent operations
+
+---
 
 ### Question 12
 
@@ -156,6 +180,8 @@ B) Terraform's declarative approach guarantees that resource blocks are processe
 C) In Terraform's declarative model, the engineer specifies WHAT the end state of infrastructure should look like; Terraform determines whether to create, update, or destroy resources by comparing the desired state (configuration files) against the current state (state file and cloud provider API responses) — engineers do not write the procedural steps; the dependency graph drives execution order automatically
 D) Declarative IaC tools like Terraform require the engineer to write explicit "create if not exists" conditional logic using `if` statements around every resource block — without these guards, the tool will attempt to create duplicate resources on every apply
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -168,6 +194,8 @@ A) Terraform configuration files (`.tf` files) are the source of DESIRED STATE �
 B) The `terraform.tfstate` file is the source of DESIRED STATE — when Terraform runs `terraform plan`, it reads the state file to determine what resources to create; the `.tf` configuration files are merely documentation
 C) The `terraform.tfstate` file records the CURRENT TRACKED STATE of all managed infrastructure — it contains real-world attributes populated by the provider after the last successful apply: resource IDs, IP addresses, ARNs, timestamps, and other computed values that did not exist before the resource was created
 D) Editing `terraform.tfstate` directly is the recommended and safe method for expressing new desired infrastructure to Terraform — it is functionally equivalent to adding a resource block to a `.tf` configuration file and is the preferred approach for advanced users
+
+---
 
 ### Question 1
 
@@ -182,6 +210,8 @@ B) A provider's responsibilities include: authenticating to the cloud/service AP
 C) A provider plugin must be included in every `.tf` configuration file using an `import` statement — without an explicit `import`, Terraform Core cannot locate the provider binary
 D) A provider is responsible for maintaining the `terraform.tfstate` file and is the only component with write access to it — Terraform Core reads state but cannot write to it directly
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -194,6 +224,8 @@ A) Setting `sensitive = true` on an output causes Terraform to display the value
 B) Setting `sensitive = true` on an output encrypts the corresponding attribute value before writing it to `terraform.tfstate`, ensuring the value cannot be read from the state file by anyone with access to it
 C) `sensitive = true` only affects terminal display — the actual attribute value is still stored in plaintext inside `terraform.tfstate` regardless of the sensitive setting
 D) Because sensitive values are stored in plaintext in state, teams handling secrets should use an encrypted remote backend (such as S3 with server-side encryption) for production state files
+
+---
 
 ### Question 3
 
@@ -208,6 +240,8 @@ B) `.terraform.lock.hcl` should be added to `.gitignore` alongside the `.terrafo
 C) To intentionally advance a provider to a newer version within the declared constraint, an engineer runs `terraform init -upgrade` — this updates the lock file to record the new version
 D) `.terraform.lock.hcl` contains the full text of all provider source code, making it the authoritative documentation for which provider APIs are available in the configuration
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -220,6 +254,8 @@ A) Local state stored in `terraform.tfstate` supports concurrent apply operation
 B) Both local and remote state backends implement state locking by default — locking is a built-in feature of the `terraform.tfstate` format and does not depend on the storage backend
 C) Local state provides NO state locking — if two engineers run `terraform apply` simultaneously against a local state file, both operations may proceed concurrently and corrupt the state file; remote backends such as S3 with DynamoDB, HCP Terraform, or Azure Blob provide state locking to prevent concurrent applies
 D) Remote state locking is only available in paid HCP Terraform plans — free-tier and open-source Terraform users must use local state and manually coordinate applies to prevent conflicts
+
+---
 
 ### Question 5
 
@@ -234,6 +270,8 @@ B) The local name used in a `required_providers` block (e.g., `aws` in `aws = { 
 C) A Terraform configuration can declare multiple providers from different namespaces — for example, the official `hashicorp/aws` and a community provider `myorg/customprovider` can both be declared in the same `required_providers` block
 D) Provider source addresses pointing to `registry.terraform.io` are resolved from the public Terraform Provider Registry — providers on this registry include Official, Partner, and Community tiers
 
+---
+
 ### Question 6
 
 **Difficulty:** Medium
@@ -246,6 +284,8 @@ A) `terraform state rm` permanently deletes the specified resource from both Ter
 B) `terraform state rm` removes the specified resource from Terraform's state file while leaving the actual cloud resource running and intact — after removal, Terraform no longer manages that resource and will not include it in future plans
 C) `terraform state rm` is the recommended way to rename a resource when you change its label in the `.tf` file — it removes the old name from state and re-applies the new name automatically
 D) `terraform state rm` is only available in HCP Terraform — the open-source Terraform CLI does not include state manipulation commands to prevent accidental state corruption
+
+---
 
 ### Question 7
 
@@ -260,6 +300,8 @@ B) The Partner tier sits between the Official tier (maintained by HashiCorp) and
 C) Partner providers carry the same trust level as Official providers because both tiers require HashiCorp to review and maintain the provider source code directly
 D) Examples of Partner providers include providers maintained by cloud vendors, database companies, or SaaS platforms that have partnered with HashiCorp to provide official integrations
 
+---
+
 ### Question 8
 
 **Difficulty:** Medium
@@ -272,6 +314,8 @@ A) `terraform plan -refresh=false` is the recommended default for all production
 B) `terraform plan -refresh=false` skips the step where Terraform queries live cloud provider APIs to update the known state — the plan is computed using the cached attribute values in the state file rather than fresh API responses; this is faster but may produce inaccurate results if the actual infrastructure has drifted from the recorded state
 C) `-refresh=false` and `-refresh-only` are equivalent flags that both skip infrastructure API calls and produce identical plan output
 D) `terraform plan -refresh=false` is required when using remote state backends — remote backends cache state and do not support real-time cloud API refreshes during plan
+
+---
 
 ### Question 9
 
@@ -286,6 +330,8 @@ B) The `terraform.tfstate` file is the sole source of truth during planning — 
 C) If `terraform.tfstate` does not yet exist (first apply of a new configuration), Terraform treats the known state as empty — this means Terraform will propose creating all resources declared in the configuration because no current state exists to compare against
 D) Terraform uses the actual live cloud state as its desired state — the `.tf` configuration files are advisory only, and Terraform will not make changes that conflict with what the cloud reports as the current resource attributes
 
+---
+
 ### Question 10
 
 **Difficulty:** Medium
@@ -298,6 +344,8 @@ A) `terraform state mv` destroys the source resource in the cloud and recreates 
 B) `terraform state mv` renames a resource in the Terraform state file without destroying or recreating the underlying cloud resource — it is the correct way to update state when you rename a resource label in your configuration, preventing Terraform from planning a destroy-and-recreate cycle
 C) `terraform state mv` only works with resources that use the `count` meta-argument — it cannot be used to rename resources that use `for_each` or resources without either meta-argument
 D) `terraform state mv` is only required when migrating between remote backends — for local renames within the same configuration it is unnecessary because Terraform automatically tracks resource label changes between applies
+
+---
 
 ### Question 11
 
@@ -312,6 +360,8 @@ B) A provider block without an `alias` argument is the default configuration for
 C) Once a provider alias is declared, all resource blocks for that provider type MUST explicitly specify which configuration to use via the `provider` meta-argument — the concept of a "default" provider no longer applies when any alias exists
 D) Provider aliases are only supported for the official HashiCorp providers (AWS, Azure, GCP) — community and partner providers cannot define aliases
 
+---
+
 ### Question 12
 
 **Difficulty:** Hard
@@ -324,6 +374,8 @@ A) The `terraform.tfstate` file contains only the resource labels and types decl
 B) Because `sensitive = true` on a variable or output causes Terraform to encrypt the value before writing it to state, engineers can safely store API keys and database passwords in Terraform variables without needing an encrypted backend
 C) Manually editing `terraform.tfstate` with a text editor is the officially recommended approach for renaming resources, fixing state corruption, and performing state migrations — it is faster and more precise than using `terraform state` commands
 D) The `terraform.tfstate` file stores computed resource attributes (IDs, IP addresses, ARNs, and other values that the cloud provider assigns after resource creation) alongside the configuration-declared attributes — these stored values enable Terraform to compute accurate diffs without querying every resource on every plan, and they are stored in plaintext JSON regardless of any `sensitive` annotations
+
+---
 
 ### Question 13
 
@@ -338,6 +390,8 @@ B) The constraint `version = "~> 5.0.0"` allows the AWS provider to be upgraded 
 C) When multiple version constraints are combined (e.g., `version = ">= 5.0, < 5.20"`), Terraform selects the NEWEST version that satisfies ALL constraints simultaneously — not the minimum version, and not the first constraint alone
 D) The `=` exact version constraint (e.g., `version = "= 5.31.0"`) is considered a poor practice because it prevents the provider from ever receiving security patches — if a security fix is released as `5.31.1`, the constraint will block its installation; `~>` with a patch-level lock (e.g., `~> 5.31.0`) is the preferred approach for maximum stability with patch-level updates
 
+---
+
 ### Question 1
 
 **Difficulty:** Easy
@@ -350,6 +404,8 @@ A) `terraform graph` outputs the resource dependency graph as an SVG image file 
 B) `terraform graph` generates an interactive HTML page that visualises the dependency graph in the browser, similar to a network diagram tool
 C) `terraform graph` outputs the dependency graph as plain text in DOT format — DOT is a graph description language processed by external tools such as Graphviz (`dot -Tsvg`) to render a visual diagram; `terraform graph` itself only writes DOT text to stdout
 D) `terraform graph` produces JSON output compatible with `terraform show -json`, allowing the dependency graph to be merged with state data for reporting purposes
+
+---
 
 ### Question 2
 
@@ -364,6 +420,8 @@ B) `terraform show plan.tfplan` reads and displays a previously saved plan file 
 C) `terraform show -json` outputs the current state as a JSON object — this is the machine-readable form useful for feeding state data into scripts, dashboards, or external tooling
 D) `terraform show` modifies the state file to refresh attribute values from the live cloud API — every time it is run, it updates the recorded state with the latest resource attributes
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -376,6 +434,8 @@ A) `terraform validate` requires a network connection to download provider schem
 B) `terraform apply` both requires a network connection (to make cloud API calls) and modifies the state file (to record the results of changes made) — it is one of the few commands that both connects to the network AND writes to state
 C) `terraform plan` modifies the state file with the proposed changes so that `terraform apply` can read them from state — a plan without `-out` still writes the proposed plan to state
 D) `terraform output` and `terraform show` both require a network connection to retrieve the latest resource attribute values directly from the cloud provider API
+
+---
 
 ### Question 4
 
@@ -390,6 +450,8 @@ B) `terraform apply -replace="aws_instance.web"` is the current approach in Terr
 C) `terraform apply -replace` destroys the specified resource immediately without generating a plan preview — it is equivalent to running `terraform destroy -target` followed by `terraform apply`
 D) Both `terraform taint` and `terraform apply -replace` mark the resource for replacement but differ in timing: `taint` takes effect immediately; `-replace` defers replacement until the next scheduled maintenance window
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -402,6 +464,8 @@ A) `terraform init -upgrade` instructs Terraform to ignore the version constrain
 B) After running `terraform init -upgrade`, the `.terraform.lock.hcl` file is rewritten to record the new provider version and updated hashes — future plain `terraform init` runs will install this newer version
 C) `terraform init -upgrade` is required any time you want to advance a provider past the version currently recorded in the lock file — running plain `terraform init` will always install the exact locked version and never upgrade it
 D) `terraform init -upgrade` also upgrades the Terraform CLI binary to the latest available release — after the command completes, `terraform -version` will report a newer version if one is available
+
+---
 
 ### Question 6
 
@@ -416,6 +480,8 @@ B) `terraform plan -destroy` generates a destroy plan showing which resources wo
 C) `terraform plan -destroy` can only be used with the `-target` flag — without a target, it returns an error saying that a full destroy requires `terraform destroy` instead
 D) `terraform plan -destroy` creates a special read-only state snapshot that Terraform Cloud can use to automatically schedule and execute the destroy — it cannot be applied locally
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -428,6 +494,8 @@ A) `terraform apply -replace="aws_instance.web"` only destroys the specified res
 B) `terraform apply -replace="aws_instance.web"` forces Terraform to destroy and then recreate the specified resource within a single apply, even if no configuration changes have been made to that resource; Terraform marks the resource for replacement in the generated plan (shown with the `-/+` symbol) before proceeding
 C) `terraform apply -replace` is a hidden alias for `terraform taint` — both commands are fully equivalent and neither is deprecated
 D) `terraform apply -replace="aws_instance.web"` only recreates the instance if the EC2 API reports it is in a degraded or stopped state — Terraform checks the live resource health before deciding whether replacement is warranted
+
+---
 
 ### Question 8
 
@@ -442,6 +510,8 @@ B) `terraform fmt -check` exits with code 1 if any files need reformatting, with
 C) `terraform fmt -diff` and `terraform fmt -check` can be combined: `terraform fmt -check -diff` will both exit with code 1 AND display the formatting diff for each non-compliant file — this is the most informative CI usage because it both fails the pipeline and shows the engineer exactly what needs to be fixed
 D) `terraform fmt -diff` rewrites all `.tf` files to canonical format AND generates a diff report showing a summary of character-level changes — unlike `-check`, it still writes files to disk while also producing the diff output
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -454,6 +524,8 @@ A) `terraform console` is an interactive REPL (Read-Eval-Print Loop) that evalua
 B) `terraform console` modifies the state file when it evaluates expressions that reference managed resources — querying `aws_instance.web.id` in the console makes an API call and refreshes the stored attribute value
 C) `terraform console` requires no network connection and does not modify the state file — it reads the existing state for resource attribute values but makes no API calls and writes nothing; it is a safe, side-effect-free tool for expression testing
 D) `terraform console` can only evaluate simple arithmetic expressions — it does not support Terraform-specific functions, resource references, or variable lookups because it runs outside the context of the configuration
+
+---
 
 ### Question 10
 
@@ -468,6 +540,8 @@ B) `terraform init -migrate-state` is used when changing to a new backend and of
 C) `terraform init -reconfigure` is required when adding a backend configuration for the very first time to a configuration that previously had no backend block — without it, `terraform init` refuses to configure a backend from scratch
 D) `terraform init -migrate-state` bypasses all confirmation prompts and automatically migrates state to the new backend without any human interaction — it is equivalent to combining `-migrate-state -auto-approve`
 
+---
+
 ### Question 11
 
 **Difficulty:** Medium
@@ -480,6 +554,8 @@ A) `terraform output -json` outputs ALL declared output values from the current 
 B) `terraform output -json` is useful for machine-readable consumption — scripts and external tools can parse the JSON object to extract specific output values programmatically without screen-scraping human-readable text
 C) `terraform output -json` requires a network connection to query the live cloud provider API for the latest attribute values before generating the JSON output
 D) `terraform output -json` reads output values from the local state file — no network calls are made; the JSON reflects what is currently recorded in state, which was last updated on the most recent `terraform apply`
+
+---
 
 ### Question 12
 
@@ -494,6 +570,8 @@ B) Running `terraform plan -out=plan.tfplan` followed by `terraform apply plan.t
 C) `terraform plan` and `terraform apply` are functionally equivalent — the only difference is that `apply` prompts the engineer to confirm before making changes, whereas `plan` proceeds without confirmation; both commands modify cloud resources
 D) `terraform plan -refresh=false` is always more accurate than a standard `terraform plan` because skipping the API refresh prevents stale data from the cloud provider from interfering with Terraform's change calculation
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -506,6 +584,8 @@ A) The legacy `terraform import` CLI command (pre-1.5 style) requires that a cor
 B) The `import` block introduced in Terraform 1.5+ allows infrastructure import to be declared directly in HCL — Terraform generates a plan showing the import operation before executing it, making the process reviewable and version-controlled alongside the rest of the configuration
 C) Both the legacy `terraform import` CLI command and the newer `import` block in HCL automatically generate the complete resource configuration block — after running either form of import, the `.tf` configuration is fully populated with all resource arguments so no manual HCL authoring is needed
 D) `terraform import` adds the imported resource to the state file and simultaneously deletes the resource from the cloud provider — it is designed to "take over" management of existing resources by moving them entirely under Terraform's control, including removing their independent existence
+
+---
 
 ### Question 1
 
@@ -520,6 +600,8 @@ B) `local.*` references create the strongest type of dependency edge in Terrafor
 C) `var.*` and `local.*` references do NOT create dependency edges between resources — variables and locals are simply resolved values, not resources; only direct references to another resource's attribute (e.g., `aws_vpc.main.id`) create implicit dependency edges in the DAG
 D) `var.*` references create dependency edges only when the variable type is `string` — list and map variable references are ignored by the dependency graph builder
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -532,6 +614,8 @@ A) `ignore_changes = all` instructs Terraform to ignore ALL attribute drift on t
 B) `ignore_changes = all` is the broadest form of `ignore_changes` — instead of listing specific attributes, it suppresses drift detection for every attribute of the resource simultaneously
 C) `ignore_changes = all` is restricted to compute resources (such as `aws_instance`) — it cannot be applied to networking, storage, or database resources because those resource types do not support the `all` keyword in their lifecycle blocks
 D) `ignore_changes = all` can be useful for resources that are heavily managed by external tooling or processes outside Terraform, where drift detection would always produce noisy false-positive changes
+
+---
 
 ### Question 3
 
@@ -546,6 +630,8 @@ B) `for_each` accepts any collection type including `list(string)`, `set(string)
 C) Inside a resource block that uses `for_each`, `each.key` holds the current iteration's key (the map key or the set element value) and `each.value` holds the corresponding value from the map; for a set, `each.key` and `each.value` are identical since each element IS its own key
 D) `for_each` and `count` can be declared together on the same resource block — `for_each` controls the naming while `count` controls the total number of instances
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -558,6 +644,8 @@ A) `replace_triggered_by` is a shorthand alias for `depends_on` — both argumen
 B) `replace_triggered_by` forces a resource to be replaced (destroyed and recreated) whenever any resource or attribute listed in it changes — even if the resource's own configuration attributes have not changed; this is useful for resources like Auto Scaling Groups that should cycle when their launch template changes
 C) `replace_triggered_by` only works with resources in the same module — you cannot reference a resource from a parent or child module in the `replace_triggered_by` list
 D) `replace_triggered_by` is equivalent to `ignore_changes` with the opposite effect — where `ignore_changes` suppresses replacements, `replace_triggered_by` forces them for listed attributes during in-place updates
+
+---
 
 ### Question 5
 
@@ -572,6 +660,8 @@ B) Setting `lifecycle { destroy = false }` inside a `removed` block tells Terraf
 C) The `removed` block is the only way to stop Terraform from managing a resource in Terraform 1.7+ — running `terraform state rm` to achieve the same result is deprecated and will be removed in a future version
 D) The `removed` block is a version-controlled, declarative alternative to `terraform state rm` — it achieves the same state-removal outcome but is expressed in HCL and goes through the normal plan/apply workflow
 
+---
+
 ### Question 6
 
 **Difficulty:** Medium
@@ -584,6 +674,8 @@ A) `depends_on` has no performance impact — Terraform's scheduler ignores expl
 B) `depends_on` increases parallelism by giving Terraform advance knowledge of the dependency structure — without it, Terraform must wait to discover dependencies at runtime, which is slower
 C) `depends_on` adds an explicit dependency edge to the Terraform DAG, serialising the creation of the dependent resource after ALL resources listed in `depends_on` complete — this reduces the potential parallelism of the apply, which is why `depends_on` should be used sparingly and only when implicit dependencies cannot capture the relationship
 D) `depends_on` is only evaluated during `terraform destroy` — it has no effect on the ordering of resource creation during `terraform apply`
+
+---
 
 ### Question 7
 
@@ -598,6 +690,8 @@ B) Using `-target` is recommended as a standard day-to-day workflow practice bec
 C) Frequent use of `-target` can cause state drift — by applying changes to only a subset of resources, other resources in the configuration may become out of sync with the state file, leading to unexpected plan output on subsequent full applies
 D) Terraform emits a warning when `-target` is used, reminding the engineer that the resulting plan and state may be incomplete
 
+---
+
 ### Question 8
 
 **Difficulty:** Medium
@@ -610,6 +704,8 @@ A) A resource's address within its own module is always prefixed with `module.ro
 B) The address `aws_instance.web` refers to a resource only when used within the same module where it is declared — when referenced from the root module, the address automatically includes the full provider namespace, becoming `hashicorp/aws.aws_instance.web`
 C) A resource declared in the root module as `resource "aws_instance" "web"` has the local address `aws_instance.web` within that module; when the same resource is referenced from an external context (such as a `terraform state` command or an error message), its fully qualified address is `aws_instance.web` (root module resources have no module prefix); a resource inside a child module called `compute` would be addressed as `module.compute.aws_instance.web`
 D) Resource addresses always include the provider name as a prefix — for example, `aws.aws_instance.web` or `azurerm.azurerm_resource_group.rg` — to disambiguate resources when multiple providers are in use
+
+---
 
 ### Question 9
 
@@ -624,6 +720,8 @@ B) When a data source's filter arguments depend on an attribute of a resource th
 C) When a data source references a "(known after apply)" attribute, Terraform uses the last known value from the state file as a substitute — this prevents any "unknown" values from propagating to downstream resources
 D) Data sources are always read during the plan phase, regardless of whether their inputs are known — Terraform uses placeholder values for any unknown inputs and corrects them automatically during apply without any visible indication in the plan output
 
+---
+
 ### Question 10
 
 **Difficulty:** Medium
@@ -636,6 +734,8 @@ A) After a successful `terraform apply` that processes a `moved` block, the `mov
 B) If a `moved` block is accidentally removed from a configuration BEFORE the apply that would process it, Terraform will silently skip the rename and the resource will retain its old address in state permanently with no further action possible
 C) A `moved` block can relocate a resource FROM the root module INTO a child module — for example, `from = aws_instance.web` and `to = module.compute.aws_instance.server` is valid and moves the state entry into the child module's address namespace without destroying the cloud resource
 D) `moved` blocks are processed by Terraform only when `terraform init -upgrade` is run — they are not processed during a normal `terraform plan` or `terraform apply` cycle
+
+---
 
 ### Question 11
 
@@ -650,6 +750,8 @@ B) `prevent_destroy = true` can be bypassed at runtime by passing the `-force-de
 C) The only way to destroy a resource protected by `prevent_destroy = true` is to first remove or disable the `prevent_destroy` setting in the configuration, then run `terraform apply` or `terraform destroy` — there is no runtime flag to override it, by design
 D) `prevent_destroy = true` is intentionally impossible to bypass with a flag because its purpose is to force a deliberate, reviewable, version-controlled configuration change before destruction can occur
 
+---
+
 ### Question 12
 
 **Difficulty:** Hard
@@ -662,6 +764,8 @@ A) `create_before_destroy = true` and `prevent_destroy = true` can never be decl
 B) `ignore_changes` with a list of attributes (e.g., `ignore_changes = [tags]`) tells Terraform to never create or update the resource for those attributes — Terraform will also skip creating the resource if the initial `terraform apply` only has values for the ignored attributes
 C) `replace_triggered_by` accepts a list of resource references or specific resource attributes — when a referenced resource OR attribute changes on apply, Terraform plans the resource as a forced replacement (`-/+`), even if none of that resource's own declared attributes have changed; `replace_triggered_by` only triggers on changes, not on initial resource creation
 D) The four lifecycle arguments (`create_before_destroy`, `prevent_destroy`, `ignore_changes`, `replace_triggered_by`) are mutually exclusive — only one can be declared per `lifecycle` block; declaring two or more causes a validation error
+
+---
 
 ### Question 13
 
@@ -676,6 +780,8 @@ B) Resources with no dependencies between them are always executed strictly sequ
 C) The destroy order in Terraform is the topological REVERSE of the create order — in a chain where A ← B ← C (C depends on B, B depends on A), creation order is A → B → C and destruction order is C → B → A; this guarantees that no resource is destroyed while another resource that depends on it still exists
 D) Adding `depends_on` between two resources that already have an implicit attribute-reference dependency is harmless but redundant — the graph edge already exists, so the explicit `depends_on` adds no new constraint and has no effect on execution order or parallelism
 
+---
+
 ### Question 1
 
 **Difficulty:** Easy
@@ -688,6 +794,8 @@ A) Adding `if condition` to a `for` expression is a syntax error in Terraform �
 B) The `if` clause in a `for` expression filters the INPUT collection before the transformation expression is evaluated — only elements for which the `if` condition is `true` are included in the resulting list or map; elements where the condition is `false` are silently discarded from the output
 C) The `if` clause in a `for` expression must always appear BEFORE the transformation value expression — writing `[for n in names : upper(n) if length(n) > 3]` is a syntax error because the `if` must precede the `:`
 D) The `if` clause in a `for` expression can only filter on the LENGTH of the element — other conditions such as type comparisons or `contains()` checks are not supported
+
+---
 
 ### Question 2
 
@@ -702,6 +810,8 @@ B) `compact()` is specifically designed for `list(string)` — it removes elemen
 C) `compact()` removes all "falsy" values from any collection type — passing a `list(number)` with zeroes (`0`) will remove those zeroes from the output alongside any `null` values
 D) `compact()` is frequently used to clean up lists produced by conditional expressions where some elements may be `null` when a condition is false — for example, when building a list of optional security group IDs
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -714,6 +824,8 @@ A) The iterator variable inside a `dynamic` block defaults to the name of the bl
 B) The iterator variable name is always fixed as `each` regardless of the block type — inside any `dynamic` block, you access the current element with `each.value` and `each.key`, exactly as with `for_each` on resource blocks
 C) The `iterator` argument inside a `dynamic` block overrides the default iterator name — for example, setting `iterator = rule` changes the iterator from `ingress` to `rule`, so the content block uses `rule.value` and `rule.key` instead of `ingress.value` and `ingress.key`
 D) The iterator variable inside a `dynamic` block always exposes only `iterator.value` — `iterator.key` is not available because `dynamic` blocks only support `list` collections as the `for_each` value, and lists have no string keys
+
+---
 
 ### Question 4
 
@@ -728,6 +840,8 @@ B) An `object` type constraint (e.g., `object({ name = string, port = number })`
 C) `map(string)` supports an arbitrary number of dynamically-named keys at runtime; `object({...})` also supports arbitrary keys — the declared attribute names in an `object` are only hints for documentation, not enforced at evaluation time
 D) An `object` type produces better performance than `map(string)` for large collections because Terraform uses a hash-indexed internal structure for objects but a linked list for maps
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -740,6 +854,8 @@ A) `element(list, index)` behaves identically to `list[index]` — if the index 
 B) `element(list, index)` wraps the index using the modulo of the list length — `element(["a", "b", "c"], 4)` returns `"b"` because `4 mod 3 = 1`, which is the index of `"b"`; this wrapping behaviour makes `element()` useful for cycling through a fixed list of values (such as availability zones) as a counter increases
 C) `element(list, index)` always returns the LAST element of the list when the index exceeds the list length — it never wraps and never errors
 D) `element(list, index)` is only valid when used with `count.index` — it cannot be used with arbitrary integer expressions or variable values
+
+---
 
 ### Question 6
 
@@ -754,6 +870,8 @@ B) `templatefile(path, vars)` renders a template file by substituting `${var_nam
 C) `templatefile()` automatically has access to all variables, locals, and resource attributes in the calling module's scope — you do not need to pass them explicitly in the `vars` argument; the `vars` map is optional and is only needed for variables not already in module scope
 D) A common use case for `templatefile()` is generating `user_data` scripts for EC2 instances — the template file (e.g., `user_data.sh.tpl`) can contain `${app_name}` placeholders that are replaced by values from the `vars` map passed to `templatefile()`
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -766,6 +884,8 @@ A) `try(expr1, expr2, fallback)` evaluates ALL expressions and returns the LAST 
 B) `try(expr1, expr2, fallback)` evaluates expressions left to right and returns the value of the FIRST expression that evaluates successfully without an error — subsequent expressions are not evaluated once a successful one is found; if ALL expressions error, Terraform returns a configuration error
 C) `try()` is equivalent to the `||` (OR) logical operator in other languages — it returns `true` if any expression is truthy and `false` otherwise; it is used for boolean short-circuit evaluation, not for error handling
 D) `try()` can only be used with map key access expressions such as `var.settings["key"]` — it cannot be used with function calls, attribute access chains, or type conversion expressions
+
+---
 
 ### Question 8
 
@@ -780,6 +900,8 @@ B) The `newbits` argument specifies how many ADDITIONAL bits to add to the base 
 C) `cidrsubnet("10.0.0.0/16", 8, 1)` produces the CIDR `"10.0.0.1/24"` — the `netnum` argument offsets the HOST portion of the address by the given number
 D) `cidrsubnet()` requires the base CIDR to be a class A network (`/8`) — it cannot be applied to `/16` or smaller prefix lengths
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -792,6 +914,8 @@ A) Output blocks support a `depends_on` meta-argument, just as resource blocks d
 B) The `depends_on` argument on an output is most commonly needed when the output's value does not directly reference a resource's attribute but the output is logically dependent on a side effect of that resource — for example, an output that exposes a computed URL that depends on a DNS record being created, where the DNS creation is not reflected in the URL string itself
 C) Output `depends_on` is required on any output that references a resource attribute — without it, Terraform cannot determine when to make the output available and will always show `(known after apply)` for resource attribute outputs
 D) When an output in a child module has `depends_on`, the parent module's reference to that output will also be blocked until the declared dependencies complete — the `depends_on` constraint propagates through module composition
+
+---
 
 ### Question 10
 
@@ -806,6 +930,8 @@ B) For a resource using `count`, `aws_instance.web[*].id` and `[for r in aws_ins
 C) The splat expression `[*]` is a legacy syntax that has been deprecated since Terraform 0.14 — it should be replaced with explicit `for` expressions in all new configurations
 D) Applying a splat expression to a single resource instance (not using `count` or `for_each`) returns a list containing exactly one element — `aws_instance.web[*].id` where `aws_instance.web` is a single instance produces `["<id>"]`, not just `"<id>"`
 
+---
+
 ### Question 11
 
 **Difficulty:** Medium
@@ -818,6 +944,8 @@ A) `jsonencode(value)` converts any Terraform value (maps, lists, strings, numbe
 B) `jsondecode(str)` parses a JSON-formatted string and returns a Terraform value — a JSON object becomes a Terraform `map`, a JSON array becomes a Terraform `list`, and JSON primitives map to their Terraform equivalents (string, number, bool, null)
 C) `jsonencode()` and `jsondecode()` are inverses of each other — `jsondecode(jsonencode(value))` always returns a value that is structurally identical to the original `value` with no information loss, regardless of the input type
 D) `jsonencode()` is commonly used with IAM policy documents in AWS configurations — instead of writing a heredoc or using the `aws_iam_policy_document` data source, engineers can write the policy as a Terraform map literal and pass it to `jsonencode()` to produce a valid JSON policy string
+
+---
 
 ### Question 12
 
@@ -832,6 +960,8 @@ B) Inside a resource block that uses `for_each`, both `each.key` and `each.value
 C) `for_each` can accept a `list(string)` directly without any type conversion — Terraform internally deduplicates list elements and builds a string key for each one; `toset()` is a convenience function but is not required
 D) Resource instances created by `for_each` are addressed using integer indexes — for example, `aws_iam_user.users[0]`, `aws_iam_user.users[1]`, etc. — and accessing a specific instance by key is not supported in `terraform state` commands or `-target` flags
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -844,6 +974,8 @@ A) Type conversion functions in Terraform are guaranteed to succeed for any inpu
 B) `tostring(true)` returns the string `"true"` and `tostring(false)` returns `"false"` — Terraform's `tostring()` function converts boolean values to their string representations without error; conversely, `tobool("true")` returns `true` and `tobool("false")` returns `false`, making round-trip conversion between bool and string lossless for the canonical string representations
 C) The `any` type constraint on a variable does NOT mean the variable accepts any Terraform type — it means Terraform will infer the type from whatever value is first supplied and then enforce that inferred type for all subsequent references to the variable within the same apply
 D) `toset(list)` removes duplicate elements when converting a list to a set — `toset(["a", "b", "a", "c"])` produces a set containing exactly three elements: `"a"`, `"b"`, and `"c"`; the ordering of elements in the resulting set is not guaranteed because sets in Terraform are unordered
+
+---
 
 ### Question 1
 
@@ -858,6 +990,8 @@ B) Multiple `validation` blocks can be declared on the same variable — each bl
 C) Multiple `validation` blocks on a variable are valid HCL syntax but Terraform only evaluates the LAST `validation` block and silently ignores all earlier ones
 D) Multiple `validation` blocks are only permitted on variables of type `string` — `number` and `bool` variables are restricted to a single `validation` block
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -870,6 +1004,8 @@ A) Inside a `postcondition` block, `self` references the resource's attributes a
 B) `self` is a valid and commonly used keyword inside `precondition` blocks — it references the resource's CURRENT state before the planned change is applied, allowing the engineer to validate the resource's existing attributes
 C) Inside a `precondition` block, `self` is NOT available — a `precondition` runs BEFORE the resource is modified, so there is no "new" state for `self` to reference; `precondition` conditions must reference other data sources, variables, or resources rather than `self`
 D) A `precondition` that needs to assert something about the resource's planned instance type should reference `var.instance_type` or `data.something.attribute` — not `self`, which is undefined in `precondition` scope
+
+---
 
 ### Question 3
 
@@ -884,6 +1020,8 @@ B) When a child module declares an output with `sensitive = true`, the parent mo
 C) Marking an output `sensitive = true` suppresses the value in `terraform apply` terminal output and in the default `terraform output` listing — the actual value is replaced with `(sensitive value)` in those contexts
 D) Sensitive outputs can never be retrieved in plaintext — once `sensitive = true` is set, the value is permanently opaque and cannot be accessed by any means, including scripts or downstream configurations
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -896,6 +1034,8 @@ A) The `data` source declared inside a `check` block is identical in behaviour t
 B) The `data` source inside a `check` block is **scoped to the `check` block** — it exists only within the context of that check's assertions and is NOT accessible from outside the `check` block via the standard `data.*` reference syntax; because it is outside the main dependency graph, a failure to read it does not fail the apply
 C) The `data` source inside a `check` block is only evaluated during `terraform apply` — it is skipped during `terraform plan` to avoid making network calls before infrastructure is deployed
 D) Only a single type of `data` source is allowed inside a `check` block — the `http` data source from the `hashicorp/http` provider; other provider data sources cannot be used as scoped check data sources
+
+---
 
 ### Question 5
 
@@ -910,6 +1050,8 @@ B) Terraform displays a warning about the potential exposure but proceeds with t
 C) Terraform raises an **error** at plan time if an output's `value` references a sensitive variable and the output block does not declare `sensitive = true` — the engineer must explicitly acknowledge the sensitive nature of the data by adding `sensitive = true` to the output block
 D) The output is simply omitted from `terraform output` listings when it references a sensitive variable without being marked sensitive — the value is silently suppressed with no error
 
+---
+
 ### Question 6
 
 **Difficulty:** Medium
@@ -922,6 +1064,8 @@ A) `precondition` and `postcondition` blocks can only be declared inside `resour
 B) Only `postcondition` is supported on data source `lifecycle` blocks — `precondition` is not valid on data sources because data sources do not have a pre-change state to evaluate
 C) `precondition` and `postcondition` blocks are both valid inside a data source's `lifecycle` block — a data source `postcondition` is commonly used to assert that the fetched data meets expected requirements (e.g., verifying that a looked-up AMI has the correct architecture) before other resources consume it
 D) `precondition` and `postcondition` blocks on data sources run at `terraform init` — unlike resource lifecycle conditions which run during plan and apply, data source conditions are validated when providers are initialized
+
+---
 
 ### Question 7
 
@@ -936,6 +1080,8 @@ B) Because `check` block failures exit with `0`, CI/CD pipelines that rely solel
 C) A failing `check` block assertion causes `terraform apply` to exit with a **non-zero exit code** — this is what distinguishes `check` from `precondition`: both block apply completion, but `check` failures are labelled as "warnings" while `precondition` failures are labelled as "errors"
 D) The non-blocking, exit-code-0 behaviour of `check` blocks makes them suitable for health monitoring dashboards and observability tooling — where surfacing a health status without blocking deployments is the desired outcome
 
+---
+
 ### Question 8
 
 **Difficulty:** Medium
@@ -948,6 +1094,8 @@ A) A `check` block MUST include a scoped `data` source block — a `check` block
 B) `check` blocks run on BOTH `terraform plan` and `terraform apply` — they are evaluated after all resource operations complete in each run; this means health assertions are checked on every plan, giving continuous visibility even in runs that make no changes
 C) A single `check` block can contain AT MOST one `assert` block — to check multiple conditions in the same `check` context, the engineer must declare multiple separate `check` blocks
 D) The `data` source declared inside a `check` block can be referenced by resource blocks elsewhere in the configuration using the standard `data.<type>.<name>.<attribute>` syntax — this allows resource configurations to consume values fetched by the health check
+
+---
 
 ### Question 9
 
@@ -962,6 +1110,8 @@ B) The `error_message` argument is optional in all three condition block types �
 C) The `error_message` is a string expression and CAN include interpolation — for example, a `validation` block's `error_message` can reference `var.<variable_name>` to include the invalid value in the message, such as `"${var.environment} is not an allowed environment"`; this helps engineers produce informative error messages that show the offending value
 D) The `error_message` in a `postcondition` can reference `self.<attribute>` to include the resource's post-change attribute values, but the `error_message` in a `precondition` and `validation` cannot use any interpolation at all
 
+---
+
 ### Question 10
 
 **Difficulty:** Medium
@@ -974,6 +1124,8 @@ A) When a `precondition` fails, Terraform halts the apply immediately — the re
 B) When a `precondition` fails mid-apply, resources that were already successfully applied BEFORE the failing resource are NOT automatically rolled back — Terraform does not perform automatic rollback of completed resource changes
 C) A failing `precondition` exits `terraform apply` with a non-zero exit code — this is what makes `precondition` suitable as a hard deployment gate in CI/CD pipelines, unlike `check` blocks which exit with code `0`
 D) When a `precondition` fails on Resource B, and Resource A was already successfully applied in the same run, Terraform automatically destroys Resource A and reverts the infrastructure to the state it was in before the apply began — this transactional rollback is the key safety feature of `precondition`
+
+---
 
 ### Question 11
 
@@ -988,6 +1140,8 @@ B) Variable `validation` blocks run after `terraform plan` is generated and disp
 C) The `check` block's `assert` condition can reference ANY value available in the Terraform configuration, including resource attributes, data source outputs, local values, and variables — it is not restricted like `validation` conditions (which can only reference `var.<name>`) because `check` blocks run after all resource operations complete when those values are known
 D) When a `precondition` fails on a resource that is being DESTROYED (not created or updated), Terraform ignores the `precondition` and proceeds with the destroy — `precondition` checks only apply to create and update operations, not destroy
 
+---
+
 ### Question 12
 
 **Difficulty:** Hard
@@ -1000,6 +1154,8 @@ A) When a resource attribute is automatically marked sensitive by its provider (
 B) The `nonsensitive()` function removes the sensitive marking from a value, allowing it to be used in contexts that would otherwise require `sensitive = true`; using `nonsensitive()` is appropriate when an engineer has reviewed the data and determined it is safe to expose — for example, when wrapping a value in `base64encode()` or `sha256()` has made the original secret unrecoverable from the output
 C) Sensitive values marked with `sensitive = true` on a variable are automatically excluded from `terraform.tfstate` — the state file omits them entirely so that even unrestricted access to the state file does not expose the original value
 D) When Terraform performs a `terraform plan`, sensitive variable values are ALWAYS omitted from the plan output entirely — even in the diff showing what will change, the old and new values are always shown as `(sensitive value)` regardless of whether the value is actually changing
+
+---
 
 ### Question 13
 
@@ -1014,6 +1170,8 @@ B) `precondition` and `postcondition` blocks are only valid inside `resource` bl
 C) A resource's `lifecycle` block can contain multiple `precondition` blocks and multiple `postcondition` blocks — there is no limit on the number of each; every `precondition` is evaluated before the resource is changed and every `postcondition` is evaluated after; if any condition fails, Terraform halts with that condition's `error_message`
 D) `postcondition` blocks support a special `rollback = true` argument that instructs Terraform to automatically destroy the just-created resource if the condition fails — without this argument, a failing `postcondition` leaves the resource in place and only exits non-zero
 
+---
+
 ### Question 1
 
 **Difficulty:** Easy
@@ -1026,6 +1184,8 @@ A) `terraform get` downloads and installs module sources into `.terraform/module
 B) `terraform get` is a standalone command that downloads module sources but does NOT install or update providers — to install providers, a full `terraform init` (or `terraform init -upgrade`) is still required
 C) `terraform get` also installs required providers defined in `terraform { required_providers {} }` blocks — because modules often declare their own required providers, `terraform get` automatically resolves and installs those providers at the same time to keep the local cache consistent
 D) Running `terraform init` performs a superset of what `terraform get` does — `terraform init` installs providers, initialises the backend, AND downloads modules; `terraform get` handles only the module download step
+
+---
 
 ### Question 2
 
@@ -1040,6 +1200,8 @@ B) The standard module file structure (`main.tf`, `variables.tf`, `outputs.tf`, 
 C) `variables.tf` and `outputs.tf` are special filenames that Terraform processes before `main.tf` — this processing order is guaranteed and means input variables are always resolved before resource blocks are evaluated
 D) The `versions.tf` file, which contains the `terraform { required_providers {} }` block, must exist in the module root directory — placing `required_providers` in `main.tf` is not supported and causes a provider resolution error
 
+---
+
 ### Question 3
 
 **Difficulty:** Easy
@@ -1052,6 +1214,8 @@ A) `count` and `for_each` are NOT valid meta-arguments on `module` blocks — th
 B) When `for_each = { prod = "10.0.0.0/16", dev = "10.1.0.0/16" }` is set on a module block, Terraform creates two module instances; inside the module, `each.key` and `each.value` are available just as they are in a `for_each` resource; the instances are addressed as `module.<name>["prod"]` and `module.<name>["dev"]`
 C) When `count = 3` is set on a module block, Terraform creates three separate module instances; the instances are addressed as `module.<name>[0]`, `module.<name>[1]`, and `module.<name>[2]`, and `count.index` is available inside the module for distinguishing instances
 D) `for_each` on a module block requires that the module itself contain no resources — only data sources are permitted inside a module instantiated with `for_each`
+
+---
 
 ### Question 4
 
@@ -1066,6 +1230,8 @@ B) `depends_on` on a `module` block should be used routinely for all module rela
 C) `depends_on` on a `module` block instructs Terraform to apply the entire target module **after** the listed resources or modules have been applied — it is specifically intended for cases where a module depends on something that Terraform CANNOT detect automatically (a "hidden dependency"), such as a resource whose output is not directly referenced by any module input but whose side effects must complete first
 D) `depends_on` on a `module` block has no effect when both dependencies are in the same Terraform root module — it only controls ordering between root modules in a workspace with multiple configurations
 
+---
+
 ### Question 5
 
 **Difficulty:** Medium
@@ -1078,6 +1244,8 @@ A) The `.terraform.lock.hcl` file tracks **provider** version selections — it 
 B) The `.terraform.lock.hcl` file records the resolved versions of **Terraform Registry modules** in addition to providers — this means that after `terraform init`, both the exact provider versions AND the exact module versions are pinned in the lock file, and all team members will use the identical module and provider versions when they run `terraform init`
 C) Module version pinning for Terraform Registry modules is NOT managed by `.terraform.lock.hcl` — module versions are resolved each time `terraform init` runs based on the `version` constraint in the `module` block; the resolved version is cached in `.terraform/modules/modules.json` but is NOT recorded in the lock file; to ensure reproducible module versions, the `version` constraint in the `module` block should be as specific as possible (e.g., `"= 5.1.0"`)
 D) The `.terraform.lock.hcl` file should be committed to version control — committing it ensures consistent provider versions across all team members and CI/CD environments; `terraform init -upgrade` is used to intentionally update the lock file to newer provider versions
+
+---
 
 ### Question 6
 
@@ -1092,6 +1260,8 @@ B) Resources inside a module cannot be targeted individually — `terraform appl
 C) Resources inside a module are addressed the same way as root-module resources — `aws_vpc.main` regardless of which module declares them; the module name is omitted from addresses in all CLI commands
 D) The module resource address format uses a colon separator: `module:<module_name>:<resource_type>:<resource_name>` — the colon syntax is required to distinguish module addresses from root-level resource addresses in command output
 
+---
+
 ### Question 7
 
 **Difficulty:** Medium
@@ -1104,6 +1274,8 @@ A) The `providers` argument in a `module` block is used to pass **input variable
 B) By default, a child module inherits all provider configurations from its parent module — no explicit `providers` argument is needed unless you want the child module to use a **different** provider configuration (for example, a provider aliased to a different region); in that case, `providers = { aws = aws.us-west-2 }` passes the aliased provider to the child module
 C) The `providers` argument must be specified in every `module` block — if it is omitted, Terraform raises an error about unresolved provider references inside the child module; there is no default provider inheritance behaviour
 D) The `providers` argument accepts only provider aliases — passing a non-aliased default provider using `providers = { aws = aws }` is invalid HCL syntax
+
+---
 
 ### Question 8
 
@@ -1118,6 +1290,8 @@ B) Published registry modules support the `version` argument in the calling `mod
 C) Terraform private registries (available through HCP Terraform and Terraform Enterprise) allow organisations to publish modules internally — these private modules use the same `<NAMESPACE>/<MODULE>/<PROVIDER>` source format and `version` argument as public registry modules, but are only accessible to authenticated members of the organisation
 D) When a `module` block references a Terraform Registry module without specifying a `version` argument, `terraform init` always downloads the oldest published version to ensure maximum backwards compatibility — operators must explicitly set a `version` constraint to get a newer version
 
+---
+
 ### Question 9
 
 **Difficulty:** Medium
@@ -1130,6 +1304,8 @@ A) Module outputs can only be passed to `resource` blocks in the root module —
 B) The root module can directly pass a child module's output as an input to another child module by referencing `module.<source_module>.<output_name>` in the receiving module's `module` block argument — Terraform automatically determines the correct dependency ordering: module B will not be evaluated until module A has completed, because module B's input depends on module A's output
 C) Passing a child module's output to another child module creates a circular dependency and is always rejected by Terraform's configuration validation
 D) Module A's output can be passed to module B's input only if both modules are in the same local directory — cross-directory module output composition is not supported
+
+---
 
 ### Question 10
 
@@ -1144,6 +1320,8 @@ B) For local path modules, `terraform init -upgrade` performs a full module re-d
 C) `terraform init -upgrade` also upgrades provider versions — it consults the `version` constraints in `required_providers` blocks and the lock file, updates the lock file to the latest satisfying provider versions, and downloads the new provider binaries
 D) `terraform init -upgrade` is the recommended command to explicitly adopt a newer minor or patch version of a module or provider when your constraints permit it — after running it, the updated selections should be reviewed and committed to version control
 
+---
+
 ### Question 11
 
 **Difficulty:** Hard
@@ -1156,6 +1334,8 @@ A) When `for_each` is set on a module block, all instances share a single addres
 B) When `for_each = toset(["prod", "dev"])` is set on a module block, the module instances are addressed as `module.<name>["prod"]` and `module.<name>["dev"]`; referencing a specific instance's output in the root module uses `module.<name>["prod"].<output_name>`; in `terraform apply -target`, the correct flag to target only the prod instance is `-target='module.vpc["prod"]'`
 C) Module `for_each` instances are addressed using numeric indices regardless of whether `for_each` was given a map or a set — Terraform converts all `for_each` collections to indexed lists internally; `module.vpc[0]` and `module.vpc[1]` are always the correct addressing format
 D) When `for_each` is used on a module block, the `each.key` and `each.value` references are only available in the root module's `module` block argument list — resources inside the child module CANNOT access `each.key` or `each.value`; child module resources must use input variables to receive the key values
+
+---
 
 ### Question 12
 
@@ -1170,6 +1350,8 @@ B) All five module meta-arguments (`count`, `for_each`, `depends_on`, `providers
 C) `count` and `for_each` are mutually exclusive on a module block — a single module block cannot use both at the same time; attempting to set both `count` and `for_each` on the same `module` block causes a Terraform configuration error
 D) The `providers` meta-argument in a module block maps the child module's **required provider names** to provider configurations in the calling module — if a child module has `required_providers { aws = { source = "hashicorp/aws" } }`, the parent can map it using `providers = { aws = aws.us-west-2 }` to supply an aliased provider to the child
 
+---
+
 ### Question 13
 
 **Difficulty:** Hard
@@ -1182,6 +1364,8 @@ A) A child module MUST redeclare all providers it uses in its own `terraform { r
 B) When a child module does NOT declare `required_providers`, Terraform automatically discovers all provider requirements by inspecting which resource types the module uses and resolves the appropriate provider versions from the registry — no explicit provider declaration is needed anywhere in the module tree
 C) A child module should declare its own `required_providers` specifying the providers it uses and their minimum version constraints — this is best practice because it documents the module's requirements, enables independent version validation, and ensures that callers who install the module via `terraform init` get a compatible provider version; the root module's lock file still governs the actual installed version, but the child's declaration constrains what is acceptable
 D) Provider requirements declared in a child module's `required_providers` are completely ignored by the root module — only the root module's `required_providers` block affects provider version resolution; child module `required_providers` declarations exist solely for documentation purposes and have no effect on `terraform init`
+
+---
 
 ### Question 1
 
@@ -1196,6 +1380,8 @@ B) `terraform.tfstate.backup` stores only the **most recent previous state** —
 C) `terraform.tfstate.backup` is created only when Terraform detects that resources will be destroyed — it is a safety copy made automatically before any destructive operation; non-destructive applies do not update the backup file
 D) `terraform.tfstate.backup` is stored in `.terraform/` alongside provider plugins and module cache — it is an internal Terraform file and should never be inspected or modified directly by operators
 
+---
+
 ### Question 2
 
 **Difficulty:** Easy
@@ -1208,6 +1394,8 @@ A) `terraform state list` and `terraform state show` are aliases for the same co
 B) `terraform state list` outputs ALL resource addresses currently tracked in state (e.g., `aws_vpc.main`, `module.networking.aws_subnet.public`) — it provides a full index of managed resources but shows NO attribute values; `terraform state show <address>` outputs ALL attribute key-value pairs for ONE specific resource at the given address, displaying the same information Terraform stores in state for that resource
 C) `terraform state list` requires a resource address argument — without it, the command returns an error because Terraform cannot determine which resource to list
 D) `terraform state show` is not a standard subcommand of `terraform state` — attributes for a specific resource are viewed using `terraform inspect <address>` instead
+
+---
 
 ### Question 3
 
@@ -1222,6 +1410,8 @@ B) HCP Terraform automatically versions all state — a full history of every st
 C) HCP Terraform's remote state storage is built on top of the AWS S3 backend — organisations must first provision an S3 bucket in their own AWS account and provide HCP Terraform with write access before remote state can be activated for a workspace
 D) All workspaces within the same HCP Terraform organisation share a single logical state file — HCP Terraform uses resource namespacing internally to prevent resource address collisions, but the underlying state is a single shared document
 
+---
+
 ### Question 4
 
 **Difficulty:** Medium
@@ -1234,6 +1424,8 @@ A) `terraform state rm` removes the specified resource from Terraform's state fi
 B) A common use case for `terraform state rm` is deliberately abandoning management of a resource that should be preserved — for example, removing a database from state before deleting the Terraform configuration, so that `terraform destroy` does not attempt to delete the database
 C) `terraform state rm aws_instance.web` destroys the EC2 instance in AWS — removing a resource from state is equivalent to destroying it because Terraform treats a resource absent from state as if it has never been provisioned and will attempt to recreate it on the next `terraform apply`
 D) After running `terraform state rm aws_s3_bucket.media`, a subsequent `terraform plan` will show the bucket as a resource to be created — because the bucket is no longer in state, Terraform treats it as new infrastructure that needs to be provisioned, even though the bucket already exists in AWS
+
+---
 
 ### Question 5
 
@@ -1248,6 +1440,8 @@ B) The `terraform_remote_state` data source requires the remote state to be stor
 C) The `terraform_remote_state` data source exposes only the **output values** declared in the remote configuration's `output` blocks — individual resource attributes are NOT directly accessible; operators who want to share infrastructure values across configurations must declare them as `output` blocks in the producing configuration; the consuming configuration then reads them as `data.terraform_remote_state.<name>.outputs.<output_name>`
 D) The `terraform_remote_state` data source automatically re-triggers a plan in the consuming configuration whenever the remote state changes — HCP Terraform detects state version changes in the referenced workspace and immediately queues a run in the consuming workspace to incorporate the new values
 
+---
+
 ### Question 6
 
 **Difficulty:** Medium
@@ -1260,6 +1454,8 @@ A) A **VCS-driven workspace** is connected to a specific branch in a VCS reposit
 B) A **CLI-driven workspace** uses HCP Terraform as the remote execution backend — when a developer runs `terraform plan` or `terraform apply` locally, the operation streams to HCP Terraform's managed infrastructure for execution; state and the run history are stored in HCP Terraform, but the trigger comes from the developer's local CLI
 C) **API-driven workspaces** have no VCS connection and no CLI trigger — all runs are initiated programmatically via HCP Terraform's API, making them suitable for custom CI/CD pipelines or external orchestration tools that need precise control over when and what Terraform runs
 D) When a workspace is configured as VCS-driven, developers can also trigger additional runs directly from the `terraform apply` CLI command on their workstations — both the VCS webhook and CLI triggers are simultaneously active; HCP Terraform merges runs from both sources into a single queue using timestamp ordering
+
+---
 
 ### Question 7
 
@@ -1274,6 +1470,8 @@ B) `soft-mandatory` enforcement blocks a run if a policy fails, but any user wit
 C) `hard-mandatory` enforcement blocks a run if a policy fails AND the failure **cannot be overridden by any user**, including organisation owners — it is the strictest enforcement level, designed for regulatory or compliance requirements that must never be bypassed under any circumstances
 D) All three enforcement levels (`advisory`, `soft-mandatory`, `hard-mandatory`) apply the same way regardless of whether the policy framework is Sentinel or OPA — the enforcement level is a run-level setting, not a policy-level setting, so a single enforcement level governs all policies that evaluate during a run
 
+---
+
 ### Question 8
 
 **Difficulty:** Medium
@@ -1286,6 +1484,8 @@ A) HCP Terraform supports only HashiCorp Sentinel for policy enforcement — OPA
 B) Sentinel and OPA are both supported in HCP Terraform — Sentinel uses the proprietary HashiCorp Sentinel DSL, while OPA uses the Rego language developed by the Open Policy Agent community; organisations can use either or both frameworks simultaneously in their policy sets, and the same three enforcement levels (`advisory`, `soft-mandatory`, `hard-mandatory`) apply to policies written in either language
 C) OPA policies in HCP Terraform use HCL syntax for consistency with the rest of the Terraform toolchain — since OPA was contributed to the Cloud Native Computing Foundation (CNCF) by HashiCorp, its policy language was aligned with HCL to reduce the learning curve for existing Terraform operators
 D) When both Sentinel and OPA policies are configured in an organisation, Sentinel policies always evaluate first — if any Sentinel policy blocks a run, OPA policies are skipped entirely; this precedence ordering is fixed and cannot be changed in the policy set configuration
+
+---
 
 ### Question 9
 
@@ -1300,6 +1500,8 @@ B) Health assessments detect infrastructure drift by running `terraform plan -re
 C) Health assessments are available in all HCP Terraform tiers starting from the free tier — drift detection is enabled by default for all workspaces and cannot be disabled without contacting HashiCorp support
 D) Health assessments require Sentinel policy sets to be configured for the workspace — drift detected during an assessment is evaluated against active policies, and if no policies are defined, the assessment exits immediately without reporting any results
 
+---
+
 ### Question 10
 
 **Difficulty:** Medium
@@ -1312,6 +1514,8 @@ A) HCP Terraform defines four workspace-level permission tiers: **Read** (view r
 B) In HCP Terraform, access permissions are assigned per individual user for each workspace — there is no concept of a team or group; every user must be individually granted a workspace permission level; this per-user model is the only way to manage access
 C) A HCP Terraform **team token** provides API authentication that carries the access level of the team it represents — CI/CD pipelines can use a single team token to authenticate and trigger plans and applies across all workspaces the team has been granted Write access to, without needing individual user credentials
 D) HCP Terraform's workspace permission model has two levels only: Read and Write — there are no intermediate levels; the Plan-only and Admin tiers described in documentation are legacy terms that map to Read and Write respectively in the current platform
+
+---
 
 ### Question 11
 
@@ -1326,6 +1530,8 @@ B) `terraform state mv aws_instance.old aws_instance.new` renames the cloud EC2 
 C) After running `terraform state mv aws_instance.old aws_instance.new`, a subsequent `terraform plan` should show "No changes" — because the state address now matches the resource block address in configuration, Terraform sees no difference between desired and actual state for that resource
 D) `terraform state mv` can also move a resource into a child module — for example, `terraform state mv aws_vpc.main module.networking.aws_vpc.main` updates the state address to reflect that the resource is now managed inside the `networking` module, without affecting the real VPC in AWS
 
+---
+
 ### Question 12
 
 **Difficulty:** Hard
@@ -1338,6 +1544,8 @@ A) Terraform OSS workspaces (`terraform workspace new`, `terraform workspace sel
 B) Terraform OSS workspaces are a **state segregation feature within a single backend and a single configuration** — all OSS workspaces in a configuration set share the same `.tf` files and differ only in their state files; HCP Terraform workspaces, by contrast, are fully isolated environments with independent state, **separate variable sets** (including environment variables), run history, access permissions, and execution infrastructure; the two concepts share the word "workspace" but represent fundamentally different models; using OSS workspaces is not the same as using HCP Terraform
 C) When connected to HCP Terraform via a `cloud` block, running `terraform workspace new staging` creates a temporary staging copy of the configuration that is automatically discarded after the next `terraform apply` on the production workspace — the staging workspace acts as a short-lived preview environment managed entirely by HCP Terraform with no further operator action needed
 D) Local `terraform workspace select prod` and HCP Terraform workspace selection are identical operations — selecting a workspace in either context causes Terraform to immediately trigger a speculative plan against the selected workspace and display the current difference between local configuration and the workspace's remote state; this plan preview is required before any subsequent `terraform apply`
+
+---
 
 ### Question 13
 

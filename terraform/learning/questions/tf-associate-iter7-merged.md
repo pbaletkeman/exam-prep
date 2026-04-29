@@ -1,5 +1,7 @@
 # Terraform Associate Exam Questions
 
+---
+
 ### Question 1 — IaC Benefit Name for Identical Environments
 
 **Difficulty**: Easy
@@ -15,6 +17,8 @@ Complete the following statement by selecting the term that fills the blank:
 - B) Convergence
 - C) Modularity
 - D) **Repeatability**
+
+---
 
 ### Question 2 — `instance_type` Argument in an EC2 Resource Block
 
@@ -39,6 +43,8 @@ What argument name fills the blank to specify the EC2 instance size?
 - C) **`instance_type`**
 - D) `type`
 
+---
+
 ### Question 3 — "Desired" End State in Declarative IaC
 
 **Difficulty**: Easy
@@ -54,6 +60,8 @@ Complete the following statement:
 - B) scripted
 - C) **desired**
 - D) imperative
+
+---
 
 ### Question 4 — `count = 0` to Conditionally Disable a Resource
 
@@ -79,6 +87,8 @@ What value fills the blank?
 - C) `"disabled"`
 - D) **`0`**
 
+---
+
 ### Question 5 — "Drift" — Infrastructure Deviation From Desired State
 
 **Difficulty**: Medium
@@ -94,6 +104,8 @@ Complete the following statement:
 - B) corruption
 - C) divergence
 - D) **drift**
+
+---
 
 ### Question 6 — "Audit Trail" Benefit of Version-Controlled IaC
 
@@ -111,6 +123,8 @@ Complete the following statement:
 - C) speculative plan history
 - D) **audit trail**
 
+---
+
 ### Question 7 — TWO Provisioning Tools in the IaC Landscape
 
 **Difficulty**: Medium
@@ -124,6 +138,8 @@ An engineer is building a comparison table of IaC tools with a "Provisioning" vs
 - B) **AWS CloudFormation**
 - C) Chef
 - D) **Pulumi**
+
+---
 
 ### Question 8 — "Documentation" Benefit of IaC Configuration Files
 
@@ -141,6 +157,8 @@ Complete the following statement from Terraform's IaC benefits:
 - C) snapshots
 - D) manifests
 
+---
+
 ### Question 9 — Declarative IaC Describes WHAT, Not HOW
 
 **Difficulty**: Medium
@@ -156,6 +174,8 @@ Complete the following statement that describes the Terraform configuration mode
 - B) why
 - C) when
 - D) **what**
+
+---
 
 ### Question 10 — Conditional `count` Expression for Optional Resources
 
@@ -186,6 +206,8 @@ What value fills the blank to create exactly one bastion instance when `create_b
 - C) `"enabled"`
 - D) `var.bastion_count`
 
+---
+
 ### Question 11 — TWO Accurate Statements About IaC Solving ClickOps Problems
 
 **Difficulty**: Medium
@@ -199,6 +221,8 @@ A team is documenting why they are adopting Terraform to replace their ClickOps 
 - B) IaC removes the need for cloud providers because infrastructure is simulated locally in configuration files
 - C) IaC configurations run faster than manual provisioning because they use compiled binary formats
 - D) **An IaC tool can compare the desired state in configuration files against the actual cloud state, detect manual changes made outside Terraform, and propose corrections**
+
+---
 
 ### Question 12 — `resource` Keyword in HCL Block Declaration
 
@@ -222,6 +246,8 @@ What keyword fills the blank to correctly declare an S3 bucket that Terraform wi
 - C) `provider`
 - D) **`resource`**
 
+---
+
 ### Question 13 — TWO Advantages of Terraform Over AWS CloudFormation
 
 **Difficulty**: Hard
@@ -235,6 +261,8 @@ A platform engineering team is choosing between Terraform and AWS CloudFormation
 - B) CloudFormation uses an imperative scripting model, while Terraform uses a superior declarative model
 - C) Terraform plan output includes cost estimation for every resource type, while CloudFormation does not support cost estimation
 - D) **Terraform is not tied to a single cloud vendor — the same tool, workflow, and skills apply whether managing AWS, Azure, GCP, or on-premises resources**
+
+---
 
 ### Question 14 — `required_version` in the `terraform` Block
 
@@ -265,6 +293,8 @@ What argument name fills the blank?
 - C) **`required_version`**
 - D) `cli_version`
 
+---
+
 ### Question 15 — Default Registry Hostname in Provider Source Addresses
 
 **Difficulty**: Easy
@@ -282,6 +312,8 @@ What word fills the blank?
 - B) `providers`
 - C) `app`
 - D) **`registry`**
+
+---
 
 ### Question 16 — `terraform init -upgrade` Flag
 
@@ -302,6 +334,8 @@ What flag fills the blank?
 - B) `--update`
 - C) `-reconfigure`
 - D) **`-upgrade`**
+
+---
 
 ### Question 17 — Provider Alias Reference in a Resource Block
 
@@ -335,6 +369,8 @@ What value fills the blank?
 - C) `"europe"`
 - D) **`aws.europe`**
 
+---
+
 ### Question 18 — `terraform.tfstate.backup` — Only One Backup Kept
 
 **Difficulty**: Medium
@@ -352,6 +388,8 @@ What word or phrase fills the blank?
 - B) first
 - C) oldest
 - D) **previous (most recent)**
+
+---
 
 ### Question 19 — `terraform plan -refresh=false`
 
@@ -373,6 +411,8 @@ What flag fills the blank?
 - C) `-cached`
 - D) **`-refresh=false`**
 
+---
+
 ### Question 20 — `terraform show -json` for Machine-Readable State
 
 **Difficulty**: Medium
@@ -393,6 +433,8 @@ What flag fills the blank?
 - C) `-parse`
 - D) **`-json`**
 
+---
+
 ### Question 21 — `terraform state pull` Writes to stdout
 
 **Difficulty**: Medium
@@ -411,6 +453,8 @@ What word or phrase fills the blank?
 - C) `terraform.tfstate` in the current directory, overwriting the local copy
 - D) **`stdout`**
 
+---
+
 ### Question 22 — `sensitive = true` Scope
 
 **Difficulty**: Medium
@@ -428,6 +472,8 @@ What word fills the blank?
 - B) log file
 - C) remote backend
 - D) **terminal**
+
+---
 
 ### Question 23 — Fourth State Purpose: Performance
 
@@ -450,6 +496,8 @@ What word fills the blank for the fourth purpose?
 - C) Locking
 - D) **Performance**
 
+---
+
 ### Question 24 — TWO Limitations of Local State vs Remote State
 
 **Difficulty**: Medium
@@ -463,6 +511,8 @@ A solo developer has been using a local `terraform.tfstate` file for a prototype
 - B) Local state cannot store resource attribute values — it only stores resource addresses
 - C) **Local state has no built-in sharing mechanism** — the `terraform.tfstate` file lives on one engineer's workstation; other team members cannot access it without manually copying the file, making collaboration impractical and error-prone; remote backends (S3, Azure Blob, HCP Terraform) store state in a location all team members can reach
 - D) Local state cannot track more than 50 resources — it has a hard limit for small projects only
+
+---
 
 ### Question 25 — gRPC Protocol Between Terraform Core and Provider
 
@@ -481,6 +531,8 @@ What protocol name fills the blank?
 - B) JSON-RPC
 - C) SOAP
 - D) **gRPC**
+
+---
 
 ### Question 26 — TWO Contents of a `.terraform.lock.hcl` Provider Entry
 
@@ -509,6 +561,8 @@ Which TWO of the following correctly describe the purpose of properties in this 
 - C) **The `hashes` field contains cryptographic checksums of the provider binary for each supported platform** — when `terraform init` downloads the provider, it verifies the binary's hash against the recorded values; if the hash does not match (e.g., the binary has been tampered with or the wrong binary was downloaded), Terraform refuses to proceed; this prevents supply-chain attacks
 - D) The `hashes` field stores the SHA-256 checksum of the `.terraform.lock.hcl` file itself, used to detect if the lock file was manually modified
 
+---
+
 ### Question 27 — Saving a Plan to a File with `-out`
 
 **Difficulty**: Easy
@@ -528,6 +582,8 @@ What flag fills the blank to save the plan to a file named `plan.tfplan`?
 - B) `-export`
 - C) **`-out=`**
 - D) `-write`
+
+---
 
 ### Question 28 — `terraform output -raw` for Scripting
 
@@ -549,6 +605,8 @@ What flag fills the blank?
 - C) `-noformat`
 - D) **`-raw`**
 
+---
+
 ### Question 29 — `terraform workspace show`
 
 **Difficulty**: Easy
@@ -568,6 +626,8 @@ What subcommand fills the blank?
 - B) `active`
 - C) `status`
 - D) **`show`**
+
+---
 
 ### Question 30 — `terraform fmt -diff` Shows Changes Without Writing
 
@@ -589,6 +649,8 @@ What flag fills the blank?
 - C) `-show`
 - D) **`-diff`**
 
+---
+
 ### Question 31 — `terraform plan -destroy`
 
 **Difficulty**: Medium
@@ -609,6 +671,8 @@ What flag fills the blank?
 - C) `-dry-destroy`
 - D) **`-destroy`**
 
+---
+
 ### Question 32 — TWO Plan Symbols That Result in a Net-New Resource After Apply
 
 **Difficulty**: Medium
@@ -622,6 +686,8 @@ A `terraform plan` output contains four types of operations. Which TWO operation
 - B) `~` — an in-place update: the existing resource is modified without replacement
 - C) **`-/+`** — a replacement: the existing resource is destroyed and a completely new one is created in its place
 - D) `-` — a pure destroy: the existing resource is removed and nothing is created
+
+---
 
 ### Question 33 — `terraform apply -replace` to Force Recreate a Resource
 
@@ -643,6 +709,8 @@ What flag fills the blank?
 - C) `-force-replace`
 - D) **`-replace`**
 
+---
+
 ### Question 34 — `terraform init -reconfigure`
 
 **Difficulty**: Medium
@@ -663,6 +731,8 @@ What flag fills the blank?
 - C) `-reset`
 - D) **`-reconfigure`**
 
+---
+
 ### Question 35 — `terraform graph` Outputs DOT Format
 
 **Difficulty**: Medium
@@ -681,6 +751,8 @@ What word fills the blank?
 - C) Mermaid
 - D) **DOT**
 
+---
+
 ### Question 36 — TWO Flags That Work on Both `terraform plan` and `terraform apply`
 
 **Difficulty**: Medium
@@ -694,6 +766,8 @@ An engineer is writing a deployment script. They need to pass input variable val
 - B) `-approve` — skips the apply confirmation prompt; only valid on apply
 - C) `-out=plan.tfplan` — saves the plan to a file; only valid on plan
 - D) **`-var-file=prod.tfvars`** — loads variable values from a `.tfvars` file; accepted by both plan and apply
+
+---
 
 ### Question 37 — Applying a Saved Plan File Skips the Confirmation Prompt
 
@@ -713,6 +787,8 @@ What word fills the blank?
 - C) only briefly
 - D) **not**
 
+---
+
 ### Question 38 — `terraform console` is an Interactive REPL
 
 **Difficulty**: Hard
@@ -731,6 +807,8 @@ What acronym fills the blank?
 - C) IDE
 - D) **REPL**
 
+---
+
 ### Question 39 — TWO Items That `terraform init` Downloads and Configures
 
 **Difficulty**: Hard
@@ -744,6 +822,8 @@ A developer runs `terraform init` in a working directory that has both `required
 - B) The Terraform Core binary itself — `terraform init` checks for a newer CLI version and auto-updates the `terraform` executable
 - C) **Module source code** — external module sources (registry modules, Git repos, or HTTP archives referenced in `module` blocks) are downloaded and cached into `.terraform/modules/`, making them available for plan and apply
 - D) The `terraform.tfstate` file — `terraform init` bootstraps an empty state file if one does not already exist
+
+---
 
 ### Question 40 — `ignore_changes` Prevents Drift Detection
 
@@ -773,6 +853,8 @@ What lifecycle argument fills the blank?
 - C) `no_update`
 - D) **`ignore_changes`**
 
+---
+
 ### Question 41 — TWO Correct Statements About the `moved` Block
 
 **Difficulty**: Easy
@@ -786,6 +868,8 @@ Which TWO of the following statements about the `moved` block are correct? (Sele
 - B) After a `moved` block is applied, it must remain in the configuration permanently — removing it causes Terraform to destroy the resource on the next apply
 - C) **A `moved` block can also relocate a resource from the root module into a child module by setting `from = aws_instance.web` and `to = module.web_tier.aws_instance.server` — Terraform updates the state address without touching the cloud resource**
 - D) The `moved` block requires running `terraform state mv` first before the block takes effect — it is a documentation-only declaration
+
+---
 
 ### Question 42 — Default Parallelism Value
 
@@ -804,6 +888,8 @@ What number fills the blank?
 - B) 5
 - C) 20
 - D) **10**
+
+---
 
 ### Question 43 — `replace_triggered_by` Forces Replacement on Dependency Change
 
@@ -837,6 +923,8 @@ What lifecycle argument fills the blank?
 - C) `recreate_when`
 - D) **`replace_triggered_by`**
 
+---
+
 ### Question 44 — `ignore_changes = all`
 
 **Difficulty**: Medium
@@ -864,6 +952,8 @@ What value fills the blank?
 - C) `"all"`
 - D) **`all`**
 
+---
+
 ### Question 45 — `removed` Block with `destroy = false`
 
 **Difficulty**: Medium
@@ -890,6 +980,8 @@ What value fills the blank?
 - C) `"retain"`
 - D) **`false`**
 
+---
+
 ### Question 46 — Data Sources Read During `apply` for Computed Values
 
 **Difficulty**: Medium
@@ -907,6 +999,8 @@ What word fills the blank?
 - B) `validate`
 - C) `refresh`
 - D) **`apply`**
+
+---
 
 ### Question 47 — Aliased Provider Reference Syntax
 
@@ -945,6 +1039,8 @@ What meta-argument fills the blank?
 - C) `configuration`
 - D) **`provider`**
 
+---
+
 ### Question 48 — TWO Consequences of Frequent `-target` Usage
 
 **Difficulty**: Medium
@@ -958,6 +1054,8 @@ Which TWO of the following accurately describe a consequence or risk of using `t
 - B) `-target` permanently marks the targeted resource as "priority" in the state file — subsequent applies without `-target` will always process that resource first
 - C) **Dependency chain gaps — if the targeted resource depends on other resources that also have pending changes, those dependencies may not be applied, leaving the configuration partially reconciled**
 - D) Using `-target` disables all provider authentication — the apply runs in offline mode and only modifies the state file, not the real cloud infrastructure
+
+---
 
 ### Question 49 — Destroy Order Is the Reverse of Creation Order
 
@@ -976,6 +1074,8 @@ What word fills the blank?
 - B) `parallel`
 - C) `extension`
 - D) **`reverse`**
+
+---
 
 ### Question 50 — `depends_on` for IAM Policy Attachment
 
@@ -1005,6 +1105,8 @@ What meta-argument fills the blank?
 - C) `prerequisites`
 - D) **`depends_on`**
 
+---
+
 ### Question 51 — Resource Address Format from Root Module
 
 **Difficulty**: Hard
@@ -1025,6 +1127,8 @@ What label fills the blank to correctly address the resource inside a module cal
 - C) `server`
 - D) **`web_tier`**
 
+---
+
 ### Question 52 — TWO Collection Types Usable Directly with `for_each`
 
 **Difficulty**: Hard
@@ -1038,6 +1142,8 @@ Which TWO collection types can be passed directly to the `for_each` meta-argumen
 - B) **`set(string)` — e.g., `for_each = toset(["us-east-1", "us-west-2"])` where the argument's type is a set; also accepted when the variable is already declared as `set(string)`**
 - C) **`map(string)` — e.g., `for_each = { web = "t3.micro", db = "r5.large" }`; each.key = "web" or "db", each.value = the instance type string**
 - D) `tuple` — e.g., `for_each = ["us-east-1", true, 80]`
+
+---
 
 ### Question 53 — `nullable = false` Prevents Null Assignment
 
@@ -1062,6 +1168,8 @@ What argument fills the blank?
 - B) `non_null`
 - C) `allow_null`
 - D) `nullable`
+
+---
 
 ### Question 54 — `count.index` Is Zero-Based
 
@@ -1091,6 +1199,8 @@ What expression fills the blank?
 - C) `count.id`
 - D) `count.index`
 
+---
+
 ### Question 55 — Referencing a Child Module Output
 
 **Difficulty**: Easy
@@ -1118,6 +1228,8 @@ What expression fills the blank?
 - C) `output.network.public_subnet_id`
 - D) `module.network.public_subnet_id`
 
+---
+
 ### Question 56 — `flatten()` Removes Nesting from a List of Lists
 
 **Difficulty**: Medium
@@ -1144,6 +1256,8 @@ After evaluation, `local.all_subnet_ids` should be `["subnet-aaa", "subnet-bbb",
 - C) `tolist()`
 - D) `flatten()`
 
+---
+
 ### Question 57 — `compact()` Removes Nulls and Empty Strings
 
 **Difficulty**: Medium
@@ -1166,6 +1280,8 @@ After evaluation, `local.clean_sg_ids` should be `["sg-aaa", "sg-bbb"]`. What fu
 - B) `trim()`
 - C) `filter()`
 - D) `compact()`
+
+---
 
 ### Question 58 — `merge()` Combines Maps with Later Values Winning
 
@@ -1198,6 +1314,8 @@ What function fills the blank so that `Environment` uses `var.environment` inste
 - B) `zipmap()`
 - C) `coalesce()`
 - D) `merge()`
+
+---
 
 ### Question 59 — `jsonencode()` Serialises a Value to JSON
 
@@ -1235,6 +1353,8 @@ What function fills the blank?
 - C) `json()`
 - D) `jsonencode()`
 
+---
+
 ### Question 60 — `dynamic` Block Iterator Variable Defaults to the Block Type Label
 
 **Difficulty**: Medium
@@ -1268,6 +1388,8 @@ What iterator variable name fills the blank?
 - C) `item`
 - D) `ingress`
 
+---
+
 ### Question 61 — Splat Expression Extracts an Attribute from Every Instance
 
 **Difficulty**: Medium
@@ -1296,6 +1418,8 @@ What expression fills the blank (inserted between `web` and `.id`) to collect al
 - C) `[count]`
 - D) `[*]`
 
+---
+
 ### Question 62 — TWO Correct Statements About the `try()` Function
 
 **Difficulty**: Medium
@@ -1309,6 +1433,8 @@ Which TWO of the following statements about the `try()` function are correct? (S
 - B) `try()` is equivalent to a standard ternary conditional — it evaluates both branches and chooses based on the truthiness of the first argument
 - C) `try()` can safely access a potentially absent map key: `try(var.settings["optional_key"], "default_value")` returns `"default_value"` if `"optional_key"` is absent or if accessing it produces any error
 - D) `try()` only accepts string expressions — using it with numeric or boolean expressions causes a type error
+
+---
 
 ### Question 63 — `templatefile()` Uses `path.module` for Reliable Template Paths
 
@@ -1338,6 +1464,8 @@ What path variable fills the blank?
 - C) `path.workspace`
 - D) `path.module`
 
+---
+
 ### Question 64 — `cidrsubnet()` Arguments: prefix, newbits, netnum
 
 **Difficulty**: Hard
@@ -1360,6 +1488,8 @@ What value fills the blank so that `local.subnet_cidr` evaluates to `"10.0.1.0/2
 - C) `24`
 - D) `8`
 
+---
+
 ### Question 65 — TWO Correct Statements About `for` Expression `if` Filter Clauses
 
 **Difficulty**: Hard
@@ -1373,6 +1503,8 @@ Which TWO of the following statements about `for` expressions with `if` filter c
 - B) The `if` clause is mandatory in a `for` expression — omitting it causes a validation error because Terraform cannot determine which elements to include
 - C) The `if` clause works in both list comprehensions `[for ...]` and map comprehensions `{for ...}` — `{for k, v in var.servers : k => v if v != ""}` is valid and produces a map containing only entries whose value is non-empty
 - D) A `for` expression `if` clause can reference variables and locals, but cannot call built-in functions such as `length()`, `contains()`, or `startswith()` — function calls inside `if` clauses are a syntax error
+
+---
 
 ### Question 66 — `check` Block Terraform Version
 
@@ -1389,6 +1521,8 @@ Complete the statement with the correct Terraform version:
 - B) `1.0`
 - C) `1.3`
 - D) `1.5`
+
+---
 
 ### Question 67 — `sensitive = true` on an Output Block
 
@@ -1411,6 +1545,8 @@ output "db_connection_string" {
 - B) `masked`
 - C) `redact`
 - D) `sensitive`
+
+---
 
 ### Question 68 — `self` Keyword Inside a `postcondition`
 
@@ -1440,6 +1576,8 @@ resource "aws_instance" "app" {
 - C) `aws_instance`
 - D) `self`
 
+---
+
 ### Question 69 — `error_message` Argument in a `validation` Block
 
 **Difficulty**: Medium
@@ -1464,6 +1602,8 @@ variable "instance_count" {
 - B) `error`
 - C) `fail_message`
 - D) `error_message`
+
+---
 
 ### Question 70 — `precondition` Block Inside `lifecycle`
 
@@ -1493,6 +1633,8 @@ resource "aws_instance" "web" {
 - C) `check`
 - D) `precondition`
 
+---
+
 ### Question 71 — `check` Block Outer Structure
 
 **Difficulty**: Medium
@@ -1520,6 +1662,8 @@ ___________ "app_health" {
 - C) `validation`
 - D) `check`
 
+---
+
 ### Question 72 — `can()` Function in a `check` Block Assertion
 
 **Difficulty**: Medium
@@ -1542,6 +1686,8 @@ check "database_accessible" {
 - B) `is_valid()`
 - C) `coalesce()`
 - D) `can()`
+
+---
 
 ### Question 73 — `nonsensitive()` Function
 
@@ -1568,6 +1714,8 @@ output "cluster_name_display" {
 - C) `expose()`
 - D) `nonsensitive()`
 
+---
+
 ### Question 74 — `check` Block: Version and Execution Timing
 
 **Difficulty**: Medium
@@ -1582,6 +1730,8 @@ Which **TWO** of the following statements about the `check` block are correct?
 - C) The `check` block runs on every `terraform plan` AND every `terraform apply` — not just on apply
 - D) The `check` block can only be declared inside a resource's `lifecycle` block — it is not a top-level block type
 
+---
+
 ### Question 75 — `postcondition`: `self` and Failure Behaviour
 
 **Difficulty**: Medium
@@ -1595,6 +1745,8 @@ Which **TWO** of the following statements about `postcondition` blocks are corre
 - B) Inside a `postcondition`, the `self` keyword references the resource as it exists **after the change has completed** — including attributes only known after creation, such as `public_ip` or `id`
 - C) A failing `postcondition` condition halts the apply **after** the resource has been changed, exits with a non-zero status code, and marks the run as failed
 - D) `postcondition` blocks can only reference `var.<name>` values — they cannot use `self` or reference other resource attributes
+
+---
 
 ### Question 76 — Vault Provider Data Source Type
 
@@ -1620,6 +1772,8 @@ resource "aws_db_instance" "main" {
 - B) `vault_kv_secret`
 - C) `vault_generic_secret`
 - D) `vault_database_secret`
+
+---
 
 ### Question 77 — `precondition` Is the Wrong Tool for Post-Creation Checks
 
@@ -1651,6 +1805,8 @@ Why is this the wrong assertion mechanism for this check?
 - C) `self` is not a valid reference inside any `lifecycle` block — both `precondition` and `postcondition` must reference other resources by their full resource address
 - D) The issue is that `public_ip` is not a valid attribute of `aws_instance` — the correct attribute is `public_ip_address`
 
+---
+
 ### Question 78 — Vault Dynamic Secrets: Two Correct Statements
 
 **Difficulty**: Hard
@@ -1664,6 +1820,8 @@ Which **TWO** of the following statements about using the HashiCorp Vault provid
 - B) Values retrieved from Vault data sources are automatically excluded from `terraform.tfstate` — the Vault integration is specifically designed to prevent secrets from appearing in state
 - C) The Vault provider pattern prevents static, long-lived credentials from being embedded in Terraform configuration files — this reduces the risk of secrets being committed to source control
 - D) Using the Vault provider means Terraform never stores the retrieved secret values anywhere — neither in state nor in memory during execution
+
+---
 
 ### Question 79 — Terraform Registry Module Source Format
 
@@ -1689,6 +1847,8 @@ module "vpc" {
 - C) `"terraform-aws-modules/vpc/aws"`
 - D) `"module://terraform-aws-modules/vpc/aws"`
 
+---
+
 ### Question 80 — Child Module Output Block Value
 
 **Difficulty**: Easy
@@ -1713,6 +1873,8 @@ output "vpc_id" {
 - C) `output.vpc.id`
 - D) `aws_vpc.main.id`
 
+---
+
 ### Question 81 — `terraform init` Module Caching
 
 **Difficulty**: Easy
@@ -1727,6 +1889,8 @@ Which **TWO** of the following statements about `terraform init` and module cach
 - C) `.terraform/modules/` is only created when at least one Terraform Registry module is referenced — configurations using only local path modules never have this directory
 - D) After `terraform init`, subsequent `terraform plan` and `terraform apply` operations read module source code from `.terraform/modules/` (or the original local path for local sources) — they do not contact remote sources again unless `terraform init` is re-run
 
+---
+
 ### Question 82 — `~>` Compatible Version Constraint
 
 **Difficulty**: Medium
@@ -1740,6 +1904,8 @@ Complete the explanation: `version = "~> 5.0"` in a `module` block is equivalent
 - B) `= 5.0` — pins to exactly version 5.0 and rejects all other versions including patch releases
 - C) `>= 5.0, < 6.0` — the `~>` pessimistic constraint allows the **rightmost** specified component to increment freely while locking all components to the left
 - D) `>= 5.0, < 5.1` — only 5.0.x patch releases are permitted
+
+---
 
 ### Question 83 — HTTP Archive Module Source
 
@@ -1763,6 +1929,8 @@ The archive is hosted at: `https://example.com/modules/vpc.zip`
 - C) `"http::https://example.com/modules/vpc.zip"`
 - D) `"https://example.com/modules/vpc.zip"`
 
+---
+
 ### Question 84 — `versions.tf` Convention
 
 **Difficulty**: Medium
@@ -1785,6 +1953,8 @@ module/
 - B) `constraints.tf`
 - C) `versions.tf`
 - D) `terraform.tf`
+
+---
 
 ### Question 85 — Explicit Variable Passing to a Child Module
 
@@ -1811,6 +1981,8 @@ module "tagging" {
 - B) `input`
 - C) `environment`
 - D) `pass`
+
+---
 
 ### Question 86 — Indexing Into a Module List Output
 
@@ -1841,6 +2013,8 @@ resource "aws_instance" "web" {
 - C) `module.networking.public_subnet_ids["0"]`
 - D) `module.networking.public_subnet_ids[0]`
 
+---
+
 ### Question 87 — Generic Git SSH Module Source
 
 **Difficulty**: Medium
@@ -1861,6 +2035,8 @@ module "example" {
 - C) `git::ssh://`
 - D) `github+ssh::`
 
+---
+
 ### Question 88 — Module Composition: Two Correct Statements
 
 **Difficulty**: Medium
@@ -1874,6 +2050,8 @@ Which **TWO** of the following statements about Terraform module composition are
 - B) Child modules can themselves contain `module` blocks that call further nested child modules — Terraform supports arbitrary nesting depth with no enforced limit
 - C) A grandchild module's output values are automatically propagated to the root module without any intermediate output declarations — Terraform traverses the call tree transparently
 - D) A root module can call multiple independent child modules, and each of those child modules can in turn call their own nested child modules
+
+---
 
 ### Question 89 — Standard Module Structure: Input Variables File
 
@@ -1898,6 +2076,8 @@ module/
 - C) `params.tf`
 - D) `variables.tf`
 
+---
+
 ### Question 90 — `modules.json` After `terraform init`
 
 **Difficulty**: Hard
@@ -1912,6 +2092,8 @@ A project uses two module blocks — one with `source = "./modules/networking"` 
 - C) `modules.json` stores the SHA256 hash of each module's source code and is used exclusively for integrity verification during `terraform apply`
 - D) `modules.json` is only created when at least one `version` argument is present in a module block — modules without version constraints are not recorded
 
+---
+
 ### Question 91 — S3 and GCS Module Sources: Two Correct Statements
 
 **Difficulty**: Hard
@@ -1925,6 +2107,8 @@ Which **TWO** of the following statements about Terraform module sources are cor
 - B) All module source types — including local paths, Git URLs, S3 buckets, and HTTP archives — support the `version` argument in the `module` block to pin the downloaded version
 - C) A Google Cloud Storage (GCS) bucket can be used as a module source using the `gcs::` prefix — for example: `"gcs::https://www.googleapis.com/storage/v1/mybucket/vpc.zip"`
 - D) GitHub module sources using the bare `github.com/...` format do not support subdirectory selection — the `//` double-slash convention is only valid when using the `git::https://` prefix
+
+---
 
 ### Question 92 — `terraform force-unlock` Command Syntax
 
@@ -1944,6 +2128,8 @@ terraform ___________ abc-12345
 - C) `force-unlock`
 - D) `state release`
 
+---
+
 ### Question 93 — `terraform login` Credential Storage Location
 
 **Difficulty**: Easy
@@ -1958,6 +2144,8 @@ Complete the sentence: After running `terraform login` and authenticating via th
 - C) `./terraform.tfvars` in the working directory
 - D) `~/.config/terraform/token`
 
+---
+
 ### Question 94 — TF_LOG Verbosity Ordering
 
 **Difficulty**: Easy
@@ -1971,6 +2159,8 @@ Which **TWO** of the following statements about `TF_LOG` log levels are correct?
 - B) `WARN` produces more output than `INFO` — warnings include all informational messages plus additional warning-level detail
 - C) The full verbosity order from most to least verbose is: `TRACE > DEBUG > INFO > WARN > ERROR`; setting a level includes all messages at that level and less verbose levels — `INFO` would show `INFO`, `WARN`, and `ERROR` messages
 - D) `ERROR` and `OFF` are the same — setting `TF_LOG=ERROR` disables logging just as `TF_LOG=OFF` does
+
+---
 
 ### Question 95 — `terraform state mv` to Rename a Resource
 
@@ -1990,6 +2180,8 @@ terraform state mv ___________ ___________
 - C) `"aws_instance" "web"` `"aws_instance" "web_server"`
 - D) `-source=aws_instance.web` `-dest=aws_instance.web_server`
 
+---
+
 ### Question 96 — `terraform init` Flag to Migrate State to a New Backend
 
 **Difficulty**: Medium
@@ -2007,6 +2199,8 @@ terraform init ___________
 - B) `-reconfigure`
 - C) `-migrate-state`
 - D) `-force-copy`
+
+---
 
 ### Question 97 — `cloud` Block Workspace Selection by Tags
 
@@ -2034,6 +2228,8 @@ terraform {
 - C) `tags`
 - D) `labels`
 
+---
+
 ### Question 98 — `TF_TOKEN_` Environment Variable for HCP Terraform
 
 **Difficulty**: Medium
@@ -2051,6 +2247,8 @@ export ___________="your-api-token-here"
 - B) `TF_CLOUD_TOKEN`
 - C) `TF_TOKEN_app_terraform_io`
 - D) `TERRAFORM_CLOUD_CREDENTIAL`
+
+---
 
 ### Question 99 — `terraform_remote_state` Backend Type for HCP Terraform
 
@@ -2078,6 +2276,8 @@ data "terraform_remote_state" "networking" {
 - C) `"remote"`
 - D) `"terraform_cloud"`
 
+---
+
 ### Question 100 — Sentinel Policy Enforcement Level That Cannot Be Overridden
 
 **Difficulty**: Medium
@@ -2091,6 +2291,8 @@ Complete the sentence: A Sentinel or OPA policy set with enforcement level _____
 - B) `advisory`
 - C) `blocking`
 - D) `hard-mandatory`
+
+---
 
 ### Question 101 — Private Registry Module Source Format
 
@@ -2113,6 +2315,8 @@ module "vpc" {
 - C) `"app.terraform.io/my-org/vpc/aws"`
 - D) `"registry.terraform.io/private/my-org/vpc/aws"`
 
+---
+
 ### Question 102 — Sentinel vs OPA: Two Correct Statements
 
 **Difficulty**: Medium
@@ -2126,6 +2330,8 @@ Which **TWO** of the following statements about HCP Terraform policy enforcement
 - B) Sentinel and OPA are mutually exclusive — an HCP Terraform organisation must choose one framework and cannot use both simultaneously
 - C) Both Sentinel and OPA policy sets can be assigned enforcement levels: `advisory`, `soft-mandatory`, or `hard-mandatory`
 - D) OPA policies can only be used for cost estimation checks; Sentinel is the only framework that can evaluate Terraform plan data for resource-level policy enforcement
+
+---
 
 ### Question 103 — `TF_LOG_CORE` and `TF_LOG_PROVIDER` Env Vars
 
@@ -2145,6 +2351,8 @@ export ___________=TRACE
 - B) `TF_LOG_CORE` and `TF_LOG_PROVIDER`
 - C) `TF_CORE_LOG` and `TF_PROVIDER_LOG`
 - D) `TF_LOG_TERRAFORM` and `TF_LOG_PLUGIN`
+
+---
 
 ### Question 104 — HCP Terraform Health Assessments: Underlying Command
 
