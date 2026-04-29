@@ -67,7 +67,7 @@ This repository contains production-grade study materials designed to help you a
 
 ### For New Learners
 
-1. Start with [study-plan.md](study-plan.md) for a structured 60-hour curriculum
+1. Start with [60-hour-study-plan.md](60-hour-study-plan.md) for a structured 60-hour curriculum
 2. Follow the recommended pace (10–30 days depending on intensity)
 3. Use the practice questions to validate knowledge
 4. Work through hands-on labs as you progress

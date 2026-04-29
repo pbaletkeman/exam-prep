@@ -10,9 +10,9 @@ This repository serves as a comprehensive study platform for three certification
 
 | Certification | Provider | Study Materials |
 | ------------- | -------- | --------------- |
-| GitHub Actions (GH-200) | GitHub / Microsoft | `githubactions/` |
-| Databricks Certified Associate Developer for Apache Spark | Databricks | `databricks/learning/` |
-| HashiCorp Certified Terraform Associate (004) | HashiCorp | `terraform/learning/` |
+| GitHub Actions (GH-200) | GitHub / Microsoft | [githubactions/learning](githubactions/learning/) |
+| Databricks Certified Associate Developer for Apache Spark | Databricks | [databricks/learning](databricks/learning/) |
+| HashiCorp Certified Terraform Associate (004) | HashiCorp | [terraform/learning](terraform/learning/) |
 
 ---
 
@@ -33,12 +33,13 @@ databricks/
 ├── plan-databricksSparkStudyPrompts.prompt.md
 └── questions-prompt.txt
 engine/                              # Shared quiz engine logic
-githubactions/                       # GitHub Actions study materials (19 topics)
+githubactions/
+├── learning/                        # GitHub Actions study materials (19 topics)
 ├── 01-GitHub-Actions-VS-Code-Extension.md
 ├── 02-Contextual-Information.md
 ├── ... (01–19)
 ├── GitHub-Workflows-Guide.md
-├── study-plan.md
+├── 60-hour-study-plan.md
 ├── exam-overview.md
 ├── README.md
 └── INDEX.md
@@ -69,7 +70,7 @@ terraform/
 
 ## GitHub Actions Study Materials
 
-**Location:** `githubactions/`
+**Location:** `githubactions/learning`
 
 Comprehensive study materials for the **GitHub Actions (GH-200)** certification exam, covering all exam domains.
 
@@ -77,31 +78,31 @@ Comprehensive study materials for the **GitHub Actions (GH-200)** certification 
 
 | File   | Topic |
 | ------ | ----- |
-| [01-GitHub-Actions-VS-Code-Extension.md](githubactions/01-GitHub-Actions-VS-Code-Extension.md) | VS Code extension setup and usage |
-| [02-Contextual-Information.md](githubactions/02-Contextual-Information.md) | GitHub context and metadata |
-| [03-Context-Availability-Reference.md](githubactions/03-Context-Availability-Reference.md) | Context availability by event |
-| [04-Workflow-File-Structure.md](githubactions/04-Workflow-File-Structure.md) | YAML syntax and workflow anatomy |
-| [05-Workflow-Trigger-Events.md](githubactions/05-Workflow-Trigger-Events.md) | Triggers: push, PR, schedule, dispatch |
-| [06-Custom-Environment-Variables.md](githubactions/06-Custom-Environment-Variables.md) | Custom env vars and scoping |
-| [07-Default-Environment-Variables.md](githubactions/07-Default-Environment-Variables.md) | Built-in GitHub environment variables |
-| [08-Environment-Protection-Rules.md](githubactions/08-Environment-Protection-Rules.md) | Deployment environments and protection rules |
-| [09-Workflow-Artifacts.md](githubactions/09-Workflow-Artifacts.md) | Uploading and downloading artifacts |
-| [10-Workflow-Caching.md](githubactions/10-Workflow-Caching.md) | Dependency caching strategies |
-| [11-Workflow-Sharing.md](githubactions/11-Workflow-Sharing.md) | Reusable workflows and composite actions |
-| [12-Workflow-Debugging.md](githubactions/12-Workflow-Debugging.md) | Debugging and troubleshooting |
-| [13-Workflows-REST-API.md](githubactions/13-Workflows-REST-API.md) | GitHub REST API for workflows |
-| [14-Reviewing-Deployments.md](githubactions/14-Reviewing-Deployments.md) | Deployment review and approval gates |
-| [15-Creating-Publishing-Actions.md](githubactions/15-Creating-Publishing-Actions.md) | Building and publishing custom actions |
-| [16-Managing-Runners.md](githubactions/16-Managing-Runners.md) | GitHub-hosted and self-hosted runners |
-| [17-GitHub-Actions-Enterprise.md](githubactions/17-GitHub-Actions-Enterprise.md) | Enterprise features and governance |
-| [18-Security-and-Optimization.md](githubactions/18-Security-and-Optimization.md) | Security hardening and performance |
-| [19-Common-Failures-Troubleshooting.md](githubactions/19-Common-Failures-Troubleshooting.md) | Common failure patterns and fixes |
+| [01-GitHub-Actions-VS-Code-Extension.md](githubactions/learning/01-GitHub-Actions-VS-Code-Extension.md) | VS Code extension setup and usage |
+| [02-Contextual-Information.md](githubactions/learning/02-Contextual-Information.md) | GitHub context and metadata |
+| [03-Context-Availability-Reference.md](githubactions/learning/03-Context-Availability-Reference.md) | Context availability by event |
+| [04-Workflow-File-Structure.md](githubactions/learning/04-Workflow-File-Structure.md) | YAML syntax and workflow anatomy |
+| [05-Workflow-Trigger-Events.md](githubactions/learning/05-Workflow-Trigger-Events.md) | Triggers: push, PR, schedule, dispatch |
+| [06-Custom-Environment-Variables.md](githubactions/learning/06-Custom-Environment-Variables.md) | Custom env vars and scoping |
+| [07-Default-Environment-Variables.md](githubactions/learning/07-Default-Environment-Variables.md) | Built-in GitHub environment variables |
+| [08-Environment-Protection-Rules.md](githubactions/learning/08-Environment-Protection-Rules.md) | Deployment environments and protection rules |
+| [09-Workflow-Artifacts.md](githubactions/learning/09-Workflow-Artifacts.md) | Uploading and downloading artifacts |
+| [10-Workflow-Caching.md](githubactions/learning/10-Workflow-Caching.md) | Dependency caching strategies |
+| [11-Workflow-Sharing.md](githubactions/learning/11-Workflow-Sharing.md) | Reusable workflows and composite actions |
+| [12-Workflow-Debugging.md](githubactions/learning/12-Workflow-Debugging.md) | Debugging and troubleshooting |
+| [13-Workflows-REST-API.md](githubactions/learning/13-Workflows-REST-API.md) | GitHub REST API for workflows |
+| [14-Reviewing-Deployments.md](githubactions/learning/14-Reviewing-Deployments.md) | Deployment review and approval gates |
+| [15-Creating-Publishing-Actions.md](githubactions/learning/15-Creating-Publishing-Actions.md) | Building and publishing custom actions |
+| [16-Managing-Runners.md](githubactions/learning/16-Managing-Runners.md) | GitHub-hosted and self-hosted runners |
+| [17-GitHub-Actions-Enterprise.md](githubactions/learning/17-GitHub-Actions-Enterprise.md) | Enterprise features and governance |
+| [18-Security-and-Optimization.md](githubactions/learning/18-Security-and-Optimization.md) | Security hardening and performance |
+| [19-Common-Failures-Troubleshooting.md](githubactions/learning/19-Common-Failures-Troubleshooting.md) | Common failure patterns and fixes |
 
 Additional resources:
 
-- [GitHub-Workflows-Guide.md](githubactions/GitHub-Workflows-Guide.md) — Complete reference guide
-- [study-plan.md](githubactions/study-plan.md) — Exam study plan
-- [exam-overview.md](githubactions/exam-overview.md) — Exam structure and domains
+- [GitHub-Workflows-Guide.md](githubactions/learning/GitHub-Workflows-Guide.md) — Complete reference guide
+- [study-plan.md](githubactions/learning/study-plan.md) — Exam study plan
+- [exam-overview.md](githubactions/learning/exam-overview.md) — Exam structure and domains
 
 ---
 
@@ -213,7 +214,7 @@ See [quiz-engine/README.md](quiz-engine/README.md) for setup instructions for ea
 
 ## Prompt Engineering Source Material
 
-**Location:** `actions-source-material/`
+**Location:** [actions-source-material](actions-source-material/README.md)
 
 Iteration prompts used during the development of the GitHub Actions study content. Contains 10 iterations of refined prompt engineering (gh-200-iteration-1.md through gh-200-iteration-10.md) showing the evolution of the question-generation prompts.
 
