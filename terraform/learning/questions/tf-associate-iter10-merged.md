@@ -1,4 +1,5 @@
 # Terraform Associate Exam Questions
+
 ---
 
 ### Question 1 — Nightly Apply Reports No Changes
