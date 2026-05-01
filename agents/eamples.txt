@@ -1,0 +1,23 @@
+Problem-solving:
+"@python-algorithm-design solve this problem step-by-step"
+
+After you code:
+"@teaching-assistant review my solution"
+
+If it breaks:
+"@python-debugger why is this failing?"
+
+If it's slow:
+"@python-performance optimize this"
+
+For testing:
+"@python-testing design tests for this code"
+
+For structure:
+"@python-architecture is this code well-organized?"
+
+GitHub Actions workflow help:
+"@github-actions-teaching review my workflow design"
+
+Terraform infrastructure help:
+"@terraform-teaching how should I structure this module?"
