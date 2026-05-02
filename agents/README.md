@@ -359,6 +359,7 @@ All agents share these principles:
 3. **Share context** - Provide code, configuration, or problem description
 4. **Engage actively** - Ask questions, test hypotheses, iterate
 5. **Learn the concepts** - Focus on understanding principles, not just getting answers
+6. **Examples** - See [examples.md](examples.md) for more detailed usage examples
 
 ---
 
