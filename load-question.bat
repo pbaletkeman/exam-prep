@@ -1,4 +1,4 @@
-@echo off
+b@echo off
 REM ============================================================================
 REM load-question.bat - Load Databricks questions into Python Quiz Engine
 REM ============================================================================
